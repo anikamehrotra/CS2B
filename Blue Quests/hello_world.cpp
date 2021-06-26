@@ -10,7 +10,7 @@ using namespace std;
 //  Feel free to use the alternate signature of main() below
 int main(int argc, const char * argv[]) 
 {
-  cout << "Hello world\n";
+  cout << "Hello world this is a test\n";
 
   return 0;
 }
