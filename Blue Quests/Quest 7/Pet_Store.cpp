@@ -120,7 +120,7 @@ bool Pet_Store::find_pet_by_id_bin(long id, Pet &pet)
             first = middle +1;
         }
     }
-    if (found = true) {
+    if (found == true) {
         pet.set_name(_pets[position].get_name());
         pet.set_id(_pets[position].get_id());
         pet.set_num_limbs(_pets[position].get_num_limbs());
@@ -152,7 +152,7 @@ bool Pet_Store::find_pet_by_name_bin(string name, Pet &pet)
             first = middle +1;
         }
     }
-    if (found = true) {
+    if (found == true) {
         pet.set_name(_pets[position].get_name());
         pet.set_id(_pets[position].get_id());
         pet.set_num_limbs(_pets[position].get_num_limbs());
