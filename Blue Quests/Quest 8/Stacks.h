@@ -42,7 +42,7 @@ class Stack_Int {
         {
             std::string s = "";
             std::string stackSize = std::to_string(_data.size());
-            s = s + "Stack (" + stackSize + " elements):\n";
+            s = "Stack (" + stackSize + " elements):\n";
             if (_data.size() <= 10) {
                 for (size_t i = 0; i < _data.size(); i++) {
                     s += std::to_string(_data[i]) + "\n";
