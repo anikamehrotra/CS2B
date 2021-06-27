@@ -167,7 +167,7 @@ string Pet_Store::to_string(size_t n1, size_t n2)
     string s = "";
     if (n1 > _pets.size() || n2 > _pets.size()) {return "";}
     else {
-        for (int i = n1; i <= n2; i++) {
+        for (size_t i = n1; i <= n2; i++) {
             s += _pets[i].to_string();
             s += "\n";
         }
