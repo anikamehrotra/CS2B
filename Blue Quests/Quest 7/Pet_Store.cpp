@@ -17,21 +17,22 @@ Pet_Store::Pet_Store(size_t n)
 
 void Pet_Store::set_size(size_t n)
 {
-    // TODO - Your code here
+    _pets.resize(n);
 }
 
 size_t Pet_Store::get_size() const
 {
-    // TODO - Your code here
+    return _pets.size();
 }
 
 void Pet_Store::clear()
 {
-    // TODO - Your code here
+    _pets.clear();
 }
 void Pet_Store::populate_with_n_random_pets(size_t n)
 {
-    // TODO - Your code here
+    Pet::get_n_pets(n, _pets, 7);
+    _sort_order = BY_ID;
 }
 // These two functions can be conveniently made anonymous "lambda" functions
 // defined within the scope of the functions where they're used (but only
