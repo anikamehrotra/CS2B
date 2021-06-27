@@ -85,10 +85,34 @@ bool Pet_Store::find_pet_by_name_lin(string name, Pet &pet)
 }
     // When this method starts, the _pets[] vector must be sorted in
     // non-descending order by _id. If it is not already, then it will be resorted.
-    bool
-    Pet_Store::find_pet_by_id_bin(long id, Pet &pet)
+bool Pet_Store::find_pet_by_id_bin(long id, Pet &pet)
 {
-    // TODO - Your code here
+    if (_sort_order != BY_ID) {_sort_pets_by_id();}
+    int first = 0;   // first array element
+    int middle;      // mid point of search
+    int last = _pets.size(); // last array element
+    bool found = false; // flag
+    int position = -1; // position of search value
+
+    while (!found && first <= last) {
+        middle = (first + last) / 2;      // calculate mid point
+        if (_pets[middle].get_id() == id) {     // if value is found at mid
+            found = true;
+            position = middle; 
+        }    
+        else if (_pets[middle].get_id() > id) {   // if value is in lower half
+            last = middle -1;  
+        }
+        else {                             // if value is in upper half
+            first = middle +1;
+        }
+    }
+    if (found = true) {
+        pet.set_name(_pets[position].get_name());
+        pet.set_id(_pets[position].get_id());
+        pet.set_num_limbs(_pets[position].get_num_limbs());
+    }
+    return found;
 }
 // When this method is called, the _pets[] vector must be sorted in
 // lexicographic non-descending order by _name. If it is not already,
