@@ -49,7 +49,7 @@ class Stack_Int {
                 }
             }
             else {
-                for (size_t j = _data.size(); j > _data.size()-10; j--) {
+                for (size_t j = _data.size()-1; j > _data.size()-11; j--) {
                     s += std::to_string(_data[j]) + "\n";
                 }
                 s += "...\n";
