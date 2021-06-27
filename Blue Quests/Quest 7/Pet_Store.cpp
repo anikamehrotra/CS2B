@@ -11,7 +11,8 @@ using namespace std;
 
 Pet_Store::Pet_Store(size_t n)
 {
-    // TODO - Your code here
+    _pets.resize(n);
+    _sort_order = NONE;
 }
 
 void Pet_Store::set_size(size_t n)
