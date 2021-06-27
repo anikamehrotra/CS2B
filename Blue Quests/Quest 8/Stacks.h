@@ -52,7 +52,7 @@ class Stack_Int {
                 for (size_t j = _data.size()-10; j < _data.size(); j++) {
                     s += std::to_string(_data[j]) + "\n";
                 }
-                s += "...";
+                s += "...\n";
             }
             s += "Elements, if listed above, are in increasing order of age.";
             return s;
