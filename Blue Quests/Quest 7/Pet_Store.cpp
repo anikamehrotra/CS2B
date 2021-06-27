@@ -74,11 +74,10 @@ bool Pet_Store::find_pet_by_id_lin(long id, Pet &pet)
             pet.set_num_limbs(_pets[index].get_num_limbs());
 
             found = true; // set the flag
-            return found;
         }
-        else {return found;}
         index++; // increase index to go to the next element
     }
+    return found;
 }
 bool Pet_Store::find_pet_by_name_lin(string name, Pet &pet)
 {
