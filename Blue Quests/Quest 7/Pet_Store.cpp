@@ -65,7 +65,7 @@ void Pet_Store::_sort_pets_by_name()
 bool Pet_Store::find_pet_by_id_lin(long id, Pet &pet)
 {
     bool found = false; // a flag to tell the code if the value was found
-    int index = 0; // used as subscript to search through the array
+    size_t index = 0; // used as subscript to search through the array
     while (index < _pets.size() && !found) {
         if (_pets[index].get_id() == id) // check if the value is found
         {
@@ -82,7 +82,7 @@ bool Pet_Store::find_pet_by_id_lin(long id, Pet &pet)
 bool Pet_Store::find_pet_by_name_lin(string name, Pet &pet)
 {
     bool found = false; // a flag to tell the code if the value was found
-    int index = 0; // used as subscript to search through the array
+    size_t index = 0; // used as subscript to search through the array
     while (index < _pets.size() && !found) {
         if (_pets[index].get_name() == name) // check if the value is found
         {
