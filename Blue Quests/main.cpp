@@ -9,7 +9,7 @@ using namespace std;
 
 int main() {
     Stack_Int s;
-    for (int i = 0; i < 100; i++) {
+    for (int i = 0; i < 10; i++) {
         s.push(i);
     }
     cout << s.to_string();
