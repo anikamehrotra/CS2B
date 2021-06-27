@@ -26,7 +26,7 @@ class Stack_Int {
         int top(bool &success) const
         {
             if (_data.empty()) {success = false; return 0;}
-            else {success = true; return _data[_data.size()];}
+            else {success = true; return _data[_data.size()-1];}
         }
         bool pop()
         {
@@ -36,7 +36,7 @@ class Stack_Int {
         bool pop(int &val)
         {
             if (_data.empty()) {return false;}
-            else {val = _data[_data.size()]; _data.pop_back(); return true;}
+            else {val = _data[_data.size()-1]; _data.pop_back(); return true;}
         }
         std::string to_string() const
         {
