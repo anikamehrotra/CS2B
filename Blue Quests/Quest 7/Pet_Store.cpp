@@ -64,7 +64,21 @@ void Pet_Store::_sort_pets_by_name()
 }
 bool Pet_Store::find_pet_by_id_lin(long id, Pet &pet)
 {
-    // TODO - Your code here
+    bool found = false; // a flag to tell the code if the value was found
+    int index = 0; // used as subscript to search through the array
+    while (index < _pets.size() && !found) {
+        if (_pets[index].get_id() == id) // check if the value is found
+        {
+            pet.set_name(_pets[index].get_name());
+            pet.set_id(_pets[index].get_id());
+            pet.set_num_limbs(_pets[index].get_num_limbs());
+
+            found = true; // set the flag
+            return found;
+        }
+        else {return found;}
+        index++; // increase index to go to the next element
+    }
 }
 bool Pet_Store::find_pet_by_name_lin(string name, Pet &pet)
 {
