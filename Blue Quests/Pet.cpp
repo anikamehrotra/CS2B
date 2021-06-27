@@ -108,3 +108,22 @@ bool operator!=(const Pet& pet1, const Pet& pet2) {
 ostream& operator<<(ostream& os, const Pet& pet) {
   return os;
 }
+
+/*
+Hooray! 5 Spools of Gold Yarn spun (make a name).
+
+Hooray! 2 Vials of Gremlin Potion distilled (Constructors).
+
+Hooray! 2 Theater Tickets bought from Good-times Grifon (Getters).
+
+Hooray! 4 Candy Cauldrons found buried (Setters).
+
+Hooray! 3 Private Investigator Badges copied (to string).
+ (Don't do this. Read the Tiger's honor code.)
+
+Hooray! 4 Raw Morple Stalks eaten on an empty stomach (Get many pets).
+
+The secret password for your next quest is The Megastore Martin (do not share)
+
+Hooray! 3 Scarlet Lanterns lit with Inner Light (Population control)
+*/
