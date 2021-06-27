@@ -11,6 +11,9 @@ using namespace std;
 int main(int argc, const char * argv[]) 
 {
   cout << "Hello world 402\n";
+  int n;
+  n = 12;
+  n++;
 
   return 0;
 }
