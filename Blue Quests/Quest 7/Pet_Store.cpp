@@ -81,7 +81,20 @@ bool Pet_Store::find_pet_by_id_lin(long id, Pet &pet)
 }
 bool Pet_Store::find_pet_by_name_lin(string name, Pet &pet)
 {
-    // TODO - Your code here
+    bool found = false; // a flag to tell the code if the value was found
+    int index = 0; // used as subscript to search through the array
+    while (index < _pets.size() && !found) {
+        if (_pets[index].get_name() == name) // check if the value is found
+        {
+            pet.set_name(_pets[index].get_name());
+            pet.set_id(_pets[index].get_id());
+            pet.set_num_limbs(_pets[index].get_num_limbs());
+
+            found = true; // set the flag
+        }
+        index++; // increase index to go to the next element
+    }
+    return found;
 }
     // When this method starts, the _pets[] vector must be sorted in
     // non-descending order by _id. If it is not already, then it will be resorted.
@@ -119,12 +132,45 @@ bool Pet_Store::find_pet_by_id_bin(long id, Pet &pet)
 // then it will be resorted.
 bool Pet_Store::find_pet_by_name_bin(string name, Pet &pet)
 {
-    // TODO - Your code here
+    if (_sort_order != BY_NAME) {_sort_pets_by_name();}
+    int first = 0;   // first array element
+    int middle;      // mid point of search
+    int last = _pets.size(); // last array element
+    bool found = false; // flag
+    int position = -1; // position of search value
+
+    while (!found && first <= last) {
+        middle = (first + last) / 2;      // calculate mid point
+        if (_pets[middle].get_name() == name) {     // if value is found at mid
+            found = true;
+            position = middle; 
+        }    
+        else if (_pets[middle].get_name() > name) {   // if value is in lower half
+            last = middle -1;  
+        }
+        else {                             // if value is in upper half
+            first = middle +1;
+        }
+    }
+    if (found = true) {
+        pet.set_name(_pets[position].get_name());
+        pet.set_id(_pets[position].get_id());
+        pet.set_num_limbs(_pets[position].get_num_limbs());
+    }
+    return found;
 }
 // Return a string representation of the pets with indexes n1 through n2
 // inclusive, exclusive of non-existent indices
 // Each pet is on a line by itself.
 string Pet_Store::to_string(size_t n1, size_t n2)
 {
-    // TODO - Your code here
+    string s = "";
+    if (n1 > _pets.size() || n2 > _pets.size()) {return "";}
+    else {
+        for (int i = n1; i <= n2; i++) {
+            s += _pets[i].to_string();
+            s += "\n";
+        }
+    }
+    return s;
 }
