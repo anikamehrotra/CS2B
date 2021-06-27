@@ -1,6 +1,7 @@
 {
     "files.associations": {
-        "sstream": "cpp"
+        "sstream": "cpp",
+        "ostream": "cpp"
     },
     "gitdoc.enabled": true
 }
