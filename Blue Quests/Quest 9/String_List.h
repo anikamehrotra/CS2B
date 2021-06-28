@@ -40,9 +40,7 @@ public:
     }
     ~String_List()
     {
-        while (_head != _tail) {
-
-        }
+        
     }
     String_List *insert_at_current(std::string s)
     {
