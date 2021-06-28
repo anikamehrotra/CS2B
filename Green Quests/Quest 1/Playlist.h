@@ -79,14 +79,7 @@ class Playlist {
         size_t _size;
 
     public:
-        Playlist() {
-            Playlist::Song_Entry *s = new Playlist::Song_Entry(-1, "HEAD");
-            Playlist::Node *n = new Playlist::Node(*s);
-            _head = n;
-            _tail = n;
-            _prev_to_current = n;
-            _size = 0;
-        };
+        Playlist() {};
         ~Playlist();
         size_t get_size() const { return _size; }
         Song_Entry &get_current_song() const;
