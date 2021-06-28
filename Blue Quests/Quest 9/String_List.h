@@ -130,7 +130,10 @@ public:
     //
     std::string &find_item(std::string s) const
     {
-        // TODO - Your code here
+        Node *n = _head->next;
+        while (n != nullptr) {
+           if (n->data == s) {return n->data;}
+        }
         return _head->data;
     }
 
