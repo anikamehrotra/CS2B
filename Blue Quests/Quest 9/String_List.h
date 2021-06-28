@@ -45,9 +45,8 @@ public:
     String_List *insert_at_current(std::string s)
     {
         Node* n = new Node(s);
-        n->next = _prev_to_current->next->next;
+        n->next = _prev_to_current->next;
         _prev_to_current->next = n;
-        _prev_to_current = n;
         _size++;
         return this;
     }
