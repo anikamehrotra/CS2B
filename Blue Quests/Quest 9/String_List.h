@@ -114,7 +114,7 @@ public:
     }
     void clear()
     {
-        _prev_to_current = _head;
+        rewind();
         while (_head != _tail) {
             remove_at_current();
         }
