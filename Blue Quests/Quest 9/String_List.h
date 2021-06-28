@@ -46,13 +46,8 @@ public:
     {
         Node *n = new Node(s);
         n->next = _prev_to_current->next;
+        if (_prev_to_current->next == nullptr) {_tail = n;}
         _prev_to_current->next = n;
-
-        while (n->next != nullptr)
-        {
-            n->next = n->next->next;
-        }
-        _tail = n;
         
         _size++;
         return this;
