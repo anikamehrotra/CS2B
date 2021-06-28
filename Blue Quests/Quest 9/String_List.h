@@ -139,3 +139,33 @@ public:
     friend class Tests; // Don't remove this line
 };
 #endif /* String_List_h */
+
+/*
+Hooray! 1 Moicrovat of Zoguulsmears Cream added (constructor)
+
+Hooray! 1 Plinch of Pfranderoza Punch Seasoning sprinkled (sentinel)
+
+Hooray! 1 Bottle of Slickyard Stephanie's potion secretly emptied in (get size)
+ (don't do these kinds of silly things!)
+
+Hooray! 5 hours and five hundred degrees later (insert at curr) ...
+
+Hooray! 1 Picoppanhandle of Pluronimo's Potion distilled (get current item)
+ (Use this potion to multiply itself for more).
+
+Hooray! 1 Kind Shepherd sent word from Brosatronia (push_back).
+
+Hooray! 2 Sthroffburp of infinitesimal size evicted. (advance curr to)
+
+Hooray! 3 Natromonici of n'Banacha rescued (get current item).
+
+Hooray! 3 Foncimers traded in for a Plinthicum blanket (remove at curr)
+
+LEVELED UP. Congratulations and welcome to a taste of what is to be (2B).
+
+The password for your next quest is the platypus-bodied duck.
+
+Hooray! 1 Parijatam blossomed into Paramatma (rewind).
+
+Failed checkpoint. 
+*/
