@@ -32,7 +32,7 @@ private:
 public:
     String_List()
     {
-        Node* n = new Node("_SENTINEL_");
+        Node *n = new Node("_SENTINEL_");
         _head = n;
         _tail = n;
         _prev_to_current = n;
@@ -44,9 +44,16 @@ public:
     }
     String_List *insert_at_current(std::string s)
     {
-        Node* n = new Node(s);
+        Node *n = new Node(s);
         n->next = _prev_to_current->next;
         _prev_to_current->next = n;
+
+        while (n->next != nullptr)
+        {
+            n->next = n->next->next;
+        }
+        _tail = n;
+        
         _size++;
         return this;
     }
@@ -64,13 +71,26 @@ public:
     }
     String_List *advance_current()
     {
-        if (_prev_to_current == _tail) {return nullptr;}
-        else {_prev_to_current = _prev_to_current->next; return this;}
+        if (_prev_to_current == _tail)
+        {
+            return nullptr;
+        }
+        else
+        {
+            _prev_to_current = _prev_to_current->next;
+            return this;
+        }
     }
     std::string get_current() const
     {
-        if (_prev_to_current != nullptr) {return _prev_to_current->data;}
-        else {return _head->data;}
+        if (_prev_to_current != nullptr)
+        {
+            return _prev_to_current->data;
+        }
+        else
+        {
+            return _head->data;
+        }
     }
     String_List *remove_at_current()
     {
@@ -104,7 +124,7 @@ public:
         // TODO - Your code here
         return _head->data;
     }
-    
+
     // Print up to max_lines lines starting at _prev_to_current->next. If the caller
     // wants to print from the beginning of the list, they should rewind() it first.
     //
