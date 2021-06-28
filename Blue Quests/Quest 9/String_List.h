@@ -36,7 +36,7 @@ public:
         _head = n;
         _tail = n;
         _prev_to_current = n;
-        _size = 1;
+        _size = 0;
     }
     ~String_List()
     {
