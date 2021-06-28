@@ -40,7 +40,6 @@ public:
     }
     ~String_List()
     {
-
         _size = 0;
     }
     String_List *insert_at_current(std::string s)
@@ -50,23 +49,26 @@ public:
         _prev_to_current->next = n;
         _prev_to_current = n;
         _size++;
+        return this;
     }
     String_List *push_back(std::string s)
     {
         _prev_to_current = _tail;
         insert_at_current(s);
         _size++;
+        return this;
     }
     String_List *push_front(std::string s)
     {
         _prev_to_current = _head;
         insert_at_current(s);
         _size++;
+        return this;
     }
     String_List *advance_current()
     {
-        if (_prev_to_current = _tail) {return nullptr;}
-        else {_prev_to_current = _prev_to_current->next;}
+        if (_prev_to_current == _tail) {return nullptr;}
+        else {_prev_to_current = _prev_to_current->next; return this;}
     }
     std::string get_current() const
     {
@@ -77,6 +79,7 @@ public:
     {
 
         _size--;
+        return this;
     }
     size_t get_size() const
     {
@@ -85,6 +88,7 @@ public:
     String_List *rewind()
     {
         _prev_to_current = _head;
+        return this;
     }
     void clear()
     {
@@ -101,13 +105,16 @@ public:
     std::string &find_item(std::string s) const
     {
         // TODO - Your code here
+        return _head->data;
     }
+    
     // Print up to max_lines lines starting at _prev_to_current->next. If the caller
     // wants to print from the beginning of the list, they should rewind() it first.
     //
     std::string to_string() const
     {
         // TODO - Your code here
+        return "";
     }
     friend class Tests; // Don't remove this line
 };
