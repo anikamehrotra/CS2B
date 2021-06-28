@@ -77,7 +77,7 @@ public:
         }
         else
         {
-            _prev_to_current = _prev_to_current->next;
+            _prev_to_current->next = _prev_to_current->next->next;
             return this;
         }
     }
