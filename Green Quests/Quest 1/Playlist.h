@@ -79,7 +79,7 @@ class Playlist {
         size_t _size;
 
     public:
-        Playlist() {};
+        Playlist();
         ~Playlist();
         size_t get_size() const { return _size; }
         Song_Entry &get_current_song() const;
