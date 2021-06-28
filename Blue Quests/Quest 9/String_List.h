@@ -92,7 +92,12 @@ public:
     String_List *remove_at_current()
     {
         Node *current = _prev_to_current->next;
+        if (_prev_to_current->next == nullptr) {return this;}
+        if (_prev_to_current->next == _tail) {
+            _tail == _prev_to_current;
+        }
         _prev_to_current->next = current->next;
+        delete current;
         _size--;
         return this;
     }
