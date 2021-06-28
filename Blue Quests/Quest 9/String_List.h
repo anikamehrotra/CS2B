@@ -82,7 +82,7 @@ public:
     {
         if (_prev_to_current != nullptr)
         {
-            return _prev_to_current->data;
+            return _prev_to_current->next->data;
         }
         else
         {
