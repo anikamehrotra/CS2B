@@ -40,6 +40,7 @@ public:
     }
     ~String_List()
     {
+        
         _size = 0;
     }
     String_List *insert_at_current(std::string s)
