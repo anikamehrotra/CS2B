@@ -32,7 +32,11 @@ private:
 public:
     String_List()
     {
-        // TODO - Your code here
+        Node* n = new Node("_SENTINEL_");
+        _head = n;
+        _tail = n;
+        _prev_to_current = n;
+        _size = 0;
     }
     ~String_List()
     {
