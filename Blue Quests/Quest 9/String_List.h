@@ -55,14 +55,12 @@ public:
     {
         _prev_to_current = _tail;
         insert_at_current(s);
-        _size++;
         return this;
     }
     String_List *push_front(std::string s)
     {
         _prev_to_current = _head;
         insert_at_current(s);
-        _size++;
         return this;
     }
     String_List *advance_current()
