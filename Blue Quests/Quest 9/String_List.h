@@ -36,11 +36,12 @@ public:
         _head = n;
         _tail = n;
         _prev_to_current = n;
-        _size = 0;
+        _size = 1;
     }
     ~String_List()
     {
-        
+
+        _size = 0;
     }
     String_List *insert_at_current(std::string s)
     {
@@ -48,11 +49,11 @@ public:
     }
     String_List *push_back(std::string s)
     {
-        // TODO - Your code here
+        _size++;
     }
     String_List *push_front(std::string s)
     {
-        // TODO - Your code here
+        _size++;
     }
     String_List *advance_current()
     {
@@ -64,7 +65,7 @@ public:
     }
     String_List *remove_at_current()
     {
-        // TODO - Your code here
+        _size--;
     }
     size_t get_size() const
     {
@@ -76,7 +77,7 @@ public:
     }
     void clear()
     {
-        // TODO - Your code here
+        _size = 1;
     }
     // Find a specific item. Does NOT change cursor.
     //
