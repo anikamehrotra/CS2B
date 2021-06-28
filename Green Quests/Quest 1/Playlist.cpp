@@ -15,5 +15,7 @@ Playlist::Playlist() {
 }
 
 Playlist::~Playlist() {
-    
+    clear();
+    delete _head;
+    _size = 0;
 }
