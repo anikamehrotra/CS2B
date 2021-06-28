@@ -45,7 +45,8 @@ public:
     }
     String_List *insert_at_current(std::string s)
     {
-        // TODO - Your code here
+        Node* n = new Node(s);
+        _size++;
     }
     String_List *push_back(std::string s)
     {
