@@ -143,14 +143,15 @@ public:
     //
     std::string to_string() const
     {
-        // TODO - Your code here
+        Node *n = _prev_to_current;
         std::string s = "";
         std::string size = std::to_string(get_size());
         s += "# String_List - " + size + " entries total. Starting at cursor:\n";
         int count = 0;
         while (count < 25) {
-            if (_prev_to_current->next != nullptr) {
-                s += _prev_to_current->next->data + "\n";
+            if (n->next != nullptr) {
+                s += n->next->data + "\n";
+                n = n->next;
                 count++;
             }
             else {

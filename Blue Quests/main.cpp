@@ -18,7 +18,9 @@ int main() {
     sl.advance_current();
     sl.advance_current();
     sl.insert_at_current("f");
+    // sl.clear();
+    // cout << sl.get_size();
+    cout << sl.to_string();
     sl.clear();
-    cout << sl.get_size();
-
+    cout << sl.to_string();
 }
