@@ -53,6 +53,9 @@ public:
     }
     String_List *push_back(std::string s)
     {
+        Node *n = new Node(s);
+        
+        _tail = n;
         _size++;
     }
     String_List *push_front(std::string s)
