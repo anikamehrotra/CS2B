@@ -30,8 +30,14 @@ public:
             : _id(id), _name(name) {}
         int get_id() const { return _id; }
         string get_name() const { return _name; }
-        bool set_id(int id);
-        bool set_name(string name);
+        bool set_id(int id) {
+            if (id < 0) {return false;}
+            else {_id = id; return true;}
+        };
+        bool set_name(string name) {
+            if (name == "") {return false;}
+            else {_name = name; return true;}
+        };
         bool operator==(const Song_Entry &that)
         {
             return this->_id == that._id && this->_name == that._name;
