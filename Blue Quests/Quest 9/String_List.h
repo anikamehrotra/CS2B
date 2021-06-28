@@ -144,8 +144,21 @@ public:
     std::string to_string() const
     {
         // TODO - Your code here
-        
-        return "";
+        std::string s = "";
+        std::string size = std::to_string(get_size());
+        s += "# String_List - " + size + " entries total. Starting at cursor:\n";
+        int count = 0;
+        while (count < 25) {
+            if (_prev_to_current->next != nullptr) {
+                s += _prev_to_current->next->data + "\n";
+                count++;
+            }
+            else {
+                return s;
+            }
+        }
+        s += "...\n";
+        return s;
     }
     friend class Tests; // Don't remove this line
 };
