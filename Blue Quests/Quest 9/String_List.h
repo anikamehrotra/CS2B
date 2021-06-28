@@ -104,7 +104,7 @@ public:
     }
     void clear()
     {
-        _size = 1;
+        _size = 0;
     }
     // Find a specific item. Does NOT change cursor.
     //
