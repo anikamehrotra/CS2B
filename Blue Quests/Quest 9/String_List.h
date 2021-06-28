@@ -40,7 +40,8 @@ public:
     }
     ~String_List()
     {
-        
+        clear();
+        delete _head;
         _size = 0;
     }
     String_List *insert_at_current(std::string s)
@@ -113,6 +114,10 @@ public:
     }
     void clear()
     {
+        _prev_to_current = _head;
+        while (_head != _tail) {
+            remove_at_current();
+        }
         _size = 0;
     }
     // Find a specific item. Does NOT change cursor.
