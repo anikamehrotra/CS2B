@@ -91,7 +91,8 @@ public:
     }
     String_List *remove_at_current()
     {
-
+        Node *current = _prev_to_current->next;
+        _prev_to_current->next = current->next;
         _size--;
         return this;
     }
