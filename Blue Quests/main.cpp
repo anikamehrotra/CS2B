@@ -8,16 +8,16 @@
 using namespace std;
 
 int main() {
-    String_List n;
-    n.insert_at_current("a");
-    n.insert_at_current("b");
-    n.insert_at_current("c");
-    n.insert_at_current("d");
-    n.insert_at_current("e");
-    n.rewind();
-    n.advance_current();
-    n.advance_current();
-    n.insert_at_current("f");
-    cout << n.get_size();
+    String_List sl;
+    sl.insert_at_current("a");
+    sl.insert_at_current("b");
+    sl.insert_at_current("c");
+    sl.insert_at_current("d");
+    sl.insert_at_current("e");
+    sl.rewind();
+    sl.advance_current();
+    sl.advance_current();
+    sl.insert_at_current("f");
+    cout << sl.get_size();
 
 }
