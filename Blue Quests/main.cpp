@@ -9,11 +9,11 @@ using namespace std;
 
 int main() {
     String_List sl;
-    sl.insert_at_current("a");
-    sl.insert_at_current("b");
-    sl.insert_at_current("c");
-    sl.insert_at_current("d");
     sl.insert_at_current("e");
+    sl.insert_at_current("d");
+    sl.insert_at_current("c");
+    sl.insert_at_current("b");
+    sl.insert_at_current("a");
     sl.rewind();
     sl.advance_current();
     sl.advance_current();
