@@ -48,6 +48,7 @@ public:
         Node* n = new Node(s);
         n->next = _prev_to_current->next->next;
         _prev_to_current->next = n;
+        _prev_to_current = n;
         _size++;
     }
     String_List *push_back(std::string s)
