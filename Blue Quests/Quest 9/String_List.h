@@ -54,8 +54,10 @@ public:
     }
     String_List *push_back(std::string s)
     {
+        Node *n = _prev_to_current;
         _prev_to_current = _tail;
         insert_at_current(s);
+        _prev_to_current = n;
         return this;
     }
     String_List *push_front(std::string s)
