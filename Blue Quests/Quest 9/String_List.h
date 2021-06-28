@@ -59,27 +59,32 @@ public:
     }
     String_List *push_front(std::string s)
     {
+        _prev_to_current = _head;
+        insert_at_current(s);
         _size++;
     }
     String_List *advance_current()
     {
-        // TODO - Your code here
+        if (_prev_to_current = _tail) {return nullptr;}
+        else {_prev_to_current = _prev_to_current->next;}
     }
     std::string get_current() const
     {
-        // TODO - Your code here
+        if (_prev_to_current != nullptr) {return _prev_to_current->data;}
+        else {return _head->data;}
     }
     String_List *remove_at_current()
     {
+
         _size--;
     }
     size_t get_size() const
     {
-        // TODO - Your code here
+        return _size;
     }
     String_List *rewind()
     {
-        // TODO - Your code here
+        _prev_to_current = _head;
     }
     void clear()
     {
