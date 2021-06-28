@@ -197,4 +197,6 @@ Hooray! 2 Hidden Dimensions jumped into (find return by reference).
 Hooray! 4 Extradimensional Screens of Reality shattered (find item) 
 
 Hooray! 3 Vestrels of Vikingham arrived expecting to be spoiled (clear)
+
+Hooray! 5 Hidden Floots of Marigold discovered.
 */

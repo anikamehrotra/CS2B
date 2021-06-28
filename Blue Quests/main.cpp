@@ -21,6 +21,8 @@ int main() {
     // sl.clear();
     // cout << sl.get_size();
     cout << sl.to_string();
+    sl.rewind();
+    cout << sl.to_string();
     sl.clear();
     cout << sl.to_string();
 }
