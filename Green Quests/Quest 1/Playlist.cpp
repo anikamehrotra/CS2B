@@ -143,7 +143,7 @@ std::string Playlist::to_string_short() const {
     int count = 0;
     while (n->get_next() != nullptr) {
         std::string id = std::to_string(n->get_next()->get_song().get_id());
-        s += "{ id: " + id + ", name: " + n->get_next()->get_song().get_name() + " }";
+        s += n->get_next()->get_song().get_name();
         if (n->get_next() == _prev_to_current) {s += "[P]";}
         if (n->get_next() == _tail) {s += "[T]";}
         n = n->get_next();
