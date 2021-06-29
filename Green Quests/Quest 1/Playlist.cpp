@@ -5,7 +5,8 @@
 
 using namespace std;
 
-Playlist::Playlist() {
+Playlist::Playlist()
+{
     Playlist::Song_Entry *s = new Playlist::Song_Entry(-1, "HEAD");
     Playlist::Node *n = new Playlist::Node(*s);
     _head = n;
@@ -14,8 +15,107 @@ Playlist::Playlist() {
     _size = 0;
 }
 
-Playlist::~Playlist() {
+Playlist::~Playlist()
+{
     clear();
     delete _head;
     _size = 0;
+}
+
+Playlist *Playlist::insert_at_cursor(const Song_Entry &s) {
+    Node *n = new Node(s);
+    n->_next = _prev_to_current->_next;
+    if (_prev_to_current->_next == nullptr) {_tail = n;}
+    _prev_to_current->_next = n;
+
+    _size++;
+    return this;
+}
+
+Playlist *Playlist::push_back(const Song_Entry& s) {
+    Node *n = _prev_to_current;
+    _prev_to_current = _tail;
+    insert_at_cursor(s);
+    _prev_to_current = n;
+    return this;
+}
+
+Playlist *Playlist::push_front(const Song_Entry& s) {
+    _prev_to_current = _head;
+    insert_at_cursor(s);
+    return this;
+}
+
+Playlist *Playlist::advance_cursor() {
+    if (_prev_to_current == _tail) {return nullptr;}
+    else {_prev_to_current = _prev_to_current->_next; return this;}
+}
+
+Playlist *Playlist::circular_advance_cursor() {
+    if (_prev_to_current == _tail) {_prev_to_current->_next = _head; return this;}
+    else {_prev_to_current = _prev_to_current->_next; return this;}
+}
+
+Playlist::Song_Entry &Playlist::get_current_song() const {
+    if (_prev_to_current != nullptr) {return _prev_to_current->_next->_song;}
+    else {return this->_head->_song;}
+}
+
+Playlist *Playlist::remove_at_cursor() {
+    if (_prev_to_current->_next == nullptr) {return this;}
+    Node *current = _prev_to_current->_next;
+    if (_prev_to_current->_next == _tail) {_tail = _prev_to_current;}
+    _prev_to_current->_next = current->_next;
+    delete current;
+    _size--;
+    return this;
+}
+
+size_t Playlist::get_size() const {
+    return _size;
+}
+
+Playlist *Playlist::rewind() {
+    _prev_to_current = _head;
+    return this;
+}
+
+Playlist *Playlist::clear() {
+    rewind();
+    while (_head != _tail) {
+        remove_at_cursor();
+    }
+    _size = 0;
+}
+
+Playlist::Song_Entry &Playlist::find_by_id(int id) const {
+    Node *n = _head->_next;
+    while (n != nullptr) {
+        if (n->_song.get_id() == id) {return n->_song;}
+        n = n->_next;
+    }
+    return this->_head->_song;
+}
+
+std::string Playlist::to_string() const {
+    Node *n = _head;
+    std::string s = "";
+    std::string size = std::to_string(get_size());
+    s += "Playlist: " + size + " entries.\n";
+    int count = 0;
+    while (count < 25) {
+        if (n->_next != nullptr) {
+            std::string id = std::to_string(n->_next->_song.get_id());
+            s += "{ id: " + id + ", name: " + n->_next->_song.get_name() + " }\n";
+            if (n == _prev_to_current) {s += " [P]";}
+            if (n == _tail) {s += " [T]";}
+            n = n->_next;
+            count++;
+        }
+        else {
+            return s;
+        }
+    }
+    s += "...\n";
+    return s;
 }

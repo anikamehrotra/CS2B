@@ -72,6 +72,7 @@ class Playlist {
                 Node *insert_next(Node *p);
                 Node *remove_next();
                 friend class Tests; // Don't remove this line
+                friend class Playlist;
         };
 
     private:
