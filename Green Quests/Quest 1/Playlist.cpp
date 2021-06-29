@@ -113,9 +113,10 @@ std::string Playlist::to_string() const {
     while (count < 25) {
         if (n->get_next() != nullptr) {
             std::string id = std::to_string(n->get_next()->get_song().get_id());
-            s += "{ id: " + id + ", name: " + n->get_next()->get_song().get_name() + " }\n";
-            if (n == _prev_to_current) {s += " [P]";}
-            if (n == _tail) {s += " [T]";}
+            s += "{ id: " + id + ", name: " + n->get_next()->get_song().get_name() + " }";
+            if (n == _prev_to_current) {s += " [P]\n";}
+            else if (n == _tail) {s += " [T]\n";}
+            else {s += "\n";}
             n = n->get_next();
             count++;
         }
