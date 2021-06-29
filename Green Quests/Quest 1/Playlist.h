@@ -56,7 +56,7 @@ class Playlist {
                 friend class Tests; // Don't remove this line
         };
 
-    private:
+    public:
         // This is going to be our inner private class. The client doesn't need to
         // know.
         // This class def should be placed in the private section of Playlist

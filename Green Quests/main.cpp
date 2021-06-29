@@ -8,6 +8,7 @@
 using namespace std;
 
 int main() {
+    /*
     Playlist p;
     Playlist::Song_Entry a(1, "a");
     p.push_back(a);
@@ -23,6 +24,12 @@ int main() {
     p.remove_at_cursor();
     p.remove_at_cursor();
     p.remove_at_cursor();
+    */
     // delete &p;
+
+    Playlist::Song_Entry a(1, "a");
+    Playlist::Node *n = new Playlist::Node(a);
+    
+
 }
     
