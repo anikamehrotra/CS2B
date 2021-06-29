@@ -95,6 +95,15 @@ Playlist::Song_Entry &Playlist::find_by_id(int id) const {
     return this->_head->get_song();
 }
 
+Playlist::Song_Entry &Playlist::find_by_name(string songName) const {
+    Node *n = _head->get_next();
+    while (n != nullptr) {
+        if (n->get_song().get_name() == songName) {return n->get_song();}
+        n = n->get_next();
+    }
+    return this->_head->get_song();
+}
+
 std::string Playlist::to_string() const {
     Node *n = _head;
     std::string s = "";
