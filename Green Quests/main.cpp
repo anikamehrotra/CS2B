@@ -39,6 +39,7 @@ class Tests {
 
         // ASSERT
         if(n1->_next != nullptr) return false;
+        cout << "removeNodeTest Passes" << endl;
         return true;
     }
     std::string nodeStringMaker(Playlist::Node *n) {
