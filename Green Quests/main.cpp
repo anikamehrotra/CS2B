@@ -23,6 +23,6 @@ int main() {
     p.remove_at_cursor();
     p.remove_at_cursor();
     p.remove_at_cursor();
-    delete &p;
+    // delete &p;
 }
     
