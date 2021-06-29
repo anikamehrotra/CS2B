@@ -18,6 +18,7 @@ int main() {
     p.push_back(c);
     Playlist::Song_Entry d(4, "d");
     p.push_back(d);
+
     cout << p.to_string();
     p.remove_at_cursor();
     p.remove_at_cursor();
@@ -38,9 +39,7 @@ int main() {
     Playlist::Node *n3 = new Playlist::Node(c);
     Playlist::Node *n4 = new Playlist::Node(d);
 
-    n1->insert_next(n2);
-    n2->insert_next(n3);
-    n3->insert_next(n4);
+    n1->insert_next(n2)->insert_next(n3)->insert_next(n4);
     n1->remove_next();
 }
     

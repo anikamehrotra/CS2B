@@ -78,7 +78,7 @@ class Playlist {
                 }; // Do not do recursive free
                 Song_Entry &get_song() { return _song; }
                 Node *get_next() { return _next; }
-                Node *insert_next(Node *p) {_next = p; return this;};
+                Node *insert_next(Node *p) {_next = p; return p;};
                 Node *remove_next() {_next = nullptr; return this;};
                 friend class Tests; // Don't remove this line
         };
