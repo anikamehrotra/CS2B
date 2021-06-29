@@ -80,6 +80,7 @@ class Playlist {
                 Node *get_next() { return _next; }
                 Node *insert_next(Node *p) {_next = p; return p;};
                 Node *remove_next() {
+                    if (_next == nullptr) {return this;}
                     Node *current = _next;
                     _next = current->get_next(); 
                     delete current; 

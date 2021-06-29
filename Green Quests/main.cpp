@@ -41,5 +41,9 @@ int main() {
 
     n1->insert_next(n2)->insert_next(n3)->insert_next(n4);
     n1->remove_next();
+    n2->remove_next();
+    n3->remove_next();
+    n4->remove_next();
+
 }
     
