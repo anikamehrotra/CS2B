@@ -24,9 +24,10 @@ Playlist::~Playlist()
 
 Playlist *Playlist::insert_at_cursor(const Song_Entry &s) {
     Node *n = new Node(s);
-    n->_next = _prev_to_current->_next;
-    if (_prev_to_current->_next == nullptr) {_tail = n;}
-    _prev_to_current->_next = n;
+    //n->_next = _prev_to_current->_next;
+    n->insert_next(_prev_to_current->get_next());
+    if (_prev_to_current->get_next() == nullptr) {_tail = n;}
+    _prev_to_current->insert_next(n);
 
     _size++;
     return this;
@@ -48,24 +49,24 @@ Playlist *Playlist::push_front(const Song_Entry& s) {
 
 Playlist *Playlist::advance_cursor() {
     if (_prev_to_current == _tail) {return nullptr;}
-    else {_prev_to_current = _prev_to_current->_next; return this;}
+    else {_prev_to_current->insert_next(_prev_to_current->get_next()); return this;}
 }
 
 Playlist *Playlist::circular_advance_cursor() {
-    if (_prev_to_current == _tail) {_prev_to_current->_next = _head; return this;}
-    else {_prev_to_current = _prev_to_current->_next; return this;}
+    if (_prev_to_current == _tail) {_prev_to_current->get_next()->insert_next(_head); return this;}
+    else {_prev_to_current->insert_next(_prev_to_current->get_next()); return this;}
 }
 
 Playlist::Song_Entry &Playlist::get_current_song() const {
-    if (_prev_to_current != nullptr) {return _prev_to_current->_next->_song;}
-    else {return this->_head->_song;}
+    if (_prev_to_current != nullptr) {return _prev_to_current->get_next()->get_song();}
+    else {return this->_head->get_song();}
 }
 
 Playlist *Playlist::remove_at_cursor() {
-    if (_prev_to_current->_next == nullptr) {return this;}
-    Node *current = _prev_to_current->_next;
-    if (_prev_to_current->_next == _tail) {_tail = _prev_to_current;}
-    _prev_to_current->_next = current->_next;
+    if (_prev_to_current->get_next() == nullptr) {return this;}
+    Node *current = _prev_to_current->get_next();
+    if (_prev_to_current->get_next() == _tail) {_tail = _prev_to_current;}
+    _prev_to_current->get_next()->insert_next(current->get_next());
     delete current;
     _size--;
     return this;
@@ -86,12 +87,12 @@ Playlist *Playlist::clear() {
 }
 
 Playlist::Song_Entry &Playlist::find_by_id(int id) const {
-    Node *n = _head->_next;
+    Node *n = _head->get_next();
     while (n != nullptr) {
-        if (n->_song.get_id() == id) {return n->_song;}
-        n = n->_next;
+        if (n->get_song().get_id() == id) {return n->get_song();}
+        n = n->get_next();
     }
-    return this->_head->_song;
+    return this->_head->get_song();
 }
 
 std::string Playlist::to_string() const {
@@ -101,12 +102,12 @@ std::string Playlist::to_string() const {
     s += "Playlist: " + size + " entries.\n";
     int count = 0;
     while (count < 25) {
-        if (n->_next != nullptr) {
-            std::string id = std::to_string(n->_next->_song.get_id());
-            s += "{ id: " + id + ", name: " + n->_next->_song.get_name() + " }\n";
+        if (n->get_next() != nullptr) {
+            std::string id = std::to_string(n->get_next()->get_song().get_id());
+            s += "{ id: " + id + ", name: " + n->get_next()->get_song().get_name() + " }\n";
             if (n == _prev_to_current) {s += " [P]";}
             if (n == _tail) {s += " [T]";}
-            n = n->_next;
+            n = n->get_next();
             count++;
         }
         else {
