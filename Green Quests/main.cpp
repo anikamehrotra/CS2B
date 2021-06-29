@@ -9,7 +9,7 @@ using namespace std;
 
 class Tests {
     public:
-    bool removeNodeTest() {
+    bool nodeTest() {
         // add 4 entries
         // remove all of them 
         // check to pass test:
@@ -76,7 +76,7 @@ int main() {
     // delete &p;
 
     Tests t;
-    cout << "Test 1: " << t.removeNodeTest() << endl;
+    cout << "Test 1: " << t.nodeTest() << endl;
 
 }
     
