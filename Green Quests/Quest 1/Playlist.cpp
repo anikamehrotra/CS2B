@@ -18,7 +18,7 @@ Playlist::Playlist()
 Playlist::~Playlist()
 {
     clear();
-    delete _head;
+    if (_head != nullptr) {delete _head;}
     _size = 0;
 }
 
@@ -67,7 +67,7 @@ Playlist *Playlist::remove_at_cursor() {
     Node *current = _prev_to_current->get_next();
     if (_prev_to_current->get_next() == _tail) {_tail = _prev_to_current;}
     _prev_to_current->get_next()->insert_next(current->get_next());
-    delete current;
+    if (current != nullptr) {delete current;}
     _size--;
     return this;
 }
