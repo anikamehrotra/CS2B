@@ -27,9 +27,20 @@ int main() {
     */
     // delete &p;
 
-    Playlist::Song_Entry a(1, "a");
-    Playlist::Node *n = new Playlist::Node(a);
-    
 
+    Playlist::Song_Entry a(1, "a");
+    Playlist::Song_Entry b(2, "b");
+    Playlist::Song_Entry c(3, "c");
+    Playlist::Song_Entry d(4, "d");
+
+    Playlist::Node *n1 = new Playlist::Node(a);
+    Playlist::Node *n2 = new Playlist::Node(b);
+    Playlist::Node *n3 = new Playlist::Node(c);
+    Playlist::Node *n4 = new Playlist::Node(d);
+
+    n1->insert_next(n2);
+    n2->insert_next(n3);
+    n3->insert_next(n4);
+    
 }
     
