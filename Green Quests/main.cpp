@@ -27,17 +27,19 @@ class Tests {
         Playlist::Node *n4 = new Playlist::Node(d);
 
         n1->insert_next(n2)->insert_next(n3)->insert_next(n4);
-        if (nodeStringMaker(n1) != "abcd") {cout << "first test failed"; return false;}
+        if (nodeStringMaker(n1) != "abcd") {cout << "test failed"; return false;}
         n1->remove_next();
-        if (nodeStringMaker(n1) != "acd") {cout << "second test failed"; return false;}
-        n1->insert_next(n2);
-        if (nodeStringMaker(n1) != "abcd") {cout << "sixth test failed"; return false;}
+        if (nodeStringMaker(n1) != "acd") {cout << "test failed"; return false;}
+        n1->insert_next(new Playlist::Node(b));
+        if (nodeStringMaker(n1) != "abcd") {cout << "test failed"; return false;}
         n1->remove_next();
-        if (nodeStringMaker(n1) != "ad") {cout << "third test failed"; return false;}
+        if (nodeStringMaker(n1) != "acd") {cout << "test failed"; return false;}
         n1->remove_next();
-        if (nodeStringMaker(n1) != "a") {cout << "fourth test failed"; return false;}
+        if (nodeStringMaker(n1) != "ad") {cout << "test failed"; return false;}
         n1->remove_next();
-        if (nodeStringMaker(n1) != "a") {cout << "fifth test failed"; return false;}
+        if (nodeStringMaker(n1) != "a") {cout << "test failed"; return false;}
+        n1->remove_next();
+        if (nodeStringMaker(n1) != "a") {cout << "test failed"; return false;}
 
         // ASSERT
         if(n1->_next != nullptr) return false;
