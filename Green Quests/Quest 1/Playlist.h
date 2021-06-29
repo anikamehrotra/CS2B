@@ -69,10 +69,9 @@ class Playlist {
                 ~Node() {delete &_song;}; // Do not do recursive free
                 Song_Entry &get_song() { return _song; }
                 Node *get_next() { return _next; }
-                Node *insert_next(Node *p);
-                Node *remove_next();
+                Node *insert_next(Node *p) {_next = p; return this;};
+                Node *remove_next() {};
                 friend class Tests; // Don't remove this line
-                friend class Playlist;
         };
 
     private:
