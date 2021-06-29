@@ -78,7 +78,11 @@ class Playlist {
                 }; // Do not do recursive free
                 Song_Entry &get_song() { return _song; }
                 Node *get_next() { return _next; }
-                Node *insert_next(Node *p) {_next = p; return p;};
+                Node *insert_next(Node *p) {
+                    p->_next = _next;
+                    _next = p; 
+                    return p;
+                    };
                 Node *remove_next() {
                     if (_next == nullptr) {return this;}
                     Node *current = _next;
