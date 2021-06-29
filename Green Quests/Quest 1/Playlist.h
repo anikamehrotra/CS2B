@@ -79,7 +79,7 @@ class Playlist {
                 Song_Entry &get_song() { return _song; }
                 Node *get_next() { return _next; }
                 Node *insert_next(Node *p) {_next = p; return p;};
-                Node *remove_next() {_next = nullptr; return this;};
+                Node *remove_next() {delete _next; _next = nullptr; return this;};
                 friend class Tests; // Don't remove this line
         };
 
