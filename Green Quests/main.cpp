@@ -30,6 +30,8 @@ class Tests {
         if (nodeStringMaker(n1) != "abcd") {cout << "first test failed"; return false;}
         n1->remove_next();
         if (nodeStringMaker(n1) != "acd") {cout << "second test failed"; return false;}
+        n1->insert_next(n2);
+        if (nodeStringMaker(n1) != "abcd") {cout << "sixth test failed"; return false;}
         n1->remove_next();
         if (nodeStringMaker(n1) != "ad") {cout << "third test failed"; return false;}
         n1->remove_next();
