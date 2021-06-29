@@ -71,10 +71,6 @@ Playlist *Playlist::remove_at_cursor() {
     return this;
 }
 
-size_t Playlist::get_size() const {
-    return _size;
-}
-
 Playlist *Playlist::rewind() {
     _prev_to_current = _head;
     return this;
@@ -86,6 +82,7 @@ Playlist *Playlist::clear() {
         remove_at_cursor();
     }
     _size = 0;
+    return this;
 }
 
 Playlist::Song_Entry &Playlist::find_by_id(int id) const {
