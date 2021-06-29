@@ -29,7 +29,7 @@ Playlist *Playlist::insert_at_cursor(const Song_Entry &s) {
     //n->_next = _prev_to_current->_next;
     // n->insert_next(_prev_to_current->get_next());
     if (_prev_to_current->get_next() == nullptr) {_tail = n;}
-    // _prev_to_current->insert_next(n);
+    _prev_to_current->insert_next(n);
 
     _size++;
     return this;
