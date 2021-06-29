@@ -69,7 +69,9 @@ Playlist *Playlist::remove_at_cursor() {
     Node *current = _prev_to_current->get_next();
     if (_prev_to_current->get_next() == _tail) {_tail = _prev_to_current;}
     _prev_to_current->insert_next(current->get_next());
-    if (current != nullptr) {delete current;}
+    if (current != nullptr) {
+        delete current;
+    }
     _size--;
     return this;
 }
