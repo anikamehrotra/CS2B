@@ -69,8 +69,9 @@ class Playlist {
             public:
                 Node(const Song_Entry &song = Song_Entry()) : _song(song), _next(nullptr) {}
                 ~Node() {
+                    _next = nullptr;
                     if (&_song != nullptr) {
-                        //delete &_song;
+                        delete &_song;
                     }
                 }; // Do not do recursive free
                 Song_Entry &get_song() { return _song; }
