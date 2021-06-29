@@ -7,6 +7,33 @@
 #include "Quest 1/Playlist.h"
 using namespace std;
 
+class Tests {
+    public:
+    bool test1() {
+        
+        Playlist::Song_Entry a(1, "a");
+        Playlist::Song_Entry b(2, "b");
+        Playlist::Song_Entry c(3, "c");
+        Playlist::Song_Entry d(4, "d");
+
+        Playlist::Node *n1 = new Playlist::Node(a);
+        Playlist::Node *n2 = new Playlist::Node(b);
+        Playlist::Node *n3 = new Playlist::Node(c);
+        Playlist::Node *n4 = new Playlist::Node(d);
+
+        n1->insert_next(n2)->insert_next(n3)->insert_next(n4);
+        n1->remove_next();
+        n1->remove_next();
+        n1->remove_next();
+        n1->remove_next();
+
+        // ASSERT
+        if(n1->_next != nullptr) return false;
+        return true;
+    }
+};
+
+
 int main() {
     /*
     Playlist p;
@@ -41,9 +68,13 @@ int main() {
 
     n1->insert_next(n2)->insert_next(n3)->insert_next(n4);
     n1->remove_next();
-    n2->remove_next();
-    n3->remove_next();
-    n4->remove_next();
+    n1->remove_next();
+    n1->remove_next();
+    n1->remove_next();
+
+    Tests t;
+    cout << "Test 1: " << t.test1();
 
 }
     
+
