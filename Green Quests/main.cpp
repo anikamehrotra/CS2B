@@ -18,5 +18,11 @@ int main() {
     Playlist::Song_Entry d(4, "d");
     p.push_back(d);
     cout << p.to_string();
+    p.remove_at_cursor();
+    p.remove_at_cursor();
+    p.remove_at_cursor();
+    p.remove_at_cursor();
+    p.remove_at_cursor();
+    delete &p;
 }
     
