@@ -116,6 +116,7 @@ class Playlist {
         Song_Entry &find_by_id(int id) const;
         Song_Entry &find_by_name(string songName) const;
         string to_string() const;
+        string to_string_short() const;
         friend class Tests; // Don't remove this line
 };
 

@@ -134,3 +134,20 @@ std::string Playlist::to_string() const {
     s += "...\n";
     return s;
 }
+
+std::string Playlist::to_string_short() const {
+    Node *n = _head;
+    std::string s = "";
+    std::string size = std::to_string(get_size());
+    s += size;
+    int count = 0;
+    while (n->get_next() != nullptr) {
+        std::string id = std::to_string(n->get_next()->get_song().get_id());
+        s += "{ id: " + id + ", name: " + n->get_next()->get_song().get_name() + " }";
+        if (n->get_next() == _prev_to_current) {s += "[P]";}
+        if (n->get_next() == _tail) {s += "[T]";}
+        n = n->get_next();
+        count++;
+    }
+    return s;
+}

@@ -55,7 +55,6 @@ class Tests {
         }
         return s;
     }
-
     bool playlistTest() {
         Playlist p;
 
@@ -70,11 +69,17 @@ class Tests {
         Playlist::Node *n4 = new Playlist::Node(d);
 
         p.push_back(a);
-        if ()
+        if (p.to_string_short() != "1a[T]") {cout << "test failed"; return false;}
         p.push_back(b);
+        if (p.to_string_short() != "2ab[T]") {cout << "test failed"; return false;}
         p.push_back(c);
+        if (p.to_string_short() != "3abc[T]") {cout << "test failed"; return false;}
         p.push_back(d);
+        if (p.to_string_short() != "4abcd[T]") {cout << "test failed"; return false;}
+
+        return true;
     }
+    
 };
 
 
@@ -98,9 +103,9 @@ int main() {
     p.remove_at_cursor();
     */
     // delete &p;
-
     Tests t;
     cout << "Test 1: " << t.nodeTest() << endl;
+    cout << "Test 2: " << t.playlistTest() << endl;
 
 }
     
