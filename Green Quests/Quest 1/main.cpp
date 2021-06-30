@@ -3,8 +3,8 @@
 #include <vector>
 #include <string>
 
-#include "Quest 1/Playlist.cpp"
-#include "Quest 1/Playlist.h"
+#include "Playlist.cpp"
+#include "Playlist.h"
 using namespace std;
 
 class Tests {
