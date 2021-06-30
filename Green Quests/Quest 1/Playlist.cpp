@@ -40,14 +40,12 @@ Playlist *Playlist::push_back(const Song_Entry& s) {
     _prev_to_current = _tail;
     insert_at_cursor(s);
     _prev_to_current = n;
-    _size++;
     return this;
 }
 
 Playlist *Playlist::push_front(const Song_Entry& s) {
     _prev_to_current = _head;
     insert_at_cursor(s);
-    _size++;
     return this;
 }
 
