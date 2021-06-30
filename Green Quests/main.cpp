@@ -27,25 +27,31 @@ class Tests {
         Playlist::Node *n4 = new Playlist::Node(d);
 
         n1->insert_next(n2)->insert_next(n3)->insert_next(n4);
-        if (nodeStringMaker(n1) != "abcd") {cout << "test failed"; return false;}
+        if (nodeStringMaker(n1) != "abcd") return testFailed("node test failed");
         n1->remove_next();
-        if (nodeStringMaker(n1) != "acd") {cout << "test failed"; return false;}
+        if (nodeStringMaker(n1) != "acd") return testFailed("node test failed");
         n1->insert_next(new Playlist::Node(b));
-        if (nodeStringMaker(n1) != "abcd") {cout << "test failed"; return false;}
+        if (nodeStringMaker(n1) != "abcd") return testFailed("node test failed");
         n1->remove_next();
-        if (nodeStringMaker(n1) != "acd") {cout << "test failed"; return false;}
+        if (nodeStringMaker(n1) != "acd") return testFailed("node test failed");
         n1->remove_next();
-        if (nodeStringMaker(n1) != "ad") {cout << "test failed"; return false;}
+        if (nodeStringMaker(n1) != "ad") return testFailed("node test failed");
         n1->remove_next();
-        if (nodeStringMaker(n1) != "a") {cout << "test failed"; return false;}
+        if (nodeStringMaker(n1) != "a") return testFailed("node test failed");
         n1->remove_next();
-        if (nodeStringMaker(n1) != "a") {cout << "test failed"; return false;}
+        if (nodeStringMaker(n1) != "a") return testFailed("node test failed");
 
         // ASSERT
         if(n1->_next != nullptr) return false;
         cout << "removeNodeTest Passes" << endl;
         return true;
     }
+
+    bool testFailed(string s) {
+        cout << s << endl;
+        return false;
+    }
+
     std::string nodeStringMaker(Playlist::Node *n) {
         std::string s = "";
         while (n != nullptr) {
@@ -69,13 +75,13 @@ class Tests {
         Playlist::Node *n4 = new Playlist::Node(d);
 
         p.push_back(a);
-        if (p.to_string_short() != "1a[T]") {cout << "test failed"; return false;}
+        if (p.to_string_short() != "1a[T]")    return testFailed("playlist test failed");
         p.push_back(b);
-        if (p.to_string_short() != "2ab[T]") {cout << "test failed"; return false;}
+        if (p.to_string_short() != "2ab[T]")   return testFailed("playlist test failed");
         p.push_back(c);
-        if (p.to_string_short() != "3abc[T]") {cout << "test failed"; return false;}
+        if (p.to_string_short() != "3abc[T]")  return testFailed("playlist test failed");
         p.push_back(d);
-        if (p.to_string_short() != "4abcd[T]") {cout << "test failed"; return false;}
+        if (p.to_string_short() != "4abcd[T]") return testFailed("playlist test failed");
 
         return true;
     }
