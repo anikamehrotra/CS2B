@@ -11,18 +11,14 @@ using namespace std;
 
 std::string get_moves(int num_discs, int src, int dst, int tmp) {
     if (num_discs == 0) {return "";}
-    return get_moves(num_discs - 1, src, tmp, dst) + " " + to_string(src) + " -> " + to_string(dst);
-    if (num_discs == 1) {return ;}
+    if (num_discs == 1) {return to_string(src) + " -> " + to_string(dst) + "\n";}
+    return 
+        get_moves(num_discs-1,src, tmp, dst) + 
+        to_string(src) + " -> " + to_string(dst) + "\n" + 
+        get_moves(num_discs-1, dst, src, tmp);
 }
 
-void tower(int a,char from,char aux,char to){
-    if(a==1){
-       cout<<"\t\tMove disc 1 from "<<from<<" to "<<to<<"\n";
-       return;
-    }
-    else{
-       tower(a-1,from,to,aux);
-       cout<<"\t\tMove disc "<<a<<" from "<<from<<" to "<<to<<"\n";
-       tower(a-1,aux,from,to);
-    }
+std::string solve(int num_discs, int src, int dst, int tmp) {
+    return "Below, 'A->B' means 'move the top disc on pole A to pole B'" + 
+        get_moves(num_discs, src, dst, tmp);
 }
