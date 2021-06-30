@@ -77,7 +77,14 @@ class Tests {
         if (p.to_string_short() != "3abc[T]")  return testFailed("playlist test failed");
         p.push_back(d);
         if (p.to_string_short() != "4abcd[T]") return testFailed("playlist test failed");
-
+        p.remove_at_cursor();
+        if (p.to_string_short() != "3bcd[T]")  return testFailed("playlist test failed");
+        p.remove_at_cursor();
+        if (p.to_string_short() != "2cd[T]")  return testFailed("playlist test failed");
+        p.remove_at_cursor();
+        if (p.to_string_short() != "1d[T]")  return testFailed("playlist test failed");
+        p.remove_at_cursor();
+        if (p.to_string_short() != "0")  return testFailed("playlist test failed");
         return true;
     }
     
