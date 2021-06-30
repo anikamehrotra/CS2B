@@ -11,7 +11,7 @@ class Tests {
     public:
         int errorCount = 0;
         
-        int hanoiTest(Hanoi h, int num_discs, int src, int dst, int tmp, string expectedResult) {
+        int hanoiTest(Hanoi &h, int num_discs, int src, int dst, int tmp, string expectedResult) {
 
             std::string r = h.get_moves(num_discs, src, dst, tmp);
             if (r != expectedResult) {
