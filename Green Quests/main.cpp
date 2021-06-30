@@ -23,17 +23,18 @@ class Tests {
         n1->insert_next(n2)->insert_next(n3)->insert_next(n4);
         if (nodeStringMaker(n1) != "abcd") return testFailed("node test failed");
         n1->remove_next();
-        if (nodeStringMaker(n1) != "acd") return testFailed("node test failed");
+        if (nodeStringMaker(n1) != "acd")  return testFailed("node test failed");
         n1->insert_next(new Playlist::Node(b));
         if (nodeStringMaker(n1) != "abcd") return testFailed("node test failed");
         n1->remove_next();
-        if (nodeStringMaker(n1) != "acd") return testFailed("node test failed");
+        if (nodeStringMaker(n1) != "acd")  return testFailed("node test failed");
         n1->remove_next();
-        if (nodeStringMaker(n1) != "ad") return testFailed("node test failed");
+        if (nodeStringMaker(n1) != "ad")   return testFailed("node test failed");
         n1->remove_next();
-        if (nodeStringMaker(n1) != "a") return testFailed("node test failed");
+        if (nodeStringMaker(n1) != "a")    return testFailed("node test failed");
         n1->remove_next();
-        if (nodeStringMaker(n1) != "a") return testFailed("node test failed");
+        if (nodeStringMaker(n1) != "a")    return testFailed("node test failed");
+        
 
         // ASSERT
         if(n1->_next != nullptr) return false;
