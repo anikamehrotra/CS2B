@@ -11,7 +11,8 @@ using namespace std;
 
 std::string get_moves(int num_discs, int src, int dst, int tmp) {
     if (num_discs == 0) {return "";}
-    if (num_discs == 1) {return "";}
+    return get_moves(num_discs - 1, src, tmp, dst) + " " + to_string(src) + " -> " + to_string(dst);
+    if (num_discs == 1) {return ;}
 }
 
 void tower(int a,char from,char aux,char to){
