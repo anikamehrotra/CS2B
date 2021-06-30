@@ -108,6 +108,9 @@ class Tests {
         if(!testPlaylist(p, "4abcd[T]")) return false;
 
         p.advance_cursor();   if(!testPlaylist(p, "4a[P]bcd[T]")) return false;
+        p.rewind();           if(!testPlaylist(p, "4abcd[T]")) return false;
+
+        p.advance_cursor();   if(!testPlaylist(p, "4a[P]bcd[T]")) return false;
         p.advance_cursor();   if(!testPlaylist(p, "4ab[P]cd[T]")) return false;
         p.advance_cursor();   if(!testPlaylist(p, "4abc[P]d[T]")) return false;
         p.advance_cursor();   if(!testPlaylist(p, "4abcd[P][T]")) return false;
