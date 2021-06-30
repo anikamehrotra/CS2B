@@ -32,6 +32,6 @@ int main() {
 
     t.hanoiTest(0, 1, 2, 3, "");
     t.hanoiTest(1, 1, 2, 3, "1->2\n");
-    t.hanoiTest(2, 1, 2, 3, "1->3\n1->2\n2->1\n");
+    t.hanoiTest(2, 1, 2, 3, "1->3\n1->2\n3->2\n");
     
 }
