@@ -2,10 +2,17 @@
 
 #include <iostream>
 #include <sstream>
+#include <string>
+#include <vector>
 
 #include "Hanoi.h"
 
 using namespace std;
+
+std::string get_moves(int num_discs, int src, int dst, int tmp) {
+    if (num_discs == 0) {return "";}
+    if (num_discs == 1) {return "";}
+}
 
 void tower(int a,char from,char aux,char to){
     if(a==1){
