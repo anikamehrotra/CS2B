@@ -17,13 +17,11 @@ std::string Hanoi::lookup_moves(int num_discs, int src, int dst) {
 std::string Hanoi::get_moves(int num_discs, int src, int dst, int tmp) {
     if (num_discs == 0) {return "";}
     if (num_discs == 1) {
-        std::string source = std::to_string(src);
-        std::string destination = std::to_string(dst);
-        return source + " -> " + destination + "\n";
+        return std::to_string(src) + "->" + std::to_string(dst) + "\n";
     }
     return 
         get_moves(num_discs-1,src, tmp, dst) + 
-        std::to_string(src) + " -> " + std::to_string(dst) + "\n" + 
+        std::to_string(src) + "->" + std::to_string(dst) + "\n" + 
         get_moves(num_discs-1, dst, src, tmp);
 }
 
