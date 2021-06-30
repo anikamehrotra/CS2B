@@ -3,8 +3,8 @@
 #include <vector>
 #include <string>
 
-#include "Hanoi.cpp"
 #include "Hanoi.h"
+#include "Hanoi.cpp"
 using namespace std;
 
 class Tests {
