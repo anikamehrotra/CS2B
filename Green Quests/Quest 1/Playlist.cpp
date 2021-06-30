@@ -53,12 +53,12 @@ Playlist *Playlist::push_front(const Song_Entry& s) {
 
 Playlist *Playlist::advance_cursor() {
     if (_prev_to_current == _tail) {return nullptr;}
-    else {_prev_to_current->insert_next(_prev_to_current->get_next()); return this;} // SSM: Why is this insert?
+    else {_prev_to_current = _prev_to_current->get_next(); return this;} 
 }
 
 Playlist *Playlist::circular_advance_cursor() {
-    if (_prev_to_current == _tail) {_prev_to_current->get_next()->insert_next(_head); return this;}
-    else {_prev_to_current->insert_next(_prev_to_current->get_next()); return this;} // SSM: Why is this insert?
+    if (_prev_to_current == _tail) {_prev_to_current = _head; return this;}
+    else {_prev_to_current = _prev_to_current->get_next(); return this;} // SSM: Why is this insert?
 }
 
 Playlist::Song_Entry &Playlist::get_current_song() const {
