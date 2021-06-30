@@ -107,14 +107,14 @@ class Tests {
           ->insert_at_cursor(Playlist::Song_Entry(4, "a"));
         if(!testPlaylist(p, "4abcd[T]")) return false;
 
-        p.advance_cursor();   if(!testPlaylist(p, "4a[P]bcd[T]")) return false;
-        p.rewind();           if(!testPlaylist(p, "4abcd[T]")) return false;
+        p.advance_cursor();            if(!testPlaylist(p, "4a[P]bcd[T]")) return false;
+        p.rewind();                    if(!testPlaylist(p, "4abcd[T]")) return false;
 
-        p.advance_cursor();   if(!testPlaylist(p, "4a[P]bcd[T]")) return false;
-        p.advance_cursor();   if(!testPlaylist(p, "4ab[P]cd[T]")) return false;
-        p.advance_cursor();   if(!testPlaylist(p, "4abc[P]d[T]")) return false;
-        p.advance_cursor();   if(!testPlaylist(p, "4abcd[P][T]")) return false;
-        p.advance_cursor();   if(!testPlaylist(p, "4abcd[P][T]")) return false;
+        p.advance_cursor();            if(!testPlaylist(p, "4a[P]bcd[T]")) return false;
+        p.advance_cursor();            if(!testPlaylist(p, "4ab[P]cd[T]")) return false;
+        p.advance_cursor();            if(!testPlaylist(p, "4abc[P]d[T]")) return false;
+        p.advance_cursor();            if(!testPlaylist(p, "4abcd[P][T]")) return false;
+        p.advance_cursor();            if(!testPlaylist(p, "4abcd[P][T]")) return false;
         p.circular_advance_cursor();   if(!testPlaylist(p, "4abcd[T]")) return false;
         p.circular_advance_cursor();   if(!testPlaylist(p, "4a[P]bcd[T]")) return false;
         p.circular_advance_cursor();   if(!testPlaylist(p, "4ab[P]cd[T]")) return false;
@@ -122,9 +122,6 @@ class Tests {
         p.circular_advance_cursor();   if(!testPlaylist(p, "4abcd[P][T]")) return false;
         p.circular_advance_cursor();   if(!testPlaylist(p, "4abcd[T]")) return false;
         p.circular_advance_cursor();   if(!testPlaylist(p, "4a[P]bcd[T]")) return false;
-
-
-
         
         return true;
     }
