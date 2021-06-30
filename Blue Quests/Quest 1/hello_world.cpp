@@ -10,10 +10,8 @@ using namespace std;
 //  Feel free to use the alternate signature of main() below
 int main(int argc, const char * argv[]) 
 {
-  cout << "Hello world 402\n";
-  int n;
-  n = 12;
-  n++;
+  cout << "Hello world\n";
+
 
   return 0;
 }
