@@ -16,7 +16,7 @@ using namespace std;
 
 class Hanoi {
     private:
-        int _num_poles = 4;
+        int _num_poles = 3;
         int _num_discs = 10;
         // TODO: Declare the _cache member using an appropriate
         // level of nesting within std::vectors to put each string
@@ -32,10 +32,13 @@ class Hanoi {
     public:
         // Use freebie default constructor
         Hanoi() {
-            for (int i = 0; i < _num_discs; i++)
-                for (int j = 0; j < _num_poles; j++)
-                    for (int k = 0; k < _num_poles; k++)
-                        _cache[i][j][k] = "";
+            _cache.resize(_num_discs);
+
+            for (int i = 0; i < _num_discs; i++) {
+                _cache[i].resize(_num_poles + 1);
+                for (int j = 0; j <= _num_poles; j++)
+                    _cache[i][j].resize(_num_poles+1, "");
+            }
         }
         std::string solve(int num_discs, int src, int dst, int tmp);
         friend class Tests; // Don't remove this line
