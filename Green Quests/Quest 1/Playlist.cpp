@@ -55,7 +55,7 @@ Playlist *Playlist::advance_cursor() {
 }
 
 Playlist *Playlist::circular_advance_cursor() {
-    if (_prev_to_current == _tail) {_prev_to_current = _head; return this;}
+    if (_prev_to_current == _tail) {_prev_to_current = _head->get_next(); return this;}
     else {_prev_to_current = _prev_to_current->get_next(); return this;}
 }
 
