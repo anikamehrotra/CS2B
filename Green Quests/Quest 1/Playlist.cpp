@@ -60,7 +60,7 @@ Playlist *Playlist::circular_advance_cursor() {
 }
 
 Playlist::Song_Entry &Playlist::get_current_song() const {
-    if (_prev_to_current != nullptr) {return _prev_to_current->get_next()->get_song();}
+    if (_prev_to_current->get_next() != nullptr) {return _prev_to_current->get_next()->get_song();}
     else {return this->_head->get_song();}
 }
 

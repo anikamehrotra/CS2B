@@ -52,11 +52,11 @@ class Tests {
 
     bool testPlaylist(Playlist &p, string expectedResult) {
         if(p.to_string_short() != expectedResult) {
-            if(testVerboseLevel >= 1) {cout << "Playlist test failed: " << p.to_string_short()  << " != " << expectedResult << endl;}
+            if(testVerboseLevel >= 1) {cout << "** Playlist test failed: Actual " << p.to_string_short()  << " != Expected " << expectedResult << endl;}
             errorCount++;
             return false;
         }
-        if(testVerboseLevel >= 2) {cout << "Playlist test succeeded: " << expectedResult << endl;}
+        if(testVerboseLevel >= 2) {cout << "   Playlist test succeeded: " << expectedResult << endl;}
 
         return true;
     }
@@ -85,44 +85,44 @@ class Tests {
         Playlist::Node *n4 = new Playlist::Node(d);
 
 
-        p.push_back(a);       testPlaylist(p, "1a[T]");
-        p.push_back(b);       testPlaylist(p, "2ab[T]");
-        p.push_back(c);       testPlaylist(p, "3abc[T]");
-        p.push_back(d);       testPlaylist(p, "4abcd[T]");
-        p.remove_at_cursor(); testPlaylist(p, "3bcd[T]");
-        p.remove_at_cursor(); testPlaylist(p, "2cd[T]");
-        p.remove_at_cursor(); testPlaylist(p, "1d[T]");
-        p.remove_at_cursor(); testPlaylist(p, "0");
+        p.push_back(a);       testPlaylist(p, "1a[T] a");
+        p.push_back(b);       testPlaylist(p, "2ab[T] a");
+        p.push_back(c);       testPlaylist(p, "3abc[T] a");
+        p.push_back(d);       testPlaylist(p, "4abcd[T] a");
+        p.remove_at_cursor(); testPlaylist(p, "3bcd[T] b");
+        p.remove_at_cursor(); testPlaylist(p, "2cd[T] c");
+        p.remove_at_cursor(); testPlaylist(p, "1d[T] d");
+        p.remove_at_cursor(); testPlaylist(p, "0 HEAD");
 
         p.push_front(Playlist::Song_Entry(1, "d"))
           ->push_front(Playlist::Song_Entry(2, "c"))
           ->push_front(Playlist::Song_Entry(3, "b"))
           ->push_front(Playlist::Song_Entry(4, "a"));
-        testPlaylist(p, "4abcd[T]");
+        testPlaylist(p, "4abcd[T] a");
         
-        p.clear();            testPlaylist(p, "0");
+        p.clear();            testPlaylist(p, "0 HEAD");
 
         p.insert_at_cursor(Playlist::Song_Entry(1, "d"))
           ->insert_at_cursor(Playlist::Song_Entry(2, "c"))
           ->insert_at_cursor(Playlist::Song_Entry(3, "b"))
           ->insert_at_cursor(Playlist::Song_Entry(4, "a"));
-        testPlaylist(p, "4abcd[T]");
+        testPlaylist(p, "4abcd[T] a");
 
-        p.advance_cursor();            testPlaylist(p, "4a[P]bcd[T]");
-        p.rewind();                    testPlaylist(p, "4abcd[T]");
+        p.advance_cursor();            testPlaylist(p, "4a[P]bcd[T] b");
+        p.rewind();                    testPlaylist(p, "4abcd[T] a");
 
-        p.advance_cursor();            testPlaylist(p, "4a[P]bcd[T]");
-        p.advance_cursor();            testPlaylist(p, "4ab[P]cd[T]");
-        p.advance_cursor();            testPlaylist(p, "4abc[P]d[T]");
-        p.advance_cursor();            testPlaylist(p, "4abcd[P][T]");
-        p.advance_cursor();            testPlaylist(p, "4abcd[P][T]");
-        p.circular_advance_cursor();   testPlaylist(p, "4abcd[T]");
-        p.circular_advance_cursor();   testPlaylist(p, "4a[P]bcd[T]");
-        p.circular_advance_cursor();   testPlaylist(p, "4ab[P]cd[T]");
-        p.circular_advance_cursor();   testPlaylist(p, "4abc[P]d[T]");
-        p.circular_advance_cursor();   testPlaylist(p, "4abcd[P][T]");
-        p.circular_advance_cursor();   testPlaylist(p, "4abcd[T]");
-        p.circular_advance_cursor();   testPlaylist(p, "4a[P]bcd[T]");
+        p.advance_cursor();            testPlaylist(p, "4a[P]bcd[T] b");
+        p.advance_cursor();            testPlaylist(p, "4ab[P]cd[T] c");
+        p.advance_cursor();            testPlaylist(p, "4abc[P]d[T] d");
+        p.advance_cursor();            testPlaylist(p, "4abcd[P][T] HEAD");
+        p.advance_cursor();            testPlaylist(p, "4abcd[P][T] HEAD");
+        p.circular_advance_cursor();   testPlaylist(p, "4abcd[T] a");
+        p.circular_advance_cursor();   testPlaylist(p, "4a[P]bcd[T] b");
+        p.circular_advance_cursor();   testPlaylist(p, "4ab[P]cd[T] c");
+        p.circular_advance_cursor();   testPlaylist(p, "4abc[P]d[T] d");
+        p.circular_advance_cursor();   testPlaylist(p, "4abcd[P][T] HEAD");
+        p.circular_advance_cursor();   testPlaylist(p, "4abcd[T] a");
+        p.circular_advance_cursor();   testPlaylist(p, "4a[P]bcd[T] b");
         
         return errorCount;
     }
@@ -152,7 +152,7 @@ int main() {
     // delete &p;
     Tests t;
     cout << "Test 1: " << t.nodeTest() << endl;
-    cout << "Test 2: " << t.playlistTest() << "failures" << endl;
+    cout << "Test 2: " << t.playlistTest() << " failures" << endl;
 
 }
     
