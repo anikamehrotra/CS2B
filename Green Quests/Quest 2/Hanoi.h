@@ -28,7 +28,7 @@ class Hanoi {
 
         std::string lookup_moves(int num_discs, int src, int dst);
         std::string get_moves(int num_discs, int src, int dst, int tmp);
-        void store_moves(int num_discs, int src, int dst, string s);
+        //void store_moves(int num_discs, int src, int dst, string s);
 
     public:
         // Use freebie default constructor
