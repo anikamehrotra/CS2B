@@ -20,9 +20,9 @@ std::string Hanoi::get_moves(int num_discs, int src, int dst, int tmp) {
         return std::to_string(src) + "->" + std::to_string(dst) + "\n";
     }
     return 
-        get_moves(num_discs-1,src, tmp, dst) + 
+        get_moves(num_discs-1, src, tmp, dst) + 
         std::to_string(src) + "->" + std::to_string(dst) + "\n" + 
-        get_moves(num_discs-1, dst, src, tmp);
+        get_moves(num_discs-1, tmp, src, dst);
 }
 
 std::string Hanoi::solve(int num_discs, int src, int dst, int tmp) {
