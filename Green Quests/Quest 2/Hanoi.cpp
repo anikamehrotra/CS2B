@@ -43,6 +43,6 @@ std::string Hanoi::get_moves(int num_discs, int src, int dst, int tmp) {
 }
 
 std::string Hanoi::solve(int num_discs, int src, int dst, int tmp) {
-    return "Below, 'A->B' means 'move the top disc on pole A to pole B'" + 
+    return "# Below, 'A->B' means 'move the top disc on pole A to pole B'" + 
         get_moves(num_discs, src, dst, tmp);
 }
