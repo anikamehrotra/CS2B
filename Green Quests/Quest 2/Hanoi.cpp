@@ -25,19 +25,18 @@ void Hanoi::store_moves(int num_discs, int src, int dst, string s) {
 */
 
 std::string Hanoi::get_moves(int num_discs, int src, int dst, int tmp) {
-    if (num_discs == 0) {return "";}
-    if (num_discs == 1) {
-        return std::to_string(src) + "->" + std::to_string(dst) + "\n";
-    }
-
     std::string s = lookup_moves(num_discs, src, dst);
-    if (s != "") {
-        return s;
+    if (s != "") {return s;}
+    if (num_discs == 0) {s = "";}
+    else if (num_discs == 1) {
+        s = std::to_string(src) + "->" + std::to_string(dst) + "\n";
     }
-    s = get_moves(num_discs-1, src, tmp, dst) + 
-        std::to_string(src) + "->" + std::to_string(dst) + "\n" + 
-        get_moves(num_discs-1, tmp, dst, src);
-    //store_moves(num_discs, src, dst, s);
+    else {
+        s = get_moves(num_discs-1, src, tmp, dst) + 
+            std::to_string(src) + "->" + std::to_string(dst) + "\n" + 
+            get_moves(num_discs-1, tmp, dst, src);
+        //store_moves(num_discs, src, dst, s);
+    }
     _cache[num_discs][src][dst] = s;
     return s;
 }
