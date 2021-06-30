@@ -18,6 +18,7 @@ class Hanoi {
         // level of nesting within std::vectors to put each string
         // of moves. You should be able to access the cache like so:
         // _cache[num_discs][src][dst] = "move1\nmove2\n..."
+        
         std::string lookup_moves(int num_discs, int src, int dst);
         std::string get_moves(int num_discs, int src, int dst, int tmp);
 
