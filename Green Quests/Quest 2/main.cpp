@@ -27,7 +27,9 @@ class Tests {
 };
 
 int main() {
+    
     Tests t;
     t.hanoiTest(0, 1, 2, 3, "");
     t.hanoiTest(1, 1, 2, 3, "1->2");
+    
 }
