@@ -149,5 +149,6 @@ std::string Playlist::to_string_short() const {
         n = n->get_next();
         count++;
     }
+    s += " " + get_current_song().get_name();
     return s;
 }
