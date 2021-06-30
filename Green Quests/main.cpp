@@ -9,6 +9,9 @@ using namespace std;
 
 class Tests {
     public:
+        bool testVerboseLevel = 2; // 0: no output, 1: false cases only, 2: all output
+        
+
     bool nodeTest() {
         Playlist::Song_Entry a(1, "a");
         Playlist::Song_Entry b(2, "b");
@@ -47,6 +50,16 @@ class Tests {
         return false;
     }
 
+    bool testPlaylist(Playlist &p, string expectedResult) {
+        if(p.to_string_short() != expectedResult) {
+            if(testVerboseLevel >= 1) {cout << "Playlist test failed: " << expectedResult << endl;}
+            return false;
+        }
+        if(testVerboseLevel >= 2) {cout << "Playlist test succeeded: " << expectedResult << endl;}
+
+        return true;
+    }
+
     std::string nodeStringMaker(Playlist::Node *n) {
         std::string s = "";
         while (n != nullptr) {
@@ -69,22 +82,22 @@ class Tests {
         Playlist::Node *n3 = new Playlist::Node(c);
         Playlist::Node *n4 = new Playlist::Node(d);
 
-        p.push_back(a);
-        if (p.to_string_short() != "1a[T]")    return testFailed("playlist test failed");
-        p.push_back(b);
-        if (p.to_string_short() != "2ab[T]")   return testFailed("playlist test failed");
-        p.push_back(c);
-        if (p.to_string_short() != "3abc[T]")  return testFailed("playlist test failed");
-        p.push_back(d);
-        if (p.to_string_short() != "4abcd[T]") return testFailed("playlist test failed");
-        p.remove_at_cursor();
-        if (p.to_string_short() != "3bcd[T]")  return testFailed("playlist test failed");
-        p.remove_at_cursor();
-        if (p.to_string_short() != "2cd[T]")  return testFailed("playlist test failed");
-        p.remove_at_cursor();
-        if (p.to_string_short() != "1d[T]")  return testFailed("playlist test failed");
-        p.remove_at_cursor();
+
+
+        p.push_back(a);       if(!testPlaylist(p, "1a[T]")) return false;
+        p.push_back(b);       if(!testPlaylist(p, "2ab[T]")) return false;
+        p.push_back(c);       if(!testPlaylist(p, "3abc[T]")) return false;
+        p.push_back(d);       if(!testPlaylist(p, "4abcd[T]")) return false;
+        p.remove_at_cursor(); if(!testPlaylist(p, "3bcd[T]")) return false;
+        p.remove_at_cursor(); if(!testPlaylist(p, "2cd[T]")) return false;
+        p.remove_at_cursor(); if(!testPlaylist(p, "1dt[T]")) return false;
+        p.remove_at_cursor(); if(!testPlaylist(p, "0")) return false;
+        /*
+        p.push_front(Playlist::Song_Entry(1, "b"))->push_front(Playlist::Song_Entry(2, "a"));
+        if (p.to_string_short() != "2ab")  return testFailed("playlist test failed");
+        p.clear();
         if (p.to_string_short() != "0")  return testFailed("playlist test failed");
+        */
         return true;
     }
     
