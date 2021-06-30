@@ -152,3 +152,40 @@ std::string Playlist::to_string_short() const {
     s += " " + get_current_song().get_name();
     return s;
 }
+
+/*
+Hooray! 4 Overhead Goals scored before the match even started (Song_Entry)
+ (This time, remember to score during the match also)
+
+Hooray! 2 Twuboggen Turtles twirled with your thumbtip (Node insertions)
+
+Hooray! 3 Curmudgeonous Conquistadors swore allegiance to the Crown of Kindness (Node removal)
+
+Hooray! 3 Quarterdyne dispatches arrived with good news (insert at cursor)
+
+Hooray! 2 Knudsacks of Sucrebones stashed away in secret cellars (push back)
+
+Hooray! 1 Tumbleweed Sandeater keeps following you around (push front)
+
+Hooray! 2 Swillsonian Lullabies composed for her highness, Princess of Orovia (advance)
+
+Hooray! 2 Spires of F'borgania raised at the last moment (circular advance)
+
+Hooray! 2 Rantangular Boxymerons tiled into a large container (get current)
+
+You can keep going. Or enter the next quest. Or both.
+
+The secret password is hare today hanoi tomorrow
+
+Hooray! 2 Secret Passageways out of Tymanoor Green Fort discovered (remove song)
+
+Hooray! 1 Sharp Pfulcamarden Cheese Log excavated in Area 1729 (rewind)
+
+Hooray! 1 Light of Leavenworth shines through the dark night (getsize)
+
+Hooray! 1 day when Gudfort opens doors to kind hearted citizens (clear)
+
+Hooray! 3 Contending Hypertheories merged into one hypothesis (find)
+
+Hooray! 4 Portmanteau points stuffed into one mini-reward (to_string)
+*/
