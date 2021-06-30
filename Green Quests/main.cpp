@@ -10,12 +10,6 @@ using namespace std;
 class Tests {
     public:
     bool nodeTest() {
-        // add 4 entries
-        // remove all of them 
-        // check to pass test:
-        /*
-
-        */
         Playlist::Song_Entry a(1, "a");
         Playlist::Song_Entry b(2, "b");
         Playlist::Song_Entry c(3, "c");
