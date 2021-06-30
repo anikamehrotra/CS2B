@@ -11,7 +11,7 @@
 using namespace std;
 
 class Hanoi {
-    private:
+    public:
         int _num_poles;
         int _num_discs;
         // TODO: Declare the _cache member using an appropriate

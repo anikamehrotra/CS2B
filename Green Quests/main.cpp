@@ -13,10 +13,11 @@ class Tests {
         
         int hanoiTest(int num_discs, int src, int dst, int tmp, string expectedResult) {
             Hanoi h;
-            std::string result = h.get_moves( num_discs,  src,  dst,  tmp);
-            if (result != expectedResult) {
+            std::string r = "";
+            h.get_moves(num_discs, src, dst, tmp);
+            if (r != expectedResult) {
                 cout << "** Test failed: " << num_discs << " " << src << " " << dst << " " << tmp << endl;
-                cout << "actual\n" + result + "\nexpected\n" + expectedResult << endl;
+                cout << "actual\n" + r + "\nexpected\n" + expectedResult << endl;
                 errorCount++;
                 return false;
             }
@@ -29,6 +30,7 @@ class Tests {
 
 int main() {
     Tests t;
+
     t.hanoiTest(0, 1, 2, 3, "");
     t.hanoiTest(1, 1, 2, 3, "1->2");
     

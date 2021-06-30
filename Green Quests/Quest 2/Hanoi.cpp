@@ -9,7 +9,12 @@
 
 using namespace std;
 
-std::string get_moves(int num_discs, int src, int dst, int tmp) {
+std::string Hanoi::lookup_moves(int num_discs, int src, int dst) {
+    return "";
+}
+
+
+std::string Hanoi::get_moves(int num_discs, int src, int dst, int tmp) {
     if (num_discs == 0) {return "";}
     if (num_discs == 1) {return to_string(src) + " -> " + to_string(dst) + "\n";}
     return 
@@ -18,7 +23,7 @@ std::string get_moves(int num_discs, int src, int dst, int tmp) {
         get_moves(num_discs-1, dst, src, tmp);
 }
 
-std::string solve(int num_discs, int src, int dst, int tmp) {
+std::string Hanoi::solve(int num_discs, int src, int dst, int tmp) {
     return "Below, 'A->B' means 'move the top disc on pole A to pole B'" + 
         get_moves(num_discs, src, dst, tmp);
 }
