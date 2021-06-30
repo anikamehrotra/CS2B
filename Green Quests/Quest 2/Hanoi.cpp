@@ -20,10 +20,14 @@ std::string Hanoi::get_moves(int num_discs, int src, int dst, int tmp) {
     if (num_discs == 1) {
         return std::to_string(src) + "->" + std::to_string(dst) + "\n";
     }
-    return 
-        get_moves(num_discs-1, src, tmp, dst) + 
+
+    std::string s = lookup_moves(num_discs, src, dst);
+    if (s != "") {return s;}
+    s = get_moves(num_discs-1, src, tmp, dst) + 
         std::to_string(src) + "->" + std::to_string(dst) + "\n" + 
         get_moves(num_discs-1, tmp, dst, src);
+    _cache[num_discs][src][dst] = s;
+    return s;
 }
 
 std::string Hanoi::solve(int num_discs, int src, int dst, int tmp) {
