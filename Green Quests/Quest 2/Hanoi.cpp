@@ -10,7 +10,8 @@
 using namespace std;
 
 std::string Hanoi::lookup_moves(int num_discs, int src, int dst) {
-    return "";
+    if (_cache[num_discs][src][dst].empty() == true) {return "";}
+    return _cache[num_discs][src][dst];
 }
 
 
