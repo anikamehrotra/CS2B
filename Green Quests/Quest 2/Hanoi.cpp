@@ -25,7 +25,7 @@ void Hanoi::store_moves(int num_discs, int src, int dst, string s) {
 */
 
 std::string Hanoi::get_moves(int num_discs, int src, int dst, int tmp) {
-    if (num_discs == 0) {return "";}
+    if (num_discs == 0) {return "\n";}
     if (num_discs == 1) {
         return std::to_string(src) + "->" + std::to_string(dst) + "\n";
     }
