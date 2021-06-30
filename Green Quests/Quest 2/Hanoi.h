@@ -28,17 +28,19 @@ class Hanoi {
 
         std::string lookup_moves(int num_discs, int src, int dst);
         std::string get_moves(int num_discs, int src, int dst, int tmp);
+        void store_moves(int num_discs, int src, int dst, string s);
 
     public:
         // Use freebie default constructor
         Hanoi() {
+            /*
             _cache.resize(_num_discs);
 
             for (int i = 0; i < _num_discs; i++) {
                 _cache[i].resize(_num_poles + 1);
                 for (int j = 0; j <= _num_poles; j++)
                     _cache[i][j].resize(_num_poles+1, "");
-            }
+            }*/
         }
         std::string solve(int num_discs, int src, int dst, int tmp);
         friend class Tests; // Don't remove this line

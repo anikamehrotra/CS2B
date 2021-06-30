@@ -15,6 +15,13 @@ std::string Hanoi::lookup_moves(int num_discs, int src, int dst) {
 }
 
 
+void Hanoi::store_moves(int num_discs, int src, int dst, string s) {
+    if(_cache.size() <= num_discs) _cache.resize(num_discs+1);
+    if(_cache[num_discs].size() <= src) _cache[num_discs].resize(src+1);
+    if(_cache[num_discs][src].size() <= dst) _cache[num_discs][src].resize(dst+1);
+    _cache[num_discs][src][dst] = s;
+}
+
 std::string Hanoi::get_moves(int num_discs, int src, int dst, int tmp) {
     if (num_discs == 0) {return "";}
     if (num_discs == 1) {
@@ -26,7 +33,8 @@ std::string Hanoi::get_moves(int num_discs, int src, int dst, int tmp) {
     s = get_moves(num_discs-1, src, tmp, dst) + 
         std::to_string(src) + "->" + std::to_string(dst) + "\n" + 
         get_moves(num_discs-1, tmp, dst, src);
-    _cache[num_discs][src][dst] = s;
+    store_moves(num_discs, src, dst, s);
+    //_cache[num_discs][src][dst] = s;
     return s;
 }
 
