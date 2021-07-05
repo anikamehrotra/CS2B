@@ -113,5 +113,4 @@ double get_nth_fibonacci_number(size_t n) {
    return get_nth_fibonacci_number(n-1) + get_nth_fibonacci_number(n-2);
 }
 
-
 // 5 Ratnaprakasa Rubies polished for Royal Crowns (play game).
