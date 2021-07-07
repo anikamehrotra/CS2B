@@ -64,6 +64,17 @@ size_t Automaton::translate_n_bits_starting_at(const vector<int>& bits, size_t p
     return binary_to_decimal(translation);
 }
 
-std::string generation_to_string(const vector<int>& gen, size_t width) {
-    
+std::string Automaton::generation_to_string(const vector<int>& gen, size_t width) {
+    if (width % 2 == 0) {return "";}
+    string s = "";
+    for (int i = 0; i < gen.size(); i++) {
+        if (gen[i] == 1) {s += "1";}
+        else {s += "0";}
+    }
+    for (int i = 0; i < (width-gen.size())/2; i++) {
+        string c = "0";
+        if (_extreme_bit == 1) {c = "1";}
+        s.insert(0, c);
+        s.insert(s.size(), c);
+    }
 }
