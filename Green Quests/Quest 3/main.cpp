@@ -14,7 +14,10 @@ class Tests {
    public:
       std::string bitsToString(const vector<int>& bits) {
          int size = bits.size();
-         std::string s(bits.begin(), bits.end());
+         std::string s;
+         for (int i = 0; i < size; i++) {
+            s += bits[i] ? '1' : '0';
+         }
          return s;
       }
       int test_binary_to_decimal(Automaton &a, const vector<int>& bits, size_t expectedResult) {
