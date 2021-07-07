@@ -29,6 +29,19 @@ class Tests {
             return true;
          }
       }
+
+      int test_decimal_to_binary(Automaton &a, size_t n, const vector<int>& expectedResult) {
+         vector<int> result = a.decimal_to_binary(n);
+         if (result != expectedResult) {
+            cout << "Error: decimal_to_binary(" << n << ") = " << bitsToString(result) << ", expected " << bitsToString(expectedResult) << endl;
+            errorCount++;
+            return false;
+         }
+         else {
+            cout << "OK: decimal_to_binary(" << n << ") = " << bitsToString(result) << endl;
+            return true;
+         }
+      }
 };
 
 int main()
@@ -58,10 +71,11 @@ int main()
    
    return 0;
    */
-  cout << "hello" << endl;
-  Automaton aut(3, 30);
-  Tests t;
-  t.test_binary_to_decimal(aut, {1, 0, 1, 0}, 10);
-  t.test_binary_to_decimal(aut, {1, 0, 1, 0, 1, 0}, 42);
-
+   // cout << "hello" << endl;
+   Automaton aut(3, 30);
+   Tests t;
+   t.test_binary_to_decimal(aut, {1, 0, 1, 0}, 10);
+   t.test_binary_to_decimal(aut, {1, 0, 1, 0, 1, 0}, 42);
+   t.test_decimal_to_binary(aut, 10, {1, 0, 1, 0});
+   t.test_decimal_to_binary(aut, 42, {1, 0, 1, 0, 1, 0});
 }
