@@ -108,6 +108,9 @@ int main()
    t.test_translate_n_bits_starting_at(aut, {1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1}, 2, 5, 21);
    for (int i = 0; i < 257; i++) {
       vector<int> b = aut.decimal_to_binary(i);
-      t.test_translate_n_bits_starting_at(aut, b, 0, b.size(), i);
+      b.push_back(0);
+      b.push_back(0);
+      b.push_back(0);
+      t.test_translate_n_bits_starting_at(aut, b, 0, b.size()-3, i);
    }
 }
