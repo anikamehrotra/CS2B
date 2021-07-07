@@ -56,6 +56,9 @@ vector<int> Automaton::decimal_to_binary(int n) {
 size_t Automaton::translate_n_bits_starting_at(const vector<int>& bits, size_t pos, size_t n) {
     if (n == 0) {return 0;}
     if (bits.begin() + pos + n > bits.end()) {return 0;}
-    vector<int> translation(bits.begin() + pos, bits.begin() + pos + n - 1);
+    vector<int> translation;
+    for (int i = pos; i < pos + n; i++) {
+        translation.push_back(bits[i]);
+    }
     return binary_to_decimal(translation);
 }
