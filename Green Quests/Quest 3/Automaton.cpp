@@ -31,18 +31,24 @@ size_t Automaton::binary_to_decimal(const vector<int>& bits) {
 }
 
 vector<int> Automaton::decimal_to_binary(int n) {
-    // vector to store binary number
-    vector<int> binaryNum[32];
- 
-    // counter for binary vector
-    int i = 0;
-    while (n > 0) {
-        // storing remainder in binary vector
-        int rem = n % 2;
-        binaryNum[i].push_back(rem);
-        n = n / 2;
-        i++;
-    }
+    if (n > 0) {
+        // vector to store binary number
+        vector<int> binaryNum;
+    
+        // counter for binary vector
+        int i = 0;
+        while (n > 0) {
+            // storing remainder in binary vector
+            int rem = n % 2;
+            binaryNum.push_back(rem);
+            n = n / 2;
+            i++;
+        }
+        reverse(binaryNum.begin(), binaryNum.end());
 
-    return binaryNum[32];
+        return binaryNum;
+    }
+    else {
+        return {0};
+    }
 }
