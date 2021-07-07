@@ -45,6 +45,7 @@ class Tests {
             return true;
          }
       }
+
 };
 
 int main()
