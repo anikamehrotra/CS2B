@@ -46,6 +46,22 @@ class Tests {
          }
       }
 
+      int test_translate_n_bits_starting_at(Automaton &a, const vector<int>& bits, size_t pos, size_t n, size_t expectedResult) {
+         size_t result = a.translate_n_bits_starting_at(bits, pos, n);
+         vector<int> translation(bits.begin() + pos, bits.begin() + pos + n);
+         if (result != expectedResult) {
+            cout << "Error: translate_n_bits_starting_at(" << bitsToString(bits);
+            cout << ", " << pos << ", " << n << ") = " << result << ", expected " << expectedResult;
+            cout << " on translation " << bitsToString(translation) << endl;
+            errorCount++;
+            return false;
+         }
+         else {
+            cout << "OK: translate_n_bits_starting_at(" << bitsToString(bits) << ", " << pos << ", " << n << ") = " << result << endl;
+            return true;
+         }
+      }
+
 };
 
 int main()
@@ -88,4 +104,9 @@ int main()
    }
    t.test_binary_to_decimal(aut, aut.decimal_to_binary(-2), 0);
    t.test_binary_to_decimal(aut, {}, 0);
+   
+   t.test_translate_n_bits_starting_at(aut, {1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1}, 2, 5, 21);
+   for (int i = 0; i < 257; i++) {
+      t.test_translate_n_bits_starting_at(aut, aut.decimal_to_binary(i), 0, 10, i);
+   }
 }
