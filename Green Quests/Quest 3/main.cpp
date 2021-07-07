@@ -48,7 +48,7 @@ class Tests {
 
       int test_translate_n_bits_starting_at(Automaton &a, const vector<int>& bits, size_t pos, size_t n, size_t expectedResult) {
          size_t result = a.translate_n_bits_starting_at(bits, pos, n);
-         vector<int> translation(bits.begin() + pos, bits.begin() + pos + n);
+         vector<int> translation(bits.begin() + pos, bits.begin() + pos + n - 1);
          if (result != expectedResult) {
             cout << "Error: translate_n_bits_starting_at(" << bitsToString(bits);
             cout << ", " << pos << ", " << n << ") = " << result << ", expected " << expectedResult;
