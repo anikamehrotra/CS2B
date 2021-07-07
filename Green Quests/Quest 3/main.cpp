@@ -10,6 +10,25 @@ using namespace std;
 class Tests {
     public:
         int errorCount = 0;
+
+   public:
+      std::string bitsToString(const vector<int>& bits) {
+         int size = bits.size();
+         std::string s(bits.begin(), bits.end());
+         return s;
+      }
+      int test_binary_to_decimal(Automaton &a, const vector<int>& bits, size_t expectedResult) {
+         int result = a.binary_to_decimal(bits);
+         if (result != expectedResult) {
+            cout << "Error: binary_to_decimal(" << bitsToString(bits) << ") = " << result << ", expected " << expectedResult << endl;
+            errorCount++;
+            return false;
+         }
+         else {
+            cout << "OK: binary_to_decimal(" << bitsToString(bits) << ") = " << result << endl;
+            return true;
+         }
+      }
 };
 
 int main()
@@ -39,7 +58,10 @@ int main()
    
    return 0;
    */
+  cout << "hello" << endl;
   Automaton aut(3, 30);
-  vector<int> test{1, 1, 0, 0};
-  cout << aut.binary_to_decimal(test);
+  Tests t;
+  t.test_binary_to_decimal(aut, {1, 0, 1, 0}, 10);
+  t.test_binary_to_decimal(aut, {1, 0, 1, 0, 1, 0}, 42);
+
 }
