@@ -30,7 +30,7 @@ size_t Automaton::binary_to_decimal(const vector<int>& bits) {
     return dec_value;
 }
 
-static vector<int> decimal_to_binary(int n) {
+vector<int> Automaton::decimal_to_binary(int n) {
     // vector to store binary number
     vector<int> binaryNum[32];
  
