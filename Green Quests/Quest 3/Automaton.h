@@ -21,7 +21,7 @@ class Automaton {
         int _extreme_bit;
 
     public:
-        Automaton(size_t num_parents, size_t rule);
+        Automaton(size_t num_parents = 3, size_t rule);
         bool set_rule(size_t rule);
         bool equals(const Automaton& that);
 
@@ -34,7 +34,7 @@ class Automaton {
         // static utilities
         static size_t pow_2(size_t n) {return 1 << n;}
         static size_t translate_n_bits_starting_at(const vector<int>& bits, size_t pos, size_t n);
-        static size_t binary_to_decimal(const vector<int>& bits);
+        size_t binary_to_decimal(const vector<int>& bits);
         static vector<int> decimal_to_binary(size_t n);
 
         friend class Tests;

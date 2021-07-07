@@ -9,7 +9,7 @@
 
 using namespace std;
 
-static size_t binary_to_decimal(const vector<int>& bits) {
+size_t Automaton::binary_to_decimal(const vector<int>& bits) {
     int dec_value = 0;
  
     // Initializing base value to 1, i.e 2^0
