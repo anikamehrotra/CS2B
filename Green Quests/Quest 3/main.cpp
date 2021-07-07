@@ -30,7 +30,7 @@ class Tests {
          }
       }
 
-      int test_decimal_to_binary(Automaton &a, size_t n, const vector<int>& expectedResult) {
+      int test_decimal_to_binary(Automaton &a, int n, const vector<int>& expectedResult) {
          vector<int> result = a.decimal_to_binary(n);
          if (result != expectedResult) {
             cout << "Error: decimal_to_binary(" << n << ") = " << bitsToString(result) << ", expected " << bitsToString(expectedResult) << endl;
