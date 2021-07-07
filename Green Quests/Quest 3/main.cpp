@@ -111,6 +111,9 @@ int main()
       b.push_back(0);
       b.push_back(0);
       b.push_back(0);
-      t.test_translate_n_bits_starting_at(aut, b, 0, b.size()-3, i);
+      b.insert(b.begin(), 0);
+      b.insert(b.begin(), 0);
+      b.insert(b.begin(), 0);
+      t.test_translate_n_bits_starting_at(aut, b, 3, b.size()-3, i);
    }
 }
