@@ -77,4 +77,5 @@ std::string Automaton::generation_to_string(const vector<int>& gen, size_t width
         s.insert(0, c);
         s.insert(s.size(), c);
     }
+    return s;
 }
