@@ -39,7 +39,7 @@ int main()
    
    return 0;
    */
-  Automaton aut;
+  Automaton aut(3, 30);
   vector<int> test{1, 1, 0, 0};
   cout << aut.binary_to_decimal(test);
 }
