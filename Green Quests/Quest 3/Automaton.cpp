@@ -44,4 +44,5 @@ static vector<int> decimal_to_binary(int n) {
         i++;
     }
 
+    return binaryNum[32];
 }
