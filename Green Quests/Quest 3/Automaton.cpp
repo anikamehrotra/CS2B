@@ -60,5 +60,6 @@ size_t Automaton::translate_n_bits_starting_at(const vector<int>& bits, size_t p
     for (int i = pos; i < pos + n; i++) {
         translation.push_back(bits[i]);
     }
+    if (translation.size() != n) {cout << "Uh oh, wrong size slice" << endl;}
     return binary_to_decimal(translation);
 }

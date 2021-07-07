@@ -110,13 +110,15 @@ int main()
    
    for (int i = 0; i < 257; i++) {
       vector<int> b = aut.decimal_to_binary(i);
+      
       b.push_back(0);
       b.push_back(0);
       b.push_back(0);
       b.insert(b.begin(), 0);
       b.insert(b.begin(), 0);
       b.insert(b.begin(), 0);
-      t.test_translate_n_bits_starting_at(aut, b, 3, b.size()-7, i);
+      
+      t.test_translate_n_bits_starting_at(aut, b, 3, b.size()-6, i);
    }
    
 }
