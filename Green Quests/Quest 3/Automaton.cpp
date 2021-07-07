@@ -63,3 +63,7 @@ size_t Automaton::translate_n_bits_starting_at(const vector<int>& bits, size_t p
     // if (translation.size() != n) {cout << "Uh oh, wrong size slice" << endl;}
     return binary_to_decimal(translation);
 }
+
+std::string generation_to_string(const vector<int>& gen, size_t width) {
+    
+}
