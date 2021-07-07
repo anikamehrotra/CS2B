@@ -39,6 +39,6 @@ int main()
    
    return 0;
    */
-  vector<int> test = {1, 0, 0, 1};
+  vector<int> test{1, 0, 0, 1};
   cout << binary_to_decimal(test);
 }
