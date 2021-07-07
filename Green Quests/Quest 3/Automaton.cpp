@@ -52,3 +52,7 @@ vector<int> Automaton::decimal_to_binary(int n) {
         return {0};
     }
 }
+
+static size_t translate_n_bits_starting_at(const vector<int>& bits, size_t pos, size_t n) {
+    
+}
