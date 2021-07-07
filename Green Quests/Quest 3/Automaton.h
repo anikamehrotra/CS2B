@@ -21,7 +21,7 @@ class Automaton {
         int _extreme_bit;
 
     public:
-        Automaton(size_t num_parents = 3, size_t rule);
+        Automaton(size_t num_parents = 3, size_t rule = 30);
         bool set_rule(size_t rule);
         bool equals(const Automaton& that);
 
