@@ -122,7 +122,7 @@ int main()
    // cout << "hello" << endl;
    Automaton aut(3, 30);
    Tests t;
-   /*
+   
    t.test_binary_to_decimal(aut, {0, 0, 0}, 0);
    t.test_binary_to_decimal(aut, {1, 0, 1, 0}, 10);
    t.test_binary_to_decimal(aut, {1, 0, 1, 0, 1, 0}, 42);
@@ -137,7 +137,6 @@ int main()
    t.test_translate_n_bits_starting_at(aut, {1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1}, 2, 5, 21);
    t.test_translate_n_bits_starting_at(aut, {1, 0, 1, 0, 1}, 2, 3, 5);
    
-   */
    for (int i = 0; i < 257; i++) {
       vector<int> b = aut.decimal_to_binary(i);
       

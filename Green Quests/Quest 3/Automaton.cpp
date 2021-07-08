@@ -72,11 +72,17 @@ size_t Automaton::binary_to_decimal(const vector<int>& bits) {
     int base = 1;
  
     int len = bits.size();
+    /*
     for (int i = len - 1; i >= 0; i--) {
         if (bits[i] == 1)
             dec_value += base;
         base = base * 2;
     }
+    */
+   for (int i = 0 ; i < len; i++) {
+       if (bits[i] == 1) dec_value += base;
+       base = base * 2;
+   }
  
     return dec_value;
 }
@@ -95,7 +101,7 @@ vector<int> Automaton::decimal_to_binary(int n) {
             n = n / 2;
             i++;
         }
-        reverse(binaryNum.begin(), binaryNum.end());
+        // reverse(binaryNum.begin(), binaryNum.end());
 
         return binaryNum;
     }
