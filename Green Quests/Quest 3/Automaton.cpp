@@ -10,7 +10,7 @@
 using namespace std;
 
 Automaton::Automaton(size_t num_parents, size_t rule) {
-    if (_num_parents > MAX_PARENTS) {_is_valid = false; return;}
+    if (num_parents > MAX_PARENTS) {_is_valid = false; return;}
     _num_parents = num_parents;
     if(!set_rule(rule)) {_is_valid = false; return;}
     for (size_t i = 0; i < pow_2(_num_parents); i++) {
