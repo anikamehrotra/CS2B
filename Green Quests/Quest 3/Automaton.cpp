@@ -23,7 +23,12 @@ Automaton::Automaton(size_t num_parents, size_t rule) {
 bool Automaton::set_rule(size_t rule) {
     if (_num_parents > MAX_PARENTS) {_is_valid = false; return false;}
     if (rule > pow_2(pow_2(_num_parents))) {_is_valid = false; return false;}
-    _rules = int_to_bool_vector(decimal_to_binary(rule));
+    // _rules = int_to_bool_vector(decimal_to_binary(rule));
+    vector<int> binary_rule = decimal_to_binary(rule);
+    for (size_t i = 0; i < binary_rule.size(); i++) {
+        if (binary_rule[i] == 1) {_rules[i] = true;}
+        if (binary_rule[i] == 0) {_rules[i] = false;}
+    }
     _is_valid = true;
     return true;
 }
