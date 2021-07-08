@@ -36,7 +36,7 @@ bool Automaton::make_next_gen(const vector<int> &current_gen, vector<int> &next_
     if (_is_valid == false) {return false;}
     if (current_gen.size() %2 == 0) {return false;}
     if (current_gen.size() == 0) {return {0};}
-
+    
     for (int i = 0; i < current_gen.size() + _num_parents - 1; i += 1) {
         
     }
