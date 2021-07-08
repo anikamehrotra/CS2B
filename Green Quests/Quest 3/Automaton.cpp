@@ -45,6 +45,11 @@ bool Automaton::make_next_gen(const vector<int> &current_gen, vector<int> &next_
     for (int i = 0; i < current_gen.size() + _num_parents - 1; i++) {
         next_gen.push_back(_rules[translate_n_bits_starting_at(intermediate_gen, i, _num_parents)]);
     }
+    vector<int> temp_current_extreme_bits;
+    for (int k = 0; k < _num_parents; k++) {
+        temp_current_extreme_bits.push_back(_extreme_bit);
+    }
+    _extreme_bit = _rules[binary_to_decimal(temp_current_extreme_bits)];
     return true;
 }
 
