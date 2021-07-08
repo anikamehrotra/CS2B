@@ -73,7 +73,7 @@ class Tests {
       int test_make_next_gen(Automaton &a, const vector<int> &current_gen, vector<int> &next_gen, vector<int> expectedNextGen, int expectedExtremeBit, bool expectedResult) {
          bool result = a.make_next_gen(current_gen, next_gen);
          if (next_gen != expectedNextGen || a._extreme_bit != expectedExtremeBit || result != expectedResult) {
-            cout << "Error: make_next_gen(" << bitsToString(current_gen) << ") = " << bitsToString(next_gen) << ", expected " << bitsToString(expectedNextGen);
+            cout << "Error: make_next_gen(" << bitsToString(current_gen) << ") with rule " << bitsToString(a._rules) << " = " << bitsToString(next_gen) << ", expected " << bitsToString(expectedNextGen);
             cout << " Error: extreme_bit = " << a._extreme_bit << ", expected " << expectedExtremeBit;
             cout << " Error: result = " << result << ", expected " << expectedResult << endl;
             errorCount++;
@@ -88,7 +88,7 @@ class Tests {
       int test_set_rule(Automaton &a, size_t rule, vector<bool> expectedRuleVector, bool expectedResult) {
          bool result = a.set_rule(rule);
          if (result != expectedResult || a._rules != expectedRuleVector) {
-            cout << "Error: set_rule(" << rule << ") = " << bitsToString(a._rules) << ", expected " << bitsToString(expectedRuleVector) << endl;
+            cout << "Error: set_rule(" << rule << ") with rule " << bitsToString(a._rules) << " = " << bitsToString(a._rules) << ", expected " << bitsToString(expectedRuleVector) << endl;
             errorCount++;
             return false;
          }
