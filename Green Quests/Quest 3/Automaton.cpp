@@ -10,9 +10,47 @@
 using namespace std;
 
 Automaton::Automaton(size_t num_parents, size_t rule) {
+    if (_num_parents > MAX_PARENTS) {_is_valid = false; return;}
     _num_parents = num_parents;
-    // _rule = rule; 
+    if(!set_rule(rule)) {_is_valid = false; return;}
+    // take out next line before submitting
     _extreme_bit = 1;
+}
+
+bool Automaton::set_rule(size_t rule) {
+    if (_num_parents > MAX_PARENTS) {_is_valid = false; return false;}
+    // what does this mean:
+    // Furthermore, you should also return false if the value is greaterthan the maximum permitted
+    // by the _num_parents value (what might that be?). These cases result in invalid automata.
+    _rules = int_to_bool_vector(decimal_to_binary(rule));
+    _is_valid = true;
+    return true;
+}
+
+bool Automaton::equals(const Automaton& that) {
+    if (this->_is_valid == false && that._is_valid == false) {return true;}
+    if (this->_is_valid == true && that._is_valid == true && this->_num_parents == that._num_parents 
+        && this->_rules == that._rules && this->_extreme_bit == that._extreme_bit) {return true;}
+    return false;
+}
+
+bool Automaton::make_next_gen(const vector<int> &current_gen, vector<int> &next_gen) {  
+    if (_is_valid == false) {return false;}
+    if (current_gen.size() %2 == 0) {return false;}
+    if (current_gen.size() == 0) {return {0};}
+
+    for (int i = 0; i < current_gen.size() - 1; i += 1) {
+
+    }
+}
+
+vector<bool> Automaton::int_to_bool_vector(const vector<int>& ints) {
+    vector<bool> result;
+    for (size_t i = 0; i < ints.size(); i++) {
+        if (ints[i] == 1) {result.push_back(true);}
+        if (ints[i] == 0) {result.push_back(false);}
+    }
+    return result;
 }
 
 size_t Automaton::binary_to_decimal(const vector<int>& bits) {

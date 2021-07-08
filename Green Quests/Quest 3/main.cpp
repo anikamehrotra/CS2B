@@ -139,4 +139,5 @@ int main()
    cout << aut.generation_to_string({1,1,1}, 0) << endl;
    cout << aut.generation_to_string({1,1,1}, 1) << endl;
    cout << aut.generation_to_string({1,1,1}, 2) << endl;
+   
 }
