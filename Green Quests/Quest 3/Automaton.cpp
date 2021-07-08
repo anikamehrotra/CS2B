@@ -25,11 +25,11 @@ bool Automaton::set_rule(size_t rule) {
     if (rule > pow_2(pow_2(_num_parents))) {_is_valid = false; return false;}
     // _rules = int_to_bool_vector(decimal_to_binary(rule));
 
-    for (size_t i = 0; i < pow_2(_num_parents); i++) {
+    vector<int> binary_rule = decimal_to_binary(rule);
+    for (size_t i = 0; i < pow_2(_num_parents) - binary_rule.size(); i++) {
         _rules[i] = false;
     }
-    vector<int> binary_rule = decimal_to_binary(rule);
-    for (size_t i = 0; i < binary_rule.size(); i++) {
+    for (size_t i = binary_rule.size(); i < binary_rule.size(); i++) {
         if (binary_rule[i] == 1) {_rules[i] = true;}
         if (binary_rule[i] == 0) {_rules[i] = false;}
     }
