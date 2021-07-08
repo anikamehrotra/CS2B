@@ -180,7 +180,7 @@ int main()
    t.test_set_rule(aut, 1, {0, 0, 0, 0, 0, 0, 0, 1}, true);
    t.test_set_rule(aut, 30, {0, 0, 0, 1, 1, 1, 1, 0}, true);
    t.test_set_rule(aut, 255, {1, 1, 1, 1, 1, 1, 1, 1}, true);
-   // t.test_set_rule(aut, 256, {1, 1, 1, 1, 1, 1, 1, 1}, false);
+   t.test_set_rule(aut, 256, {1, 1, 1, 1, 1, 1, 1, 1}, false);
    aut.set_rule(0);
    vector<int> next_gen;
    t.test_make_next_gen(aut, {1}, next_gen, {0, 0, 0}, 0, true);
