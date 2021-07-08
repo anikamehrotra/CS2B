@@ -19,9 +19,7 @@ Automaton::Automaton(size_t num_parents, size_t rule) {
 
 bool Automaton::set_rule(size_t rule) {
     if (_num_parents > MAX_PARENTS) {_is_valid = false; return false;}
-    // what does this mean:
-    // Furthermore, you should also return false if the value is greaterthan the maximum permitted
-    // by the _num_parents value (what might that be?). These cases result in invalid automata.
+    if (rule > pow_2(_num_parents)) {_is_valid = false; return false;}
     _rules = int_to_bool_vector(decimal_to_binary(rule));
     _is_valid = true;
     return true;
@@ -40,7 +38,7 @@ bool Automaton::make_next_gen(const vector<int> &current_gen, vector<int> &next_
     if (current_gen.size() == 0) {return {0};}
 
     for (int i = 0; i < current_gen.size() - 1; i += 1) {
-        if (_num_parents == 1);
+        
     }
 }
 
