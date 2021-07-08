@@ -13,6 +13,9 @@ Automaton::Automaton(size_t num_parents, size_t rule) {
     if (_num_parents > MAX_PARENTS) {_is_valid = false; return;}
     _num_parents = num_parents;
     if(!set_rule(rule)) {_is_valid = false; return;}
+    for (size_t i = 0; i < pow_2(_num_parents); i++) {
+        _rules.push_back(false);
+    }
     // take out next line before submitting
     _extreme_bit = 1;
 }
@@ -21,9 +24,6 @@ bool Automaton::set_rule(size_t rule) {
     if (_num_parents > MAX_PARENTS) {_is_valid = false; return false;}
     if (rule > pow_2(pow_2(_num_parents))) {_is_valid = false; return false;}
     _rules = int_to_bool_vector(decimal_to_binary(rule));
-    for (size_t i = _rules.size(); i < pow_2(_num_parents); i++) {
-        _rules.push_back(false);
-    }
     _is_valid = true;
     return true;
 }
