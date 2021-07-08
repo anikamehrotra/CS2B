@@ -94,6 +94,7 @@ int main()
    // cout << "hello" << endl;
    Automaton aut(3, 30);
    Tests t;
+   /*
    t.test_binary_to_decimal(aut, {0, 0, 0}, 0);
    t.test_binary_to_decimal(aut, {1, 0, 1, 0}, 10);
    t.test_binary_to_decimal(aut, {1, 0, 1, 0, 1, 0}, 42);
@@ -120,5 +121,7 @@ int main()
       
       t.test_translate_n_bits_starting_at(aut, b, 3, b.size()-6, i);
    }
+   */
+   cout << aut.generation_to_string({1,1,1}, 15) << endl;
    
 }
