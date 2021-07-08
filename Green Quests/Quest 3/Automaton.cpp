@@ -26,12 +26,13 @@ bool Automaton::set_rule(size_t rule) {
     // _rules = int_to_bool_vector(decimal_to_binary(rule));
 
     vector<int> binary_rule = decimal_to_binary(rule);
-    for (size_t i = 0; i < pow_2(_num_parents) - binary_rule.size(); i++) {
+    size_t padding = pow_2(_num_parents) - binary_rule.size();
+    for (size_t i = 0; i < padding; i++) {
         _rules[i] = false;
     }
-    for (size_t i = pow_2(_num_parents) - binary_rule.size(); i < pow_2(_num_parents); i++) {
-        if (binary_rule[i] == 1) {_rules[i] = true;}
-        if (binary_rule[i] == 0) {_rules[i] = false;}
+    for (size_t i = padding; i < pow_2(_num_parents); i++) {
+        if (binary_rule[i - padding] == 1) {_rules[i] = true;}
+        if (binary_rule[i - padding] == 0) {_rules[i] = false;}
     }
     _is_valid = true;
     return true;
