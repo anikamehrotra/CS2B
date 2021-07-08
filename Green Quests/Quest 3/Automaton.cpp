@@ -19,7 +19,7 @@ Automaton::Automaton(size_t num_parents, size_t rule) {
 
 bool Automaton::set_rule(size_t rule) {
     if (_num_parents > MAX_PARENTS) {_is_valid = false; return false;}
-    if (rule > pow_2(_num_parents)) {_is_valid = false; return false;}
+    if (rule > pow_2(pow_2(_num_parents))) {_is_valid = false; return false;}
     _rules = int_to_bool_vector(decimal_to_binary(rule));
     _is_valid = true;
     return true;
