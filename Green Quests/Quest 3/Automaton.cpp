@@ -69,7 +69,7 @@ std::string Automaton::generation_to_string(const vector<int>& gen, size_t width
     string s = "";
     if (width % 2 == 0) {return s;}
     if (gen.size() > width) {return s;}
-    // if (gen.size() % 2 == 0) {return s;}
+    if (gen.size() % 2 == 0) {return s;}
     for (int i = 0; i < gen.size(); i++) {
         if (gen[i] == 1) {s += "*";}
         else {s += " ";}
