@@ -61,6 +61,21 @@ class Tests {
             return true;
          }
       }
+
+      int test_make_next_gen(Automaton &a, const vector<int> &current_gen, vector<int> &next_gen, vector<int> &expectedNextGen, int expectedExtremeBit, bool expectedResult) {
+         bool result = a.make_next_gen(current_gen, next_gen);
+         if (next_gen != expectedNextGen || a._extreme_bit != expectedExtremeBit || result != expectedResult) {
+            cout << "Error: make_next_gen(" << bitsToString(current_gen) << ") = " << bitsToString(next_gen) << ", expected " << bitsToString(expectedNextGen);
+            cout << " Error: extreme_bit = " << a._extreme_bit << ", expected " << expectedExtremeBit;
+            cout << " Error: result = " << result << ", expected " << expectedResult << endl;
+            errorCount++;
+            return false;
+         }
+         else {
+            cout << "OK: make_next_gen(" << bitsToString(current_gen) << ") = " << bitsToString(next_gen) << endl;
+            return true;
+         }
+      }
 /* 
       int test_generation_to_string(Automaton &a, const vector<int>& gen, size_t width, size_t expectedResult) {
          string result = a.generation_to_string(gen, width);
