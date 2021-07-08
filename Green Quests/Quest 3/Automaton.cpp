@@ -47,8 +47,8 @@ bool Automaton::equals(const Automaton& that) {
 
 bool Automaton::make_next_gen(const vector<int> &current_gen, vector<int> &next_gen) {  
     if (_is_valid == false) {return false;}
-    if (current_gen.size() %2 == 0) {return false;}
     if (current_gen.size() == 0) {next_gen = {1}; return true;}
+    if (current_gen.size() %2 == 0) {return false;}
     next_gen.clear();
     vector<int> intermediate_gen = current_gen;
     for (int j = 0; j < _num_parents-1; j++) {

@@ -183,11 +183,13 @@ int main()
    t.test_set_rule(aut, 256, {1, 1, 1, 1, 1, 1, 1, 1}, false);
    t.test_set_rule(aut, 257, {1, 1, 1, 1, 1, 1, 1, 1}, false);
    vector<int> next_gen;
+   aut.set_rule(0);   t.test_make_next_gen(aut, {},       next_gen, {1},       0, true);
    aut.set_rule(0);   t.test_make_next_gen(aut, {0},       next_gen, {0, 0, 0},       0, true);
    aut.set_rule(0);   t.test_make_next_gen(aut, {1},       next_gen, {0, 0, 0},       0, true);
    aut.set_rule(0);   t.test_make_next_gen(aut, {0, 0, 0}, next_gen, {0, 0, 0, 0, 0}, 0, true);
    aut.set_rule(0);   t.test_make_next_gen(aut, {1, 1, 1}, next_gen, {0, 0, 0, 0, 0}, 0, true);
 
+   aut.set_rule(255);   t.test_make_next_gen(aut, {},       next_gen, {1},       0, true);
    aut.set_rule(255); t.test_make_next_gen(aut, {0}, next_gen, {1, 1, 1}, 1, true);
    aut.set_rule(255); t.test_make_next_gen(aut, {1}, next_gen, {1, 1, 1}, 1, true);
    aut.set_rule(255); t.test_make_next_gen(aut, {0, 0, 0}, next_gen, {1, 1, 1, 1, 1}, 1, true);
