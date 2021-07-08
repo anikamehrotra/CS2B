@@ -35,12 +35,17 @@ bool Automaton::equals(const Automaton& that) {
 bool Automaton::make_next_gen(const vector<int> &current_gen, vector<int> &next_gen) {  
     if (_is_valid == false) {return false;}
     if (current_gen.size() %2 == 0) {return false;}
-    if (current_gen.size() == 0) {return {0};}
+    if (current_gen.size() == 0) {next_gen = {1}; return true;}
     next_gen.clear();
     vector<int> intermediate_gen = current_gen;
-    for (int i = 0; i < current_gen.size() + _num_parents - 1; i += 1) {
-        
+    for (int j = 0; j < _num_parents-1; j++) {
+        intermediate_gen.insert(intermediate_gen.begin(), _extreme_bit);
+        intermediate_gen.push_back(_extreme_bit);
     }
+    for (int i = 0; i < current_gen.size() + _num_parents - 1; i++) {
+        next_gen.push_back(_rules[translate_n_bits_starting_at(intermediate_gen, i, _num_parents)]);
+    }
+    return true;
 }
 
 vector<bool> Automaton::int_to_bool_vector(const vector<int>& ints) {
