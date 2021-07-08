@@ -12,6 +12,7 @@ using namespace std;
 Automaton::Automaton(size_t num_parents, size_t rule) {
     _num_parents = num_parents;
     // _rule = rule; 
+    _extreme_bit = 0;
 }
 
 size_t Automaton::binary_to_decimal(const vector<int>& bits) {
