@@ -29,7 +29,7 @@ bool Automaton::set_rule(size_t rule) {
     for (size_t i = 0; i < pow_2(_num_parents) - binary_rule.size(); i++) {
         _rules[i] = false;
     }
-    for (size_t i = binary_rule.size(); i < binary_rule.size(); i++) {
+    for (size_t i = pow_2(_num_parents) - binary_rule.size(); i < pow_2(_num_parents); i++) {
         if (binary_rule[i] == 1) {_rules[i] = true;}
         if (binary_rule[i] == 0) {_rules[i] = false;}
     }
@@ -64,7 +64,7 @@ bool Automaton::make_next_gen(const vector<int> &current_gen, vector<int> &next_
     _extreme_bit = _rules[binary_to_decimal(temp_current_extreme_bits)];
     return true;
 }
-
+/*
 vector<bool> Automaton::int_to_bool_vector(const vector<int>& ints) {
     vector<bool> result;
     for (size_t i = 0; i < ints.size(); i++) {
@@ -73,7 +73,7 @@ vector<bool> Automaton::int_to_bool_vector(const vector<int>& ints) {
     }
     return result;
 }
-
+*/
 size_t Automaton::binary_to_decimal(const vector<int>& bits) {
     int dec_value = 0;
  

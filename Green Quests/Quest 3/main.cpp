@@ -76,6 +76,10 @@ class Tests {
             return true;
          }
       }
+
+      int test_set_rule(Automaton &a, size_t rule, size_t expectedRuleVector, s) {
+
+      }
 /* 
       int test_generation_to_string(Automaton &a, const vector<int>& gen, size_t width, size_t expectedResult) {
          string result = a.generation_to_string(gen, width);
