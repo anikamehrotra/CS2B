@@ -134,8 +134,8 @@ int main()
       b.insert(b.begin(), 0);
       
       t.test_translate_n_bits_starting_at(aut, b, 3, b.size()-6, i);
-      cout << aut.generation_to_string(b, b.size()+6);
+      cout << aut.generation_to_string(b, b.size()+6) << " ";
    }
-   cout << aut.generation_to_string({1,1,1}, 15) << endl;
+   // cout << aut.generation_to_string({1,1,1}, 15) << endl;
    
 }
