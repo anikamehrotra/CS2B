@@ -124,10 +124,10 @@ int main()
    Tests t;
    
    t.test_binary_to_decimal(aut, {0, 0, 0}, 0);
-   t.test_binary_to_decimal(aut, {1, 0, 1, 0}, 10);
-   t.test_binary_to_decimal(aut, {1, 0, 1, 0, 1, 0}, 42);
-   t.test_decimal_to_binary(aut, 10, {1, 0, 1, 0});
-   t.test_decimal_to_binary(aut, 42, {1, 0, 1, 0, 1, 0});
+   t.test_binary_to_decimal(aut, {1, 0, 1, 0}, 5);
+   t.test_binary_to_decimal(aut, {1, 0, 1, 0, 1, 0}, 21);
+   t.test_decimal_to_binary(aut, 5, {1, 0, 1, 0});
+   t.test_decimal_to_binary(aut, 21, {1, 0, 1, 0, 1, 0});
    for (int i = 0; i < 257; i++) {
       t.test_binary_to_decimal(aut, aut.decimal_to_binary(i), i);
    }
