@@ -195,5 +195,5 @@ int main()
    aut.set_rule(255); t.test_make_next_gen(aut, {0, 0, 0}, next_gen, {1, 1, 1, 1, 1}, 1, true);
    aut.set_rule(255); t.test_make_next_gen(aut, {1, 1, 1}, next_gen, {1, 1, 1, 1, 1}, 1, true);
 
-
+   aut.set_rule(30); t.test_make_next_gen(aut, {1}, next_gen, {1, 1, 1}, 0, true);
 }
