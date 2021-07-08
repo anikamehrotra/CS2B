@@ -20,6 +20,14 @@ class Tests {
          }
          return s;
       }
+      std::string bitsToString(const vector<bool>& bits) {
+         int size = bits.size();
+         std::string s;
+         for (int i = 0; i < size; i++) {
+            s += bits[i] ? '1' : '0';
+         }
+         return s;
+      }
       int test_binary_to_decimal(Automaton &a, const vector<int>& bits, size_t expectedResult) {
          int result = a.binary_to_decimal(bits);
          if (result != expectedResult) {
@@ -77,8 +85,17 @@ class Tests {
          }
       }
 
-      int test_set_rule(Automaton &a, size_t rule, size_t expectedRuleVector, s) {
-
+      int test_set_rule(Automaton &a, size_t rule, vector<bool> expectedRuleVector, bool expectedResult) {
+         bool result = a.set_rule(rule);
+         if (result != expectedResult || a._rules != expectedRuleVector) {
+            cout << "Error: set_rule(" << rule << ") = " << bitsToString(a._rules) << ", expected " << bitsToString(expectedRuleVector) << endl;
+            errorCount++;
+            return false;
+         }
+         else {
+            cout << "OK: set_rule(" << rule << ") = " << bitsToString(a._rules) << endl;
+            return true;
+         }
       }
 /* 
       int test_generation_to_string(Automaton &a, const vector<int>& gen, size_t width, size_t expectedResult) {
@@ -126,7 +143,7 @@ int main()
    // cout << "hello" << endl;
    Automaton aut(3, 30);
    Tests t;
-   
+   /*
    t.test_binary_to_decimal(aut, {0, 0, 0}, 0);
    t.test_binary_to_decimal(aut, {1, 0, 1, 0}, 10);
    t.test_binary_to_decimal(aut, {1, 0, 1, 0, 1, 0}, 42);
@@ -158,6 +175,12 @@ int main()
    cout << aut.generation_to_string({1,1,1}, 0) << endl;
    cout << aut.generation_to_string({1,1,1}, 1) << endl;
    cout << aut.generation_to_string({1,1,1}, 2) << endl;
+   */
+   t.test_set_rule(aut, 0, {0, 0, 0, 0, 0, 0, 0, 0}, true);
+   t.test_set_rule(aut, 1, {0, 0, 0, 0, 0, 0, 0, 1}, true);
+   t.test_set_rule(aut, 30, {0, 0, 0, 1, 1, 1, 1, 0}, true);
+   t.test_set_rule(aut, 255, {1, 1, 1, 1, 1, 1, 1, 1}, true);
+   // t.test_set_rule(aut, 256, {1, 1, 1, 1, 1, 1, 1, 1}, false);
    aut.set_rule(0);
    vector<int> next_gen;
    t.test_make_next_gen(aut, {1}, next_gen, {0, 0, 0}, 0, true);
