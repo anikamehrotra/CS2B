@@ -80,7 +80,7 @@ class Tests {
             return false;
          }
          else {
-            cout << "OK: make_next_gen(" << bitsToString(current_gen) << ") = " << bitsToString(next_gen) << endl;
+            cout << "OK: make_next_gen(" << bitsToString(current_gen) << ") with rule " << bitsToString(a._rules) << " = " << bitsToString(next_gen) << endl;
             return true;
          }
       }
@@ -88,7 +88,7 @@ class Tests {
       int test_set_rule(Automaton &a, size_t rule, vector<bool> expectedRuleVector, bool expectedResult) {
          bool result = a.set_rule(rule);
          if (result != expectedResult || a._rules != expectedRuleVector) {
-            cout << "Error: set_rule(" << rule << ") with rule " << bitsToString(a._rules) << " = " << bitsToString(a._rules) << ", expected " << bitsToString(expectedRuleVector) << endl;
+            cout << "Error: set_rule(" << rule << ") = " << bitsToString(a._rules) << ", expected " << bitsToString(expectedRuleVector) << endl;
             errorCount++;
             return false;
          }
