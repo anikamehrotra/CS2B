@@ -12,7 +12,7 @@ using namespace std;
 Automaton::Automaton(size_t num_parents, size_t rule) {
     _num_parents = num_parents;
     // _rule = rule; 
-    _extreme_bit = 0;
+    _extreme_bit = 1;
 }
 
 size_t Automaton::binary_to_decimal(const vector<int>& bits) {
@@ -71,12 +71,12 @@ std::string Automaton::generation_to_string(const vector<int>& gen, size_t width
     if (gen.size() > width) {return s;}
     if (gen.size() % 2 == 0) {return s;}
     for (int i = 0; i < gen.size(); i++) {
-        if (gen[i] == 1) {s += "1";}
-        else {s += "0";}
+        if (gen[i] == 1) {s += "*";}
+        else {s += " ";}
     }
     for (int i = 0; i < (width-gen.size())/2; i++) {
-        string c = "0";
-        if (_extreme_bit == 1) {c = "1";}
+        string c = " ";
+        if (_extreme_bit == 1) {c = "*";}
         s.insert(0, c);
         s.insert(s.size(), c);
     }

@@ -61,7 +61,20 @@ class Tests {
             return true;
          }
       }
-
+/* 
+      int test_generation_to_string(Automaton &a, const vector<int>& gen, size_t width, size_t expectedResult) {
+         string result = a.generation_to_string(gen, width);
+         if (result != expectedResult) {
+            cout << "Error: generation_to_string(" << bitsToString(gen) << ", " << width << ") = " << result << ", expected " << expectedResult << endl;
+            errorCount++;
+            return false;
+         }
+         else {
+            cout << "OK: generation_to_string(" << bitsToString(gen) << ", " << width << ") = " << result << endl;
+            return true;
+         }
+      }
+*/
 };
 
 int main()
@@ -109,6 +122,7 @@ int main()
    t.test_translate_n_bits_starting_at(aut, {1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1}, 2, 5, 21);
    t.test_translate_n_bits_starting_at(aut, {1, 0, 1, 0, 1}, 2, 3, 5);
    
+   */
    for (int i = 0; i < 257; i++) {
       vector<int> b = aut.decimal_to_binary(i);
       
@@ -120,8 +134,8 @@ int main()
       b.insert(b.begin(), 0);
       
       t.test_translate_n_bits_starting_at(aut, b, 3, b.size()-6, i);
+      cout << aut.generation_to_string(b, b.size()+6);
    }
-   */
    cout << aut.generation_to_string({1,1,1}, 15) << endl;
    
 }
