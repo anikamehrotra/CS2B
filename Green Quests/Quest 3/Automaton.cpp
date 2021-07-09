@@ -106,7 +106,7 @@ vector<int> Automaton::decimal_to_binary(int n) {
             n = n / 2;
             i++;
         }
-        std::reverse(binaryNum.begin(), binaryNum.end());
+        reverse(binaryNum.begin(), binaryNum.end());
 
         return binaryNum;
     }
