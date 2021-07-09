@@ -142,7 +142,8 @@ std::string Automaton::generation_to_string(const vector<int>& gen, size_t width
         s.insert(s.size(), c);
     }
     if (gen.size() > width) {
-        s.erase();
+        s.erase(s.begin(), s.begin() + (gen.size()-width)/2);
+        s.erase(s.end() - (gen.size()-width)/2, s.end());
     }
     return s;
 }
