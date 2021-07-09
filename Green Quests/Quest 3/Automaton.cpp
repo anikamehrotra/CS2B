@@ -52,15 +52,15 @@ bool Automaton::make_next_gen(const vector<int> &current_gen, vector<int> &next_
     if (current_gen.size() %2 == 0) {return false;}
     next_gen.clear();
     vector<int> intermediate_gen = current_gen;
-    for (int j = 0; j < _num_parents-1; j++) {
+    for (size_t j = 0; j < _num_parents-1; j++) {
         intermediate_gen.insert(intermediate_gen.begin(), _extreme_bit);
         intermediate_gen.push_back(_extreme_bit);
     }
-    for (int i = 0; i < current_gen.size() + _num_parents - 1; i++) {
+    for (size_t i = 0; i < current_gen.size() + _num_parents - 1; i++) {
         next_gen.push_back(_rules[_rules.size() - translate_n_bits_starting_at(intermediate_gen, i, _num_parents)-1]);
     }
     vector<int> temp_current_extreme_bits;
-    for (int k = 0; k < _num_parents; k++) {
+    for (size_t k = 0; k < _num_parents; k++) {
         temp_current_extreme_bits.push_back(_extreme_bit);
     }
     _extreme_bit = _rules[binary_to_decimal(temp_current_extreme_bits)];
@@ -106,7 +106,7 @@ vector<int> Automaton::decimal_to_binary(int n) {
             n = n / 2;
             i++;
         }
-        reverse(binaryNum.begin(), binaryNum.end());
+        std::reverse(binaryNum.begin(), binaryNum.end());
 
         return binaryNum;
     }
