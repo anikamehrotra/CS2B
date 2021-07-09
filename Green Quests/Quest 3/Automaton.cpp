@@ -34,6 +34,7 @@ bool Automaton::set_rule(size_t rule) {
         if (binary_rule[i - padding] == 1) {_rules[i] = true;}
         if (binary_rule[i - padding] == 0) {_rules[i] = false;}
     }
+    _extreme_bit = 0;
     _is_valid = true;
     return true;
 }
