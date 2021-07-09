@@ -153,5 +153,7 @@ string Automaton::get_first_n_generations(size_t n, size_t width) {
         temp = generation_to_string(current_gen, width);
         s += temp + "\n";
         make_next_gen(current_gen, next_gen);
+        current_gen = next_gen;
     }
+    return s;
 }

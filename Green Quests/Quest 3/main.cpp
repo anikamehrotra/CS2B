@@ -97,6 +97,19 @@ class Tests {
             return true;
          }
       }
+
+      int test_get_first_n_generations(Automaton &a, size_t n, size_t width, string expectedResult) {
+         string result = a.get_first_n_generations(n, width);
+         if (result != expectedResult) {
+            cout << "Error: get_first_n_generations(" << n << ", " << width << ") = " << result << ", expected " << expectedResult << endl;
+            errorCount++;
+            return false;
+         }
+         else {
+            cout << "OK: get_first_n_generations(" << n << ", " << width << ") = \n" << result << endl;
+            return true;
+         }
+      }
 /* 
       int test_generation_to_string(Automaton &a, const vector<int>& gen, size_t width, size_t expectedResult) {
          string result = a.generation_to_string(gen, width);
@@ -204,4 +217,10 @@ int main()
    t.test_make_next_gen(aut, {1}, next_gen, {1, 0, 1}, 0, true);
    t.test_make_next_gen(aut, {1, 0, 1}, next_gen, {1, 0, 0, 0, 1}, 0, true);
    t.test_make_next_gen(aut, {1, 0, 0, 0, 1}, next_gen, {1, 0, 1, 0, 1, 0, 1}, 0, true);
+
+   t.test_get_first_n_generations(aut, 4, 11, "     *     \n    * *    \n   *   *   \n  * * * *  \n");
+   aut.set_rule(30);
+   t.test_get_first_n_generations(aut, 4, 11, "     *     \n    * *    \n   *   *   \n  * * * *  \n");
+   //cout << aut.get_first_n_generations(4, 11);
+
 }
