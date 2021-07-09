@@ -220,7 +220,7 @@ int main()
 
    t.test_get_first_n_generations(aut, 4, 11, "     *     \n    * *    \n   *   *   \n  * * * *  \n");
    aut.set_rule(30);
-   t.test_get_first_n_generations(aut, 4, 11, "     *     \n    * *    \n   *   *   \n  * * * *  \n");
+   t.test_get_first_n_generations(aut, 4, 11, "     *     \n    ***    \n   **  *   \n  ** ****  \n");
    //cout << aut.get_first_n_generations(4, 11);
 
 }
