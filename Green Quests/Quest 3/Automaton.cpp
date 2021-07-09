@@ -143,3 +143,7 @@ std::string Automaton::generation_to_string(const vector<int>& gen, size_t width
     }
     return s;
 }
+
+string get_first_n_generations(size_t n, size_t width) {
+    
+}

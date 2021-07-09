@@ -36,7 +36,7 @@ class Automaton {
         static size_t translate_n_bits_starting_at(const vector<int>& bits, size_t pos, size_t n);
         static size_t binary_to_decimal(const vector<int>& bits);
         static vector<int> decimal_to_binary(int n);
-        static vector<bool> Automaton::int_to_bool_vector(const vector<int>& ints);
+        // static vector<bool> Automaton::int_to_bool_vector(const vector<int>& ints);
         friend class Tests;
 };
 
