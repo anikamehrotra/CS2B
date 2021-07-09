@@ -119,7 +119,7 @@ size_t Automaton::translate_n_bits_starting_at(const vector<int>& bits, size_t p
     if (n == 0) {return 0;}
     if (bits.begin() + pos + n > bits.end()) {return 0;}
     vector<int> translation;
-    for (int i = pos; i < pos + n; i++) {
+    for (size_t i = pos; i < pos + n; i++) {
         translation.push_back(bits[i]);
     }
     // if (translation.size() != n) {cout << "Uh oh, wrong size slice" << endl;}
@@ -131,12 +131,12 @@ std::string Automaton::generation_to_string(const vector<int>& gen, size_t width
     if (width % 2 == 0) {return s;}
     //if (gen.size() > width) {return s;}
     if (gen.size() % 2 == 0) {return s;}
-    for (int i = 0; i < gen.size(); i++) {
+    for (size_t i = 0; i < gen.size(); i++) {
         if (gen[i] == 1) {s += "*";}
         else {s += " ";}
     }
     if (gen.size() < width) {
-        for (int i = 0; i < (width-gen.size())/2; i++) {
+        for (size_t i = 0; i < (width-gen.size())/2; i++) {
             string c = " ";
             if (_extreme_bit == 1) {c = "*";}
             s.insert(0, c);
