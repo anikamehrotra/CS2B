@@ -226,6 +226,6 @@ int main()
    cout << "generation to string " << aut.generation_to_string({0, 1, 1, 1, 0}, 3) << endl;
    cout << "generation to string " << aut.generation_to_string({1, 1, 1, 1, 1}, 9) << endl;
    */
-
+  aut.set_rule(35);
   cout << aut.get_first_n_generations(100, 101) << endl;
 }
