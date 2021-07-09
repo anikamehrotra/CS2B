@@ -135,11 +135,13 @@ std::string Automaton::generation_to_string(const vector<int>& gen, size_t width
         if (gen[i] == 1) {s += "*";}
         else {s += " ";}
     }
-    for (int i = 0; i < (width-gen.size())/2; i++) {
-        string c = " ";
-        if (_extreme_bit == 1) {c = "*";}
-        s.insert(0, c);
-        s.insert(s.size(), c);
+    if (gen.size() < width) {
+        for (int i = 0; i < (width-gen.size())/2; i++) {
+            string c = " ";
+            if (_extreme_bit == 1) {c = "*";}
+            s.insert(0, c);
+            s.insert(s.size(), c);
+        }
     }
     if (gen.size() > width) {
         s.erase(s.begin(), s.begin() + (gen.size()-width)/2);
