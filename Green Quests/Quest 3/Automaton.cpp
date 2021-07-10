@@ -149,7 +149,7 @@ std::string Automaton::generation_to_string(const vector<int>& gen, size_t width
         s.erase(s.begin(), s.begin() + (gen.size()-width)/2);
         s.erase(s.end() - (gen.size()-width)/2, s.end());
     }
-    return s;
+    return s ;
 }
 
 string Automaton::get_first_n_generations(size_t n, size_t width) {
@@ -160,7 +160,9 @@ string Automaton::get_first_n_generations(size_t n, size_t width) {
     vector<int> next_gen;
     for (size_t i = 0; i < n; i++) {
         temp = generation_to_string(current_gen, width);
-        s += temp + "\n";
+        if (temp != "") {
+            s += temp + "\n";
+        }
         make_next_gen(current_gen, next_gen);
         current_gen = next_gen;
     }

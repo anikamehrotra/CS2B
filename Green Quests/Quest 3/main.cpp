@@ -229,4 +229,6 @@ int main()
   aut.set_rule(35);
   cout << aut.get_first_n_generations(100, 101) << endl;
    */
+  Automaton a(1,0);
+  cout << a.generation_to_string({1},1);
 }
