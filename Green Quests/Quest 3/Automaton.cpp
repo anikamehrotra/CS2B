@@ -156,7 +156,7 @@ string Automaton::get_first_n_generations(size_t n, size_t width) {
     if (width <= 0) {return "";}
     string s = "";
     string temp;
-    vector<int> current_gen = {1};
+    vector<int> current_gen = {};
     vector<int> next_gen;
     for (size_t i = 0; i < n; i++) {
         temp = generation_to_string(current_gen, width);
