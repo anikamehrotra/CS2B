@@ -232,3 +232,4 @@ int main()
   Automaton b(1,3);
   cout << b.get_first_n_generations(10, 11) << endl;
 }
+

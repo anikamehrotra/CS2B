@@ -10,6 +10,8 @@
 
 using namespace std;
 
+/* UNFINISHED DID NOT RECEIVE ALL TROPHIES */
+
 Automaton::Automaton(size_t num_parents, size_t rule) {
     if (num_parents > MAX_PARENTS) {_is_valid = false; return;}
     _num_parents = num_parents;
@@ -168,3 +170,49 @@ string Automaton::get_first_n_generations(size_t n, size_t width) {
     }
     return s;
 }
+
+/*
+Hooray! 3 Transfer Credits earn a trip to Luminare's Levitating Emporium (utils)
+
+Hooray! 4 Conditions agreed upon by the sparring trio (set rule)
+
+Hooray! 1 Bottle of Crypiscid Distillate exchanged for a balloon axe (constructor)
+
+Hooray! 3 Prosphuric Monocrystamate molecules energized to ionization level 1.729 (equals)
+
+Hooray! 6 Pillars of solpitude provide the strength you need (make_next_gen)
+
+Hooray! 3 Phlags of intergalactic victory hoisted before waking up (generation to string)
+
+You can keep going. Or enter the next quest. Or both.
+
+Hooray, krazy the koala knows where to go nowhere to go.
+
+Alas! Aut(1,3).get_first_n...(n:10,wid:11) gave us different results.
+You said:
+***********
+***********
+***********
+***********
+***********
+***********
+***********
+***********
+***********
+***********
+
+But I expected:
+     *     
+***********
+***********
+***********
+***********
+***********
+***********
+***********
+***********
+***********
+
+Auto da yours: { valid = 1, num_parents = 1, extreme = 1, rules = [ 1 1 ] }
+Auto da mines: { valid = 1, num_parents = 1, extreme = 1, rules = [ 1 1 ] }
+*/
