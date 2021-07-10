@@ -59,7 +59,7 @@ bool Automaton::make_next_gen(const vector<int> &current_gen, vector<int> &next_
         intermediate_gen.push_back(_extreme_bit);
     }
     for (size_t i = 0; i < current_gen.size() + _num_parents - 1; i++) {
-        next_gen.push_back(_rules[translate_n_bits_starting_at(intermediate_gen, i, _num_parents)-1]);
+        next_gen.push_back(_rules[translate_n_bits_starting_at(intermediate_gen, i, _num_parents)]);
     }
     vector<int> temp_current_extreme_bits;
     for (size_t k = 0; k < _num_parents; k++) {
