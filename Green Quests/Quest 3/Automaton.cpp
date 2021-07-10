@@ -153,6 +153,7 @@ std::string Automaton::generation_to_string(const vector<int>& gen, size_t width
 }
 
 string Automaton::get_first_n_generations(size_t n, size_t width) {
+    if (width <= 0) {return "";}
     string s = "";
     string temp;
     vector<int> current_gen = {1};
