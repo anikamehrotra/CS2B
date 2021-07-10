@@ -189,7 +189,7 @@ int main()
    cout << aut.generation_to_string({1,1,1}, 1) << endl;
    cout << aut.generation_to_string({1,1,1}, 2) << endl;
    */
-  /*
+
    t.test_set_rule(aut, 0, {0, 0, 0, 0, 0, 0, 0, 0}, true);
    t.test_set_rule(aut, 1, {0, 0, 0, 0, 0, 0, 0, 1}, true);
    t.test_set_rule(aut, 30, {0, 0, 0, 1, 1, 1, 1, 0}, true);
@@ -225,7 +225,8 @@ int main()
    //cout << aut.get_first_n_generations(4, 11);
    cout << "generation to string " << aut.generation_to_string({0, 1, 1, 1, 0}, 3) << endl;
    cout << "generation to string " << aut.generation_to_string({1, 1, 1, 1, 1}, 9) << endl;
-   */
+  /*
   aut.set_rule(35);
   cout << aut.get_first_n_generations(100, 101) << endl;
+   */
 }

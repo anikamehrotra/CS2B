@@ -35,6 +35,7 @@ bool Automaton::set_rule(size_t rule) {
         if (binary_rule[i - padding] == 1) {_rules[i] = true;}
         if (binary_rule[i - padding] == 0) {_rules[i] = false;}
     }
+    reverse(_rules.begin(), _rules.end());
     _extreme_bit = 0;
     _is_valid = true;
     return true;
@@ -58,7 +59,7 @@ bool Automaton::make_next_gen(const vector<int> &current_gen, vector<int> &next_
         intermediate_gen.push_back(_extreme_bit);
     }
     for (size_t i = 0; i < current_gen.size() + _num_parents - 1; i++) {
-        next_gen.push_back(_rules[_rules.size() - translate_n_bits_starting_at(intermediate_gen, i, _num_parents)-1]);
+        next_gen.push_back(_rules[translate_n_bits_starting_at(intermediate_gen, i, _num_parents)-1]);
     }
     vector<int> temp_current_extreme_bits;
     for (size_t k = 0; k < _num_parents; k++) {
