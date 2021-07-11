@@ -8,4 +8,12 @@
 
 #include "Tree.h"
 
+    Tree::Tree() {
+        
+    }
+
+    Tree::~Tree() {
+
+    }
+
 using namespace std;
