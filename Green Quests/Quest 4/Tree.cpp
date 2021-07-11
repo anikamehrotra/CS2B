@@ -35,3 +35,15 @@ std::string Tree::to_string() const {
     s += "# End of Tree";
     return s;
 }
+
+void Tree::make_special_config_1(const std::vector<std::string> &names) {
+    // names = { "AABA", "ABAB", "ABBA", "BABA", "COBO", "COCO", "CODO", "COFO", "COGO", "COHO", "COJO", "COKO", "DIBI", "DIDI", "DIFI", "DIGI", "DIHI", "DIJI", "DIKI", "DILI" };
+    Tree tree;
+    std::vector<Node*> nodes = {};
+    for (size_t i = 0; i < names.size(); i++) {
+        nodes[i] = new Node(names[i]);
+    }
+    _root->insert_sibling(nodes[0]);
+    nodes[0]->insert_child(nodes[5]);
+    nodes[5]->insert_child(nodes[6]);
+}
