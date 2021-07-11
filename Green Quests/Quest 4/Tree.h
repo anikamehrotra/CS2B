@@ -30,9 +30,14 @@ class Tree
                 return *this;
             };           // Deep clone
             ~Node() {
-                _sibling = nullptr; 
-                _child = nullptr;
-                delete _sibling, _child;
+                while (_child != nullptr) {
+                    delete _child;
+                    _child = nullptr;
+                }
+                while (_sibling != nullptr) {
+                    delete _sibling;
+                    _sibling = nullptr;
+                }
             };
             std::string get_data() const { return _data; }
             void set_data(std::string s) { _data = s; }
