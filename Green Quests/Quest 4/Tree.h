@@ -26,12 +26,16 @@ class Tree
             std::string get_data() const { return _data; }
             void set_data(std::string s) { _data = s; }
             Node *insert_sibling(Node *p) {
-                size_t i = 0;
-                while (_sibling != nullptr) {
-                    i++;
+                Node *ptr = _sibling;
+                while (ptr->_sibling != nullptr) {
+                    ptr = ptr->_sibling;
                 }
+                ptr->_sibling = p;
             };
-            Node *insert_child(Node *p);
+            Node *insert_child(Node *p) {
+                if (_child == nullptr) {_child = p;}
+                else {_child->insert_sibling(p);}
+            };
             std::string to_string() const;
             bool operator==(const Node &that) const;
             bool operator!=(const Node &that) const;
