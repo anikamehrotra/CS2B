@@ -83,7 +83,10 @@ class Tree
     public:
         Tree();
         ~Tree();
-        Tree(const Tree &that) { *this = that; }
+        Tree(const Tree &that) {
+            if (this == &that) {return;}
+            *this = that; 
+        }
         Tree &operator=(const Tree &that); // Deep clone
         std::string to_string() const;
         void make_special_config_1(const std::vector<std::string> &names);

@@ -20,11 +20,6 @@ Tree::~Tree() {
     _root = nullptr;
 }
 
-Tree::Tree(const Tree &that) {
-    if (this == &that) {return;}
-    _root = that._root;
-}
-
 Tree& Tree::operator=(const Tree &that) {
     if (this == &that) {return *this;}
     _root = that._root;
@@ -38,4 +33,5 @@ std::string Tree::to_string() const {
     s += "#   node: child1 child2...\n";
     s +=  _root->to_string();
     s += "# End of Tree";
+    return s;
 }
