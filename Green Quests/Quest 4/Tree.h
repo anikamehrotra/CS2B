@@ -29,7 +29,11 @@ class Tree
                 }
                 return *this;
             };           // Deep clone
-            ~Node();
+            ~Node() {
+                _sibling = nullptr; 
+                _child = nullptr;
+                delete _sibling, _child;
+            };
             std::string get_data() const { return _data; }
             void set_data(std::string s) { _data = s; }
             Node *insert_sibling(Node *p) {
