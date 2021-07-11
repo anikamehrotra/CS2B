@@ -47,11 +47,13 @@ class Tree
             std::string get_data() const { return _data; }
             void set_data(std::string s) { _data = s; }
             Node *insert_sibling(Node *p) {
-                Node *ptr = _sibling;
-                while (ptr->_sibling != nullptr) {
-                    ptr = ptr->_sibling;
+                Node *lastSibling = _sibling;
+                if (lastSibling == nullptr) {lastSibling = p; return this;}
+                while (lastSibling != nullptr) {
+                    if (lastSibling->_sibling == nullptr) {lastSibling->_sibling = p; return this;}
+                    lastSibling = lastSibling->_sibling;
                 }
-                ptr->_sibling = p;
+                lastSibling = p;
                 return this;
             };
             Node *insert_child(Node *p) {
