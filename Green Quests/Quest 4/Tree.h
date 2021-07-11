@@ -20,12 +20,17 @@ class Tree
             Node *_sibling, *_child;
             static bool is_equal(const Node *p1, const Node *p2);
             Node(std::string s = "") { _data = s;};                           // TODO
-             Node(const Node& that);                            // TODO
+            Node(const Node& that);                            // TODO
             const Node &operator=(const Node &that);           // Deep clone
             ~Node();
             std::string get_data() const { return _data; }
             void set_data(std::string s) { _data = s; }
-            Node *insert_sibling(Node *p);
+            Node *insert_sibling(Node *p) {
+                size_t i = 0;
+                while (_sibling != nullptr) {
+                    i++;
+                }
+            };
             Node *insert_child(Node *p);
             std::string to_string() const;
             bool operator==(const Node &that) const;
