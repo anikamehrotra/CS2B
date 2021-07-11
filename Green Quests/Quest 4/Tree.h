@@ -65,7 +65,13 @@ class Tree
                     s += " " + ptr->_data;
                 }
                 s += "\n";
-                
+                if (_child != nullptr) {
+                    s += "# Child of " + _data + "\n" + _child->to_string();
+                }
+                if (_sibling != nullptr) {
+                    s += "# Next sib of " + _data + "\n" + _sibling->to_string();
+                }
+                return s;
             };
             bool operator==(const Node &that) const {return is_equal(this, &that);};
             bool operator!=(const Node &that) const {return !is_equal(this, &that);};
