@@ -98,7 +98,7 @@ class Tree
             return false;
         }
         friend std::ostream &operator<<(std::ostream &os, const Tree &tree){
-            // TODO
+            return os << tree.to_string();
         };
         friend class Tests; // Don't remove this line
 };
