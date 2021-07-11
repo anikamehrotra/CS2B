@@ -12,5 +12,9 @@ class Tests {
 };
 
 int main() {
+    Tree tree;
+    std::vector<std::string> names = { "AABA", "ABAB", "ABBA", "BABA", "COBO", "COCO", "CODO", "COFO", "COGO", "COHO", "COJO", "COKO", "DIBI", "DIDI", "DIFI", "DIGI", "DIHI", "DIJI", "DIKI", "DILI" };
+    tree.make_special_config_1(names);
+    cout << tree.to_string() << endl;
 
 }

@@ -42,7 +42,7 @@ void Tree::make_special_config_1(const std::vector<std::string> &names) {
     _root->set_data("ROOT");
     std::vector<Node*> nodes = {};
     for (size_t i = 0; i < names.size(); i++) {
-        nodes[i] = new Node(names[i]);
+        nodes.push_back(new Node(names[i]));
     }
     _root->insert_sibling(nodes[0]);
     nodes[0]->insert_child(nodes[4]);
