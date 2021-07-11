@@ -18,7 +18,12 @@ class Tree
         { // Inner class
             std::string _data;
             Node *_sibling, *_child;
-            static bool is_equal(const Node *p1, const Node *p2) {};
+            static bool is_equal(const Node *p1, const Node *p2) {
+                if (p1->_sibling == p2->_sibling && p1->_child == p2->_child && p1->_data == p2->_data) {
+                    return true;
+                }
+                return false;
+            };
             Node(std::string s = "") { _data = s;};                           // TODO
             Node(const Node& that) {*this = that;};                            // TODO
             const Node &operator=(const Node &that) {
@@ -52,9 +57,16 @@ class Tree
                 if (_child == nullptr) {_child = p;}
                 else {_child->insert_sibling(p);}
             };
-            std::string to_string() const;
-            bool operator==(const Node &that) const;
-            bool operator!=(const Node &that) const;
+            std::string to_string() const {
+                string s = "";
+                s += _data + " :";
+                Node *ptr = _sibling;
+                while (ptr->_sibling != nullptr) {
+                    s += " " + ptr->_data;
+                }
+            };
+            bool operator==(const Node &that) const {return is_equal(this, &that);};
+            bool operator!=(const Node &that) const {return !is_equal(this, &that);};
         };
         Node *_root;
 
