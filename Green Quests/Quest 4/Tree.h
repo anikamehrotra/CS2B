@@ -18,7 +18,7 @@ class Tree
         { // Inner class
             std::string _data;
             Node *_sibling, *_child;
-            static bool is_equal(const Node *p1, const Node *p2);
+            static bool is_equal(const Node *p1, const Node *p2) {};
             Node(std::string s = "") { _data = s;};                           // TODO
             Node(const Node& that) {*this = that;};                            // TODO
             const Node &operator=(const Node &that) {
