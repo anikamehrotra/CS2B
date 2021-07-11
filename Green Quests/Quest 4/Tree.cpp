@@ -22,5 +22,20 @@ Tree::~Tree() {
 
 Tree::Tree(const Tree &that) {
     if (this == &that) {return;}
-    
+    _root = that._root;
+}
+
+Tree& Tree::operator=(const Tree &that) {
+    if (this == &that) {return *this;}
+    _root = that._root;
+    return *this;
+}
+
+std::string Tree::to_string() const {
+    string s;
+    s += "# Tree rooted at " + _root->get_data() + "\n";
+    s += "# The following lines are of the form:\n";
+    s += "#   node: child1 child2...\n";
+    s +=  _root->to_string();
+    s += "# End of Tree";
 }

@@ -87,11 +87,13 @@ class Tree
         void make_special_config_1(const std::vector<std::string> &names);
         bool operator==(const Tree &that) const
         {
-            // TODO
+            if (_root == that._root) {return true;}
+            return false;
         }
         bool operator!=(const Tree &that) const
         {
-            // TODO
+            if (_root != that._root) {return true;}
+            return false;
         }
         friend std::ostream &operator<<(std::ostream &os, const Tree &tree){
             // TODO
