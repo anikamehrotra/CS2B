@@ -21,5 +21,6 @@ Tree::~Tree() {
 }
 
 Tree::Tree(const Tree &that) {
+    if (this == &that) {return;}
     
 }
