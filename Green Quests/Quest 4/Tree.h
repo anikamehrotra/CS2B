@@ -52,10 +52,12 @@ class Tree
                     ptr = ptr->_sibling;
                 }
                 ptr->_sibling = p;
+                return this;
             };
             Node *insert_child(Node *p) {
                 if (_child == nullptr) {_child = p;}
                 else {_child->insert_sibling(p);}
+                return this;
             };
             std::string to_string() const {
                 string s = "";
