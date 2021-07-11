@@ -45,5 +45,5 @@ void Tree::make_special_config_1(const std::vector<std::string> &names) {
     }
     _root->insert_sibling(nodes[0]);
     nodes[0]->insert_child(nodes[5]);
-    nodes[5]->insert_child(nodes[6]);
+    nodes[5]->insert_child(nodes[13]);
 }
