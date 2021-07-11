@@ -47,6 +47,12 @@ class Tree
             std::string get_data() const { return _data; }
             void set_data(std::string s) { _data = s; }
             Node *insert_sibling(Node *p) {
+                if (_sibling == nullptr) {
+                    _sibling = p; 
+                    return this;
+                }
+                else return _sibling->insert_sibling(p);
+                /*
                 Node *lastSibling = _sibling;
                 if (lastSibling == nullptr) {lastSibling = p; return this;}
                 while (lastSibling != nullptr) {
@@ -55,6 +61,7 @@ class Tree
                 }
                 lastSibling = p;
                 return this;
+                */
             };
             Node *insert_child(Node *p) {
                 if (_child == nullptr) {_child = p;}
