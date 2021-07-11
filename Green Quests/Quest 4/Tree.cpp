@@ -8,12 +8,18 @@
 
 #include "Tree.h"
 
-    Tree::Tree() {
-        
-    }
-
-    Tree::~Tree() {
-
-    }
 
 using namespace std;
+
+Tree::Tree() {
+    _root = new Node("ROOT");
+}
+
+Tree::~Tree() {
+    delete _root;
+    _root = nullptr;
+}
+
+Tree::Tree(const Tree &that) {
+    
+}
