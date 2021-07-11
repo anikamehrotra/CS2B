@@ -19,7 +19,7 @@ class Tree
             std::string _data;
             Node *_sibling, *_child;
             static bool is_equal(const Node *p1, const Node *p2);
-            Node(std::string s = "");                           // TODO
+            Node(std::string s = "") { _data = s;};                           // TODO
              Node(const Node& that);                            // TODO
             const Node &operator=(const Node &that);           // Deep clone
             ~Node();
