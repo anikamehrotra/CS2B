@@ -72,12 +72,15 @@ class Tree
                 string s = "";
                 s += _data + " :";
                 Node *ptr = _sibling;
-                while (ptr->_sibling != nullptr) {
+                while (ptr != nullptr) {
                     s += " " + ptr->_data;
+                    ptr = ptr->_sibling;
                 }
                 s += "\n";
-                if (_child != nullptr) {
+                ptr = _child;
+                if (ptr != nullptr) {
                     s += "# Child of " + _data + "\n" + _child->to_string();
+                    ptr = ptr->_child;
                 }
                 if (_sibling != nullptr) {
                     s += "# Next sib of " + _data + "\n" + _sibling->to_string();
