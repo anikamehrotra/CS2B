@@ -24,7 +24,7 @@ class Tree
                 }
                 return false;
             };
-            Node(std::string s = "") { _data = s;};                           // TODO
+            Node(std::string s = "") { _data = s; _sibling = nullptr; _child = nullptr;};                           // TODO
             Node(const Node& that) {*this = that;};                            // TODO
             const Node &operator=(const Node &that) {
                 if (this != &that) {
