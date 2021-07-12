@@ -67,9 +67,9 @@ void Tree::make_special_config_1(const std::vector<std::string> &names) {
     nodes[10]->insert_child(nodes[18]);
     nodes[10]->insert_sibling(nodes[11]);
     nodes[11]->insert_child(nodes[19]);
-
+/*
     for (size_t i = 0; i < nodes.size(); i++) {
         delete nodes[i];
         nodes[i] = nullptr;    
-    }
+    } */
 }
