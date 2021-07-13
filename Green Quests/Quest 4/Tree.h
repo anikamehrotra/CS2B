@@ -35,9 +35,9 @@ class Tree
                     */
                    set_data(that._data);
                    Node *new_sibling = that._sibling;
-                   insert_sibling(new_sibling);
+                   _sibling = new_sibling;
                    Node *new_child = that._child;
-                   insert_child(new_child);
+                   _child = new_child;
                 }
                 return *this;
             };           // Deep clone
