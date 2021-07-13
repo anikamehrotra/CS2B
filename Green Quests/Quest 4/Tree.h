@@ -19,7 +19,7 @@ class Tree
             std::string _data;
             Node *_sibling, *_child;
             static bool is_equal(const Node *p1, const Node *p2) {
-                bool result = true;
+            
                 if (p1 == nullptr && p2 == nullptr) return true;
                 if (p1 == nullptr && p2 != nullptr) return false;
                 if (p2 == nullptr && p1 != nullptr) return false;
