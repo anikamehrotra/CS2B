@@ -58,6 +58,19 @@ int main() {
     cout << t.cacheTest(h);
     t.hanoiTest(h, 2, 3, 2, 1, "3->1\n3->2\n1->2\n");
     cout << t.cacheTest(h);
+    t.hanoiTest(h, 2, 3, 1, 2, "3->2\n3->1\n2->1\n");
+    cout << t.cacheTest(h);
+    t.hanoiTest(h, 2, 1, 2, 3, "1->3\n1->2\n3->2\n");
+    cout << t.cacheTest(h);
+    t.hanoiTest(h, 2, 1, 3, 2, "1->2\n1->3\n2->3\n");
+    cout << t.cacheTest(h);
+    t.hanoiTest(h, 2, 1, 2, 3, "1->3\n1->2\n3->2\n");
+    cout << t.cacheTest(h);
+    t.hanoiTest(h, 2, 2, 1, 3, "2->3\n2->1\n3->1\n");
+    cout << t.cacheTest(h);
+    t.hanoiTest(h, 2, 2, 3, 1, "2->1\n2->3\n1->3\n");
+    cout << t.cacheTest(h);
+    
     /*
     t.hanoiTest(h, 2, 1, 2, 3, "1->3\n1->2\n3->2\n");
     t.hanoiTest(h, 3, 1, 2, 3, "1->2\n1->3\n2->3\n1->2\n3->1\n3->2\n1->2\n");
