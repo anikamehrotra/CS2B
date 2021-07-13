@@ -33,7 +33,8 @@ class Tree
                     _sibling = that._sibling;
                     _child = that._child;
                     */
-                   set_data(that._data);
+                   std::string new_data = that._data;
+                   set_data(new_data);
                    Node *new_sibling = that._sibling;
                    _sibling = new_sibling;
                    Node *new_child = that._child;
