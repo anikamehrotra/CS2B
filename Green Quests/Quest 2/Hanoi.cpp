@@ -10,8 +10,16 @@
 using namespace std;
 
 std::string Hanoi::lookup_moves(int num_discs, int src, int dst) {
+    /*
     if (_cache[num_discs][src][dst] == "") {return "";}
-    return _cache[num_discs][src][dst];
+    return _cache[num_discs][src][dst]; */
+    size_t st_num_discs = num_discs;
+    size_t st_src = src;
+    size_t st_dst = dst;
+    if(_cache.size() <= st_num_discs) return "";
+    if(_cache[st_num_discs].size() <= st_src) return "";
+    if(_cache[st_num_discs][st_src].size() <= st_dst) return "";
+    return _cache[st_num_discs][st_src][st_dst];
 }
 
 
@@ -43,7 +51,7 @@ std::string Hanoi::get_moves(int num_discs, int src, int dst, int tmp) {
     }
     //_cache[num_discs][src][dst] = s;
     store_moves(num_discs, src, dst, s);
-    _cache[num_discs - 1].clear();
+    //_cache[num_discs - 1].clear();
     return s;
 }
 

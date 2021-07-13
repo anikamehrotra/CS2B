@@ -30,13 +30,13 @@ class Tests {
 int main() {
     Tests t;
     Hanoi h;
-/*
+
     t.hanoiTest(h, 0, 1, 2, 3, "");
     t.hanoiTest(h, 1, 1, 2, 3, "1->2\n");
     t.hanoiTest(h, 2, 1, 2, 3, "1->3\n1->2\n3->2\n");
     t.hanoiTest(h, 3, 1, 2, 3, "1->2\n1->3\n2->3\n1->2\n3->1\n3->2\n1->2\n");
     t.hanoiTest(h, 3, 1, 2, 3, "1->2\n1->3\n2->3\n1->2\n3->1\n3->2\n1->2\n");
-    */
+    
     t.hanoiTest(h, 2, 2, 1, 3, "2->3\n2->1\n3->1\n");
     t.hanoiTest(h, 2, 2, 1, 3, "2->3\n2->1\n3->1\n");
 
