@@ -3,8 +3,8 @@
 #include <vector>
 #include <string>
 
-#include "Quest 2/Hanoi.h"
-#include "Quest 2/Hanoi.cpp"
+#include "Hanoi.h"
+#include "Hanoi.cpp"
 using namespace std;
 
 class Tests {
@@ -36,6 +36,6 @@ int main() {
     t.hanoiTest(h, 2, 1, 2, 3, "1->3\n1->2\n3->2\n");
     t.hanoiTest(h, 3, 1, 2, 3, "1->2\n1->3\n2->3\n1->2\n3->1\n3->2\n1->2\n");
     t.hanoiTest(h, 3, 1, 2, 3, "1->2\n1->3\n2->3\n1->2\n3->1\n3->2\n1->2\n");
-    t.hanoiTest(h, 2, 1, 2, 3, "1->3\n1->2\n3->2\n");
+    t.hanoiTest(h, 2, 2, 1, 3, "2->3\n2->1\n3->1\n");
     
 }
