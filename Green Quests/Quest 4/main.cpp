@@ -23,5 +23,6 @@ int main() {
 
     Tree tree3;
     tree3 = tree;
+    cout << tree3.to_string() << endl;
     cout << (tree == tree3) << endl;
 }
