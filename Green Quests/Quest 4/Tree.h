@@ -121,7 +121,7 @@ class Tree
         }
         bool operator!=(const Tree &that) const
         {
-            if (_root != that._root) {return true;}
+            if (*_root != *that._root) {return true;}
             return false;
         }
         friend std::ostream &operator<<(std::ostream &os, const Tree &tree){
