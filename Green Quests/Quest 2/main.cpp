@@ -28,9 +28,9 @@ class Tests {
 
         string cacheTest(Hanoi &h) {
             string s;
-            for (int i = 1; i < h._cache.size(); i++) {
-                for (int j = 1; j < h._cache[i].size(); j++) {
-                    for (int k = 1; k < h._cache[i][j].size(); k++) {
+            for (int i = 0; i < h._cache.size(); i++) {
+                for (int j = 0; j < h._cache[i].size(); j++) {
+                    for (int k = 0; k < h._cache[i][j].size(); k++) {
                         s += "_cache[" + to_string(i) + "][" + to_string(j) + "][" + to_string(k) + "] = " + h._cache[i][j][k] + "\n";                      
                         //+ i + i + "][" + j + "][" + k + "] = "
                          //    + h._cache[i][j][k] + "\n";
@@ -51,6 +51,12 @@ int main() {
     cout << t.cacheTest(h);
     */
     t.hanoiTest(h, 1, 1, 2, 3, "1->2\n");
+    cout << t.cacheTest(h);
+    t.hanoiTest(h, 1, 1, 3, 2, "1->3\n");
+    cout << t.cacheTest(h);
+    t.hanoiTest(h, 1, 1, 2, 3, "1->2\n");
+    cout << t.cacheTest(h);
+    t.hanoiTest(h, 2, 3, 2, 1, "3->1\n3->2\n1->2\n");
     cout << t.cacheTest(h);
     /*
     t.hanoiTest(h, 2, 1, 2, 3, "1->3\n1->2\n3->2\n");
