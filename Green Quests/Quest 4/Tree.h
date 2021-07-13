@@ -20,6 +20,8 @@ class Tree
             Node *_sibling, *_child;
             static bool is_equal(const Node *p1, const Node *p2) {
                 if (p1 == nullptr && p2 == nullptr) return true;
+                if (p1 == nullptr && p2 != nullptr) return false;
+                if (p2 == nullptr && p1 != nullptr) return false;
                 if (p1->_data!=p2->_data) return false;
                 if (!is_equal(p1->_sibling, p2->_sibling)) return false;
                 if (!is_equal(p1->_child, p2->_child)) return false;
