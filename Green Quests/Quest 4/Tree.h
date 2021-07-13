@@ -71,20 +71,19 @@ class Tree
             std::string to_string() const {
                 string s = "";
                 s += _data + " :";
-                Node *ptr = _sibling;
+                Node *ptr = _child;
                 while (ptr != nullptr) {
                     s += " " + ptr->_data;
                     ptr = ptr->_sibling;
                 }
                 s += "\n";
-                ptr = _child;
-                if (ptr != nullptr) {
+                if (_child != nullptr) {
                     s += "# Child of " + _data + "\n" + _child->to_string();
-                    ptr = ptr->_child;
                 }
                 if (_sibling != nullptr) {
                     s += "# Next sib of " + _data + "\n" + _sibling->to_string();
                 }
+                
                 return s;
             };
             bool operator==(const Node &that) const {return is_equal(this, &that);};
