@@ -41,11 +41,11 @@ std::string Hanoi::get_moves(int num_discs, int src, int dst, int tmp) {
     if (s != "") {return s;}
     if (num_discs == 0) {s = "";}
     else if (num_discs == 1) {
-        s = std::to_string(src) + "->" + std::to_string(dst) + "\\n";
+        s = std::to_string(src) + "->" + std::to_string(dst) + "\n";
     }
     else {
         s = get_moves(num_discs-1, src, tmp, dst) + 
-            std::to_string(src) + "->" + std::to_string(dst) + "\\n" + 
+            std::to_string(src) + "->" + std::to_string(dst) + "\n" + 
             get_moves(num_discs-1, tmp, dst, src);
         //store_moves(num_discs, src, dst, s);
     }
