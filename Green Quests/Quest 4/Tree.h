@@ -41,7 +41,9 @@ class Tree
                    std::string new_data = that._data;
                    set_data(new_data);
                    if (that._sibling != nullptr) {_sibling = new Node(*that._sibling);}
+                   else {_sibling = nullptr;}
                    if (that._child != nullptr) {_child = new Node(*that._child);}
+                   else {_child = nullptr;}
                 }
                 return *this;
             };           // Deep clone
