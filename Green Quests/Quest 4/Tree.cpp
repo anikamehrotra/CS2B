@@ -78,3 +78,36 @@ void Tree::make_special_config_1(const std::vector<std::string> &names) {
         nodes[i] = nullptr;    
     } */
 }
+
+/*
+Hooray! 1 Nelliform crystal dessicated into methopheric molecules (node ctr)
+
+Hooray! 2 Smalltalk Sonnets stuffed into imperative Rexmus stackings (child insertions)
+
+Hooray! 2 Nanosecs of carelessness averted through mindful engagement (sibling insertions)
+(Whoa!)
+
+Hooray! 8 Pandrumcellos played by 1-Toe Yomoya at the grand stringual concert (=)
+
+Hooray! 1 Zephyr of Pulchritude caressed your artwork in transit (node copy)
+
+Hooray! 2 Shades of Zurao stripe a burgundy sky (node comparisons)
+
+Hooray! 10 Queens of compassion decide to form an unbreakable pact (node to string)
+
+Hooray! 1 Humongiferous ingot of polycrystalline Mobium ionized into a Lectrodragnet (node dtr)
+
+You can keep going. Or enter the next quest. Or both.
+
+Hooray, the complex kiwi can open secret doors.
+
+Hooray! 2 Eager children play Trim Dandango after a liquid sunset (tree ctr/dtr)
+
+Hooray! 2 Liters of Nyscent Rocksyjen will blecch even purple velvyt smidges (tree copy)
+
+Hooray! 2 Gumbaugh Riffsticks suffice to scale Boron's overwall (tree comp ops)
+
+Hooray! 1 Sunyati uses techniques never before known to Strovenkind (tree to string)
+
+Hooray! 6 Muavino Nectarines ripened in time for guests royale (config 1)
+*/
