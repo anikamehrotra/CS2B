@@ -19,8 +19,13 @@ class Tree
             std::string _data;
             Node *_sibling, *_child;
             static bool is_equal(const Node *p1, const Node *p2) {
-                if (p1->_sibling == p2->_sibling && p1->_child == p2->_child && p1->_data == p2->_data) {
-                    return true;
+                bool result = true;
+                if (p1->_data!=p2->_data) return false;
+                if (p1->_sibling!=nullptr) {
+                    result = is_equal(p1->_sibling, p2->_sibling);
+                } 
+                if (p1->_child!=nullptr) {
+                    result = is_equal(p1->_child, p2->_child);
                 }
                 return false;
             };
