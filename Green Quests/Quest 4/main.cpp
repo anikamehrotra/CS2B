@@ -12,21 +12,38 @@ class Tests {
 };
 
 int main() {
-    Tree tree;
+    Tree treeFromStrings;
     std::vector<std::string> names = { "AABA", "ABAB", "ABBA", "BABA", "COBO", "COCO", "CODO", "COFO", "COGO", "COHO", "COJO", "COKO", "DIBI", "DIDI", "DIFI", "DIGI", "DIHI", "DIJI", "DIKI", "DILI" };
-    tree.make_special_config_1(names);
-    cout << tree.to_string() << endl;
-    string treeString = tree.to_string();
+    treeFromStrings.make_special_config_1(names);
+    cout << treeFromStrings.to_string() << endl;
+    string sTreefromStrings = treeFromStrings.to_string();
 
-    Tree tree2;
-    tree2.make_special_config_1(names);
-    cout << (tree == tree2) << endl;
+    Tree treeFromStringsAgain;
+    treeFromStringsAgain.make_special_config_1(names);
+    cout << (treeFromStrings == treeFromStringsAgain) << endl;
 
-    Tree tree3(tree);
+    Tree treeFromDeepCopy(treeFromStrings);
     // tree3 = tree;
-    cout << tree3.to_string() << endl;
-    cout << (tree == tree3) << endl;
-    string treeString3 = tree3.to_string();
+    cout << treeFromDeepCopy.to_string() << endl;
+    cout << (treeFromStrings == treeFromDeepCopy) << endl;
+    string sTreeFromDeepCopy = treeFromDeepCopy.to_string();
 
-    cout << "treeString == treeString3: " << (treeString == treeString3) << endl;
+    cout << "sTreefromStrings == sTreeFromDeepCopy: " << (sTreefromStrings == sTreeFromDeepCopy) << endl;
+
+    Tree treeFromDeepCopyEquals;
+    std::vector<std::string> namesDifferent = { "aaba", "abab", "abba", "baba", "cobo", "coco", "codo", "cofo", "cogo", "coho", "cojo", "coko", "dibi", "didi", "difi", "digi", "dihi", "diji", "diki", "dili" };
+
+    treeFromDeepCopyEquals.make_special_config_1(namesDifferent);
+    cout << treeFromDeepCopyEquals.to_string() << endl;
+    cout << (treeFromStrings == treeFromDeepCopyEquals) << endl;
+    string sTreeFromDeepCopyEquals = treeFromDeepCopyEquals.to_string();
+    treeFromDeepCopyEquals = treeFromStrings;
+    cout << "sTreefromStrings == sTreeFromDeepCopyEquals: " << (sTreefromStrings == sTreeFromDeepCopyEquals) << endl;    
+
+    // tree3 = tree;
+    cout << treeFromDeepCopyEquals.to_string() << endl;
+    cout << (treeFromStrings == treeFromDeepCopyEquals) << endl;
+    sTreeFromDeepCopyEquals = treeFromDeepCopyEquals.to_string();
+
+    cout << "sTreefromStrings == sTreeFromDeepCopyEquals: " << (sTreefromStrings == sTreeFromDeepCopyEquals) << endl;    
 }

@@ -29,7 +29,10 @@ class Tree
                 return true;
             };
             Node(std::string s = "") { _data = s; _sibling = nullptr; _child = nullptr;};                           // TODO
-            Node(const Node& that) {*this = that;};                            // TODO
+            Node(const Node& that) {
+                if (this == &that) {return;}
+                *this = that; 
+            };                            // TODO
             const Node &operator=(const Node &that) {
                 if (this != &that) {
                     /*
