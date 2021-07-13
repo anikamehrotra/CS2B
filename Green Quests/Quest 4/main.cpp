@@ -18,6 +18,6 @@ int main() {
     cout << tree.to_string() << endl;
 
     Tree tree2;
-    tree2.make_special_config_1(names);
+    tree2 = tree;
     cout << (tree == tree2) << endl;
 }
