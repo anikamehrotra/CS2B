@@ -36,10 +36,8 @@ class Tree
                 
                    std::string new_data = that._data;
                    set_data(new_data);
-                   _sibling = new Node();
-                   *_sibling = *that._sibling;
-                   _child = new Node();
-                   *_child = *that._child;
+                   _sibling = new Node(*that._sibling);
+                   _child = new Node(*that._child);
                 }
                 return *this;
             };           // Deep clone
