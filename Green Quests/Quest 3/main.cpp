@@ -230,6 +230,6 @@ int main()
   cout << a.generation_to_string({1},1) << endl;
 */
   Automaton b(1,3);
-  cout << b.get_first_n_generations(10, 11) << endl;
+  cout << b.get_first_n_generations(10, 13) << endl;
 }
 
