@@ -28,9 +28,14 @@ class Tree
             Node(const Node& that) {*this = that;};                            // TODO
             const Node &operator=(const Node &that) {
                 if (this != &that) {
+                    /*
                     _data = that._data;
                     _sibling = that._sibling;
                     _child = that._child;
+                    */
+                   set_data(that._data);
+                   insert_sibling(that._sibling);
+                   insert_child(that._child);
                 }
                 return *this;
             };           // Deep clone
