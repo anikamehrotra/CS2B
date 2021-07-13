@@ -76,6 +76,6 @@ You can keep going. Or enter the next quest. Or both.
 
 Hooray, Hooray. Merry Mynahs show the way.
 
-Alas! Your cache was different from mine after running 2 discs.
+Hooray! 8 Leaf Cloverfields as far as eye could see (lookup cache).
 
 */
