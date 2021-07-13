@@ -22,8 +22,9 @@ Tree::~Tree() {
 
 Tree& Tree::operator=(const Tree &that) {
     if (this == &that) {return *this;}
-    if (_root != nullptr) {_root = new Node(*that._root);}
-    else {_root = nullptr;}
+    //_root = new Node("ROOT");
+    _root = new Node(*that._root);
+    // else {_root = nullptr;}
     return *this;
 }
 
