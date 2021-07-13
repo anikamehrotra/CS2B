@@ -33,7 +33,9 @@ int main() {
     Tree treeFromDeepCopyEquals;
     std::vector<std::string> namesDifferent = { "aaba", "abab", "abba", "baba", "cobo", "coco", "codo", "cofo", "cogo", "coho", "cojo", "coko", "dibi", "didi", "difi", "digi", "dihi", "diji", "diki", "dili" };
 
-    treeFromDeepCopyEquals.make_special_config_1(namesDifferent);
+    //treeFromDeepCopyEquals.make_special_config_1(namesDifferent);
+    treeFromDeepCopyEquals.make_special_config_2();
+
     cout << treeFromDeepCopyEquals.to_string() << endl;
     cout << (treeFromStrings == treeFromDeepCopyEquals) << endl;
     string sTreeFromDeepCopyEquals = treeFromDeepCopyEquals.to_string();
