@@ -22,8 +22,8 @@ int main() {
     tree2.make_special_config_1(names);
     cout << (tree == tree2) << endl;
 
-    Tree tree3;
-    tree3 = tree;
+    Tree tree3(tree);
+    // tree3 = tree;
     cout << tree3.to_string() << endl;
     cout << (tree == tree3) << endl;
     string treeString3 = tree3.to_string();
