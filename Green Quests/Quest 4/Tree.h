@@ -97,7 +97,9 @@ class Tree
                 
                 return s;
             };
-            bool operator==(const Node &that) const {return is_equal(this, &that);};
+            bool operator==(const Node &that) const {
+                return is_equal(this, &that);
+                };
             bool operator!=(const Node &that) const {return !is_equal(this, &that);};
         };
         Node *_root;
