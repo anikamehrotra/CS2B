@@ -188,31 +188,5 @@ You can keep going. Or enter the next quest. Or both.
 
 Hooray, krazy the koala knows where to go nowhere to go.
 
-Alas! Aut(1,3).get_first_n...(n:10,wid:11) gave us different results.
-You said:
-***********
-***********
-***********
-***********
-***********
-***********
-***********
-***********
-***********
-***********
-
-But I expected:
-     *     
-***********
-***********
-***********
-***********
-***********
-***********
-***********
-***********
-***********
-
-Auto da yours: { valid = 1, num_parents = 1, extreme = 1, rules = [ 1 1 ] }
-Auto da mines: { valid = 1, num_parents = 1, extreme = 1, rules = [ 1 1 ] }
+Hooray! 3 Dreams show N hyperquadrants that partition the way out (get first n gens)
 */
