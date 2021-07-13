@@ -20,12 +20,12 @@ std::string Hanoi::lookup_moves(int num_discs, int src, int dst) {
     return _cache[st_num_discs][st_src][st_dst];
 }
 
-/*
+
 void Hanoi::store_moves(int num_discs, int src, int dst, string s) {
 
     _cache[num_discs][src][dst] = s;
 }
-*/
+
 
 std::string Hanoi::get_moves(int num_discs, int src, int dst, int tmp) {
     std::string s = lookup_moves(num_discs, src, dst);
@@ -40,7 +40,8 @@ std::string Hanoi::get_moves(int num_discs, int src, int dst, int tmp) {
             get_moves(num_discs-1, tmp, dst, src);
         //store_moves(num_discs, src, dst, s);
     }
-    _cache[num_discs][src][dst] = s;
+    //_cache[num_discs][src][dst] = s;
+    store_moves(num_discs, src, dst, s);
     return s;
 }
 
