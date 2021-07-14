@@ -1,7 +1,7 @@
 // Student ID: 20480681
 
-#ifndef Automaton_h
-#define Automaton_h
+#ifndef Complex_h
+#define Complex_h
 
 #include <iostream>
 #include <sstream>
@@ -62,4 +62,4 @@ class Complex {
         
 };
 
-#endif /* Automaton_h */
+#endif /* Complex_h */
