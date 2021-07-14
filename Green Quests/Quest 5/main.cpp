@@ -8,8 +8,15 @@
 using namespace std;
 
 class Tests {
-    int complex_test(Complex& c, bool b_expectedResult, Complex& c_expectedResult) {
+    int complex_test(Complex& c, Complex& c2, bool b_expectedResult, Complex& c_expectedResult) {
+        bool b_result = c == c2;
+        cout << "c == c2: " << b_result << endl;
         
+        b_result = c != c2;
+        cout << "c != c2: " << b_result << endl;
+
+        b_result = c < c2;
+        cout << "c < c2: " << b_result << endl;
     }
 };
 
