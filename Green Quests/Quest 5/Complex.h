@@ -28,7 +28,9 @@ class Complex {
         void set_real(double re) { _real = re; }
         void set_imag(double im) { _imag = im; }
 
-        string to_string() const;
+        string to_string() const {
+            
+        };
         double norm_squared() const { return _real * _real + _imag * _imag;}; 
         double norm() const { return sqrt(norm_squared()); }
 
