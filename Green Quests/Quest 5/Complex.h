@@ -28,7 +28,7 @@ class Complex {
         void set_imag(double im) { _imag = im; }
 
         string to_string() const {
-            char* buffer;
+            char buffer[50];
             sprintf(buffer, "(%.11g,%.11g)", _real, _imag);
             return string(buffer);
         };
@@ -39,7 +39,7 @@ class Complex {
             if (norm_squared() <= Complex::FLOOR) {throw Div_By_Zero_Exception();};
             return Complex(_real / norm_squared(), -_imag / norm_squared());
         };
-        Complex& operator= (const Complex & rhs);
+        Complex& operator= (const Complex & rhs) {*this = rhs; return *this;};
 
         class Div_By_Zero_Exception {
             public:

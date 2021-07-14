@@ -8,7 +8,9 @@
 using namespace std;
 
 class Tests {
-
+    int complex_test(Complex& c, bool b_expectedResult, Complex& c_expectedResult) {
+        
+    }
 };
 
 int main() {
