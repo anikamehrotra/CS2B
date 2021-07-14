@@ -17,6 +17,21 @@ class Tests {
 
         b_result = c < c2;
         cout << "c < c2: " << b_result << endl;
+
+        cout << "c.get_real(): " << c.get_real() << endl;
+        cout << "c.get_imag(): " << c.get_imag() << endl;
+
+        c.set_real(c.get_real() + 1);
+        c.set_imag(c.get_imag() + 1);
+        cout << "c.get_real(): " << c.get_real() << endl;
+        cout << "c.get_imag(): " << c.get_imag() << endl;
+
+        cout << c.to_string() << endl;
+
+        cout << "c.norm(): " << c.norm() << endl;
+        cout << "c.norm_squared(): " << c.norm_squared() << endl;
+
+        cout << "c.reciprocal(): " << c.reciprocal().to_string() << endl;
     }
 };
 
