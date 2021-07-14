@@ -8,6 +8,7 @@
 using namespace std;
 
 class Tests {
+    public:
     int complex_test(Complex& c, Complex& c2, bool b_expectedResult, Complex& c_expectedResult) {
         bool b_result = c == c2;
         cout << "c == c2: " << b_result << endl;
@@ -37,9 +38,17 @@ class Tests {
         cout << "c - c2: " << (c-c2).to_string() << endl;
         cout << "c * c2: " << (c*c2).to_string() << endl;
         cout << "c / c2: " << (c/c2).to_string() << endl;
+
+        c = c2;
+        cout << "c = c2: c = " << c.to_string() << ", c2 = " <<  c2.to_string() << endl;
+
     }
 };
 
 int main() {
+    Complex c(1,1);
+    Complex c2(3,2);
 
+    Tests t;
+    t.complex_test(c, c2, true, Complex(2,2));
 }
