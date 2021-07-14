@@ -8,6 +8,7 @@
 #include <ostream>
 #include <string>
 #include <vector>
+#include <cmath>
 
 using namespace std;
 
@@ -18,10 +19,8 @@ class Complex {
     public:
         static constexpr double FLOOR = 1e-10; // Threshold
         Complex (double re = 0.0, double im = 0.0) : _real(re), _imag(im) {
-            if (re != NULL) {set_real(re);}
-            else {set_real(0.0);}
-            if (im != NULL) {set_imag(im);}
-            else {set_imag(0.0);}
+            set_real(re);
+            set_imag(im);
         };
         double get_real() const { return _real; }
         double get_imag() const { return _imag; }
@@ -37,12 +36,12 @@ class Complex {
         double norm() const { return sqrt(norm_squared()); }
 
         Complex reciprocal() const {
-            if (norm_squared() <= Complex::FLOOR) {throw Div_By_Zero_Execption();};
+            if (norm_squared() <= Complex::FLOOR) {throw Div_By_Zero_Exception();};
             return Complex(_real / norm_squared(), -_imag / norm_squared());
         };
         Complex& operator= (const Complex & rhs);
 
-        class Div_By_Zero_Execption {
+        class Div_By_Zero_Exception {
             public:
                 string to_string() const {return "Divide by zero exception";};
                 string what() const {return "Divide by zero exception";};
