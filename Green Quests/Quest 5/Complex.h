@@ -48,7 +48,7 @@ class Complex {
         Complex operator+ (const Complex & that) const {return Complex(_real + that._real, _imag + that._imag);};
         Complex operator- (const Complex & that) const {return Complex(_real - that._real, _imag - that._imag);};
         Complex operator* (const Complex & that) const {return Complex(_real * that._real - _imag * that._imag, _real * that._imag + _imag * that._real);};
-        Complex operator/ (const Complex & that) const {if (that.norm_squared() <= FLOOR) {throw Div_By_Zero_Execption();} return *this * that.reciprocal();};
+        Complex operator/ (const Complex & that) const {return *this * that.reciprocal();};
 
         bool operator==(const Complex & that) const {if (_real == that._real && _imag == that._imag) return true; else return false; };
         bool operator!=(const Complex & that) const { return !(*this == that);};
