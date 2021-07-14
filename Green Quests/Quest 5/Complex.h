@@ -29,7 +29,9 @@ class Complex {
         void set_imag(double im) { _imag = im; }
 
         string to_string() const {
-            
+            char* buffer;
+            sprintf(buffer, "(%.11g,%.11g)", _real, _imag);
+            return string(buffer);
         };
         double norm_squared() const { return _real * _real + _imag * _imag;}; 
         double norm() const { return sqrt(norm_squared()); }
@@ -56,7 +58,7 @@ class Complex {
         bool operator!=(const Complex & that) const { return !(*this == that);};
         bool operator<(const Complex & that) const { return norm() < that.norm();};
 
-        friend ostream& operator<< (ostream& os, const Complex& x);
+        friend ostream& operator<< (ostream& os, const Complex& x) {return os << x.to_string();};
         friend class Tests;
         
 };
