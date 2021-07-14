@@ -32,6 +32,11 @@ class Tests {
         cout << "c.norm_squared(): " << c.norm_squared() << endl;
 
         cout << "c.reciprocal(): " << c.reciprocal().to_string() << endl;
+
+        cout << "c + c2: " << (c+c2).to_string() << endl;
+        cout << "c - c2: " << (c-c2).to_string() << endl;
+        cout << "c * c2: " << (c*c2).to_string() << endl;
+        cout << "c / c2: " << (c/c2).to_string() << endl;
     }
 };
 
