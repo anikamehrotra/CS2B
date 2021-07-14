@@ -9,7 +9,7 @@ using namespace std;
 
 class Tests {
     public:
-    int complex_test(Complex& c, Complex& c2, bool b_expectedResult, Complex& c_expectedResult) {
+    void complex_test(Complex& c, Complex& c2, bool b_expectedResult, Complex& c_expectedResult) {
         bool b_result = c == c2;
         cout << "c == c2: " << b_result << endl;
         
@@ -41,7 +41,6 @@ class Tests {
 
         c = c2;
         cout << "c = c2: c = " << c.to_string() << ", c2 = " <<  c2.to_string() << endl;
-
     }
 };
 

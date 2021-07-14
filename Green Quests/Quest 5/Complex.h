@@ -39,7 +39,7 @@ class Complex {
             if (norm_squared() <= Complex::FLOOR) {throw Div_By_Zero_Exception();};
             return Complex(_real / norm_squared(), -_imag / norm_squared());
         };
-        Complex& operator= (const Complex & rhs) {*this = rhs; return *this;};
+        Complex& operator= (const Complex & rhs) {set_real(rhs.get_real()); set_imag(rhs.get_imag()); return *this;};
 
         class Div_By_Zero_Exception {
             public:
