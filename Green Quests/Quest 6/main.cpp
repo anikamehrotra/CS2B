@@ -33,7 +33,7 @@ class Tests {
 int main() {
     Tests t;
     string output;
-
+/*
     t.test_fill_screen(new Screen(3, 3), 'c', "ccc\nccc\nccc\n");
     t.test_fill_screen(new Screen(2, 1), 'c', "cc\n");
     t.test_fill_screen(new Screen(1, 2), 'c', "c\nc\n");
@@ -41,9 +41,10 @@ int main() {
     t.test_fill_screen(new Screen(0, 0), 'c', "");
 //  t.test_fill_screen(new Screen(0, -1), 'c', "");
     t.test_draw_point(new Screen(3, 3), 2, 0, 'c', "...\n...\n..c\n");
-
-    Screen s(20, 40);
-    Stick_Man m;
+*/
+    Screen s(100, 100);
+    Stick_Man m(0, 0, 100, 100);
+    s.clear();
     m.draw(s, '*');
     cout << s.to_string();
 /*  
