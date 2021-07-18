@@ -41,6 +41,7 @@ int main() {
     t.test_fill_screen(new Screen(0, 0), 'c', "");
 //  t.test_fill_screen(new Screen(0, -1), 'c', "");
     t.test_draw_point(new Screen(3, 3), 2, 0, 'c', "c..\n...\n...\n");
+    t.test_draw_point(new Screen(3, 3), 4, 1, 'c', "c..\n...\n...\n");
 
 
 /*
