@@ -20,5 +20,5 @@ int main() {
     Tests t;
     Screen s(4, 4);
     s.fill('c');
-    s.to_string();
+    cout << s.to_string();
 }
