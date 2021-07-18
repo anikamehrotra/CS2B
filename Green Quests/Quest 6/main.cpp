@@ -18,7 +18,7 @@ class Tests {
 
 int main() {
     Tests t;
-    Screen s(4, 4);
+    Screen s(3, 3);
     s.fill('c');
     cout << s.to_string();
 }
