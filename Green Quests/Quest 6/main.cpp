@@ -40,7 +40,7 @@ int main() {
     t.test_fill_screen(new Screen(1, 1), 'c', "c\n");
     t.test_fill_screen(new Screen(0, 0), 'c', "");
 //  t.test_fill_screen(new Screen(0, -1), 'c', "");
-    t.test_draw_point(new Screen(3, 3), 0, 0, 'c', "c  \n   \n   \n");
+    t.test_draw_point(new Screen(3, 3), 0, 0, 'c', "  \n   \nc   \n");
 
 
 /*
