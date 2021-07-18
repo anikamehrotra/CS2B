@@ -40,10 +40,13 @@ int main() {
     t.test_fill_screen(new Screen(1, 1), 'c', "c\n");
     t.test_fill_screen(new Screen(0, 0), 'c', "");
 //  t.test_fill_screen(new Screen(0, -1), 'c', "");
-    t.test_draw_point(new Screen(3, 3), 2, 0, 'c', "c..\n...\n...\n");
+    t.test_draw_point(new Screen(3, 3), 2, 0, 'c', "...\n...\n..c\n");
 
-
-/*
+    Screen s(20, 40);
+    Stick_Man m;
+    m.draw(s, '*');
+    cout << s.to_string();
+/*  
     s = new Screen(0, 0); s->fill('c'); output = s->to_string();
     assert(output == ""); 
     cout << output << endl;
