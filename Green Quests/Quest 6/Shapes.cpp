@@ -108,4 +108,14 @@ bool Quadrilateral::draw(Screen &scr, char ch) {
     return true;
 }
 
+Stick_Man::Stick_Man(size_t x, size_t y, size_t w, size_t h) {
+    if (h == 0 || h == 1) {_h = DEFAULT_H;}
+    Upright_Rectangle head(x+0, y+h/2, x+w-1, y+h-1);
+    Line torso(x+w/2, y+h/2, x+w/2, y+h/4);
+    Line LArm(x+w/2, y+h/2, x+w/4, y+h/4);
+    Line RArm(x+w/2, y+h/2, x+3*w/4, y+h/4);
+    Line LLeg(x+w/2, y+h/4, x, y);
+    Line RLeg(x+w/2, y+h/4, x+w-1, y);
+}
+
 using namespace std;
