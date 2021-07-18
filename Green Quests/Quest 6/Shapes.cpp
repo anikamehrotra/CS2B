@@ -9,6 +9,7 @@
 #include "Shapes.h"
 
 Screen::Screen(size_t w, size_t h) {
+    if (w < 1 || h < 1) {return;}
     _pix.resize(h);
     for (size_t i = 0; i < h; i++) {
         _pix[i].resize(w);
