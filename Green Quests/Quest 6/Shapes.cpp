@@ -110,18 +110,18 @@ bool Quadrilateral::draw(Screen &scr, char ch) {
 
 Stick_Man::Stick_Man(size_t x, size_t y, size_t w, size_t h) {
     _parts.clear();
-    if (h == 0 || h == 1) {_h = DEFAULT_H;}
-    if (w == 0 || w == 1) {_w = DEFAULT_W;}
     _x = x;
     _y = y;
     _w = w;
     _h = h;
-    _parts.push_back(new Upright_Rectangle(x+0, y+h/2, x+w-1, y+h-1));
-    _parts.push_back(new Line(x+w/2, y+h/2, x+w/2,   y+h/4));
-    _parts.push_back(new Line(x+w/2, y+h/2, x+w/4,   y+h/4));
-    _parts.push_back(new Line(x+w/2, y+h/2, x+3*w/4, y+h/4));
-    _parts.push_back(new Line(x+w/2, y+h/4, x,       y));
-    _parts.push_back(new Line(x+w/2, y+h/4, x+w-1,   y));
+    if (h == 0 || h == 1) {_h = DEFAULT_H;}
+    if (w == 0 || w == 1) {_w = DEFAULT_W;}
+    _parts.push_back(new Upright_Rectangle(_x+0, _y+_h/2, _x+_w-1, _y+_h-1));
+    _parts.push_back(new Line(_x+_w/2, _y+_h/2, _x+_w/2,   _y+_h/4));
+    _parts.push_back(new Line(_x+_w/2, _y+_h/2, _x+_w/4,   _y+_h/4));
+    _parts.push_back(new Line(_x+_w/2, _y+_h/2, _x+3*_w/4, _y+_h/4));
+    _parts.push_back(new Line(_x+_w/2, _y+_h/4, _x,        _y));
+    _parts.push_back(new Line(_x+_w/2, _y+_h/4, _x+_w-1,   _y));
 }
 
 Stick_Man::~Stick_Man() {
