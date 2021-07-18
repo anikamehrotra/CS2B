@@ -32,7 +32,7 @@ class Screen {
 
         size_t get_w() const { return _w; }
         size_t get_h() const { return _h; }
-        vector<vector<char> > get_pix() { return _pix; }
+        vector<vector<char> >& get_pix() { return _pix; }
 
         void set_w(size_t w) {_w = w;}
         void set_h(size_t h) {_h = h;}
