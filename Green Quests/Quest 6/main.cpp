@@ -11,7 +11,6 @@ class Tests {
     public:
         void test_to_string(Screen& s, char c) {
             s.fill(c);
-
             s.to_string();
         } 
 };
