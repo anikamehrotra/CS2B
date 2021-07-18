@@ -10,7 +10,11 @@
 
 Screen::Screen(size_t w, size_t h) {
     _pix.resize(h);
-    _pix[h].resize(w);
+    for (size_t i = 0; i < h; i++) {
+        _pix[i].resize(w);
+    }
+    _w = w;
+    _h = h;
 }
 
 void Screen::fill(char c) {
