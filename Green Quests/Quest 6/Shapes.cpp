@@ -87,10 +87,24 @@ double Line::get_slope(size_t x1, size_t y1, size_t x2, size_t y2) {
 }
 
 bool Line::draw(Screen &scr, char ch) {
-    if (get_height_of_line(_x1, _y1, _x2, _y2) <= 0 || get_width_of_line(_x1, _y1, _x2, _y2) <= 0) {return false;}
+    // if (get_height_of_line(_x1, _y1, _x2, _y2) <= 0 || get_width_of_line(_x1, _y1, _x2, _y2) <= 0) {return false;}
     if (get_height_of_line(_x1, _y1, _x2, _y2) > get_width_of_line(_x1, _y1, _x2, _y2)) 
         {draw_by_y(scr, ch, _x1, _y1, _x2, _y2);} 
     else {draw_by_x(scr, ch, _x1, _y1, _x2, _y2);}
+    return true;
+}
+
+bool Quadrilateral::draw(Screen &scr, char ch) {
+    Line top(_x2, _y2, _x3, _y3);
+    Line left(_x1, _y1, _x2, _y2);
+    Line right(_x3, _y3, _x4, _y4);
+    Line bottom(_x4, _y4, _x1, _y1);
+
+    top.draw(scr, ch);
+    left.draw(scr, ch);
+    right.draw(scr, ch);
+    bottom.draw(scr, ch);
+
     return true;
 }
 
