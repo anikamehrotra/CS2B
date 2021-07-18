@@ -24,7 +24,7 @@ class Tests {
 
         void test_draw_point(Screen *s, int x, int y, char c, string expectedOutput) {
             Point p(x, y);
-            s->fill(' ');
+            s->fill('.');
             p.draw(*s, c);
             test_to_string(s, expectedOutput);
         }
@@ -40,7 +40,7 @@ int main() {
     t.test_fill_screen(new Screen(1, 1), 'c', "c\n");
     t.test_fill_screen(new Screen(0, 0), 'c', "");
 //  t.test_fill_screen(new Screen(0, -1), 'c', "");
-    t.test_draw_point(new Screen(3, 3), 0, 0, 'c', "  \n   \nc   \n");
+    t.test_draw_point(new Screen(3, 3), 2, 0, 'c', "c..\n...\n...\n");
 
 
 /*
