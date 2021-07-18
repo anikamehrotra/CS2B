@@ -25,7 +25,8 @@ class Screen {
         size_t _w, _h;
         vector<vector<char> > _pix;
     public:
-        static const char FG = "*", BG = ".";
+        static const char FG = '*';
+        static const char BG = '.';
 
         Screen(size_t w, size_t h);
 
