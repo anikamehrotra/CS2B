@@ -43,6 +43,9 @@ bool Point::draw(Screen &screen, char c) {
     return true;
 }
 
+// Draw pizels on the screen along the X direction, using the supplied
+// char (ch) as the pixel. The number of segments will be abs(y2-y1).
+// Each segment will be abs(x2-x1)/abs(y2-y1) pixels long.
 static bool draw_by_x(Screen &scr, char ch, size_t x1, size_t y1, size_t x2, size_t y2) {
     if (x1 > x2) return draw_by_x(scr, ch, x2, y2, x1, y1); //reorder
     double dy = ((double) y2-y1)/((double) x2-x1);
@@ -56,7 +59,15 @@ static bool draw_by_x(Screen &scr, char ch, size_t x1, size_t y1, size_t x2, siz
     return contained;
 }
 static bool draw_by_y(Screen &scr, char ch, size_t x1, size_t y1, size_t x2, size_t y2) {
-    
+    if (y1 > y2) return draw_by_y(scr, ch, x2, y2, x1, y1); //reorder)
+    double dx = ((double) x2-x1)/((double) y2-y1);
+    bool contained = true;
+    double x = x1, y = y1;
+    while (y <= y2) {
+        contained &= Point((size_t) x, (size_t) y).draw(scr, ch);
+        x += dx;
+        y++;
+    }
 }
 
 using namespace std;
