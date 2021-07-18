@@ -43,7 +43,7 @@ int main() {
     t.test_draw_point(new Screen(3, 3), 2, 0, 'c', "...\n...\n..c\n");
 */
     Screen s(100, 100);
-    Stick_Man m(0, 0, 100, 100);
+    Stick_Man m(59, 39, 0, 1);
     s.clear();
     m.draw(s, '*');
     cout << s.to_string();
