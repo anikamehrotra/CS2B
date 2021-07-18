@@ -109,13 +109,32 @@ bool Quadrilateral::draw(Screen &scr, char ch) {
 }
 
 Stick_Man::Stick_Man(size_t x, size_t y, size_t w, size_t h) {
+    _parts.clear();
     if (h == 0 || h == 1) {_h = DEFAULT_H;}
-    Upright_Rectangle head(x+0, y+h/2, x+w-1, y+h-1);
-    Line torso(x+w/2, y+h/2, x+w/2, y+h/4);
-    Line LArm(x+w/2, y+h/2, x+w/4, y+h/4);
-    Line RArm(x+w/2, y+h/2, x+3*w/4, y+h/4);
-    Line LLeg(x+w/2, y+h/4, x, y);
-    Line RLeg(x+w/2, y+h/4, x+w-1, y);
+    if (w == 0 || w == 1) {_w = DEFAULT_W;}
+    _x = x;
+    _y = y;
+    _w = w;
+    _h = h;
+    _parts.push_back(new Upright_Rectangle(x+0, y+h/2, x+w-1, y+h-1));
+    _parts.push_back(new Line(x+w/2, y+h/2, x+w/2,   y+h/4));
+    _parts.push_back(new Line(x+w/2, y+h/2, x+w/4,   y+h/4));
+    _parts.push_back(new Line(x+w/2, y+h/2, x+3*w/4, y+h/4));
+    _parts.push_back(new Line(x+w/2, y+h/4, x,       y));
+    _parts.push_back(new Line(x+w/2, y+h/4, x+w-1,   y));
+}
+
+Stick_Man::~Stick_Man() {
+    for (size_t i = 0; i < _parts.size(); i++) {
+        delete _parts[i];
+    }
+}
+
+bool Stick_Man::draw(Screen &scr, char ch) {
+    for (size_t i = 0; i < _parts.size(); i++) {
+        _parts[i]->draw(scr, ch);
+    }
+    return true;
 }
 
 using namespace std;
