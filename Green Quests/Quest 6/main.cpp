@@ -18,7 +18,7 @@ class Tests {
 
 int main() {
     Tests t;
-    Screen s(10, 10);
+    Screen s(4, 4);
     s.fill('c');
     s.to_string();
 }
