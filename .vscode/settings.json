@@ -48,7 +48,8 @@
         "xmemory": "cpp",
         "xstddef": "cpp",
         "xstring": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "complex": "cpp"
     },
     "gitdoc.enabled": true
 }
