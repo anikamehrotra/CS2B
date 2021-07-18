@@ -71,7 +71,10 @@ static bool draw_by_y(Screen &scr, char ch, size_t x1, size_t y1, size_t x2, siz
 }
 
 bool Line::draw(Screen &scr, char ch = Screen::FG) {
-    
+    if (_x2 - _x1 > _y2 - _y1) {
+        
+    }
+
 }
 
 using namespace std;
