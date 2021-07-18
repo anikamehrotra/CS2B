@@ -39,7 +39,8 @@ string Screen::to_string() const {
 
 bool Point::draw(Screen &screen, char c) {
     if (_x < 0 || _x >= screen.get_w() || _y < 0 || _y >= screen.get_h()) {return false;}
-    screen.get_pix()[_x][_y] = c;
+    vector<vector<char> > pix = screen.get_pix();
+    pix[_x][_y] = c;
     return true;
 }
 
