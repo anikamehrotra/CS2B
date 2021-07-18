@@ -36,4 +36,8 @@ string Screen::to_string() const {
     return s;
 }
 
+bool Point::draw(Screen &screen, char c) {
+    
+}
+
 using namespace std;
