@@ -27,7 +27,11 @@ void Screen::clear() {
 
 string Screen::to_string() const {
     string s;
-    
+    for (size_t i = 0; i < _pix.size(); i++) {
+        for (size_t j = 0; j < _pix[i].size(); j++) {
+            s += _pix[i][j];
+        }
+    }
 }
 
 using namespace std;
