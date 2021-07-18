@@ -21,10 +21,6 @@ void Screen::fill(char c) {
     }
 }
 
-void Screen::clear() {
-    fill(Screen::BG);
-}
-
 string Screen::to_string() const {
     string s;
     for (size_t i = _h-1; i >= 0; i--) {

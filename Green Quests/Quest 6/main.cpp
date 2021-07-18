@@ -3,8 +3,8 @@
 #include <vector>
 #include <string>
 
-#include "Shapes.cpp"
 #include "Shapes.h"
+#include "Shapes.cpp"
 using namespace std;
 
 class Tests {
