@@ -21,6 +21,12 @@ class Tests {
             assert(output == expectedOutput);
             cout << expectedOutput << endl;
         } 
+
+        void test_draw_point(Screen *s, int x, int y, char c, string expectedOutput) {
+            Point p(x, y);
+            p.draw(*s, c);
+            test_to_string(s, expectedOutput);
+        }
 };
 
 int main() {
