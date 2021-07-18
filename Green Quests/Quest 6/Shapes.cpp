@@ -5,6 +5,7 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <cmath>
 
 #include "Shapes.h"
 
@@ -68,13 +69,29 @@ static bool draw_by_y(Screen &scr, char ch, size_t x1, size_t y1, size_t x2, siz
         x += dx;
         y++;
     }
+    return contained;
 }
 
-bool Line::draw(Screen &scr, char ch = Screen::FG) {
-    if (_x2 - _x1 > _y2 - _y1) {
-        
-    }
+size_t Line::get_height_of_line(size_t x1, size_t y1, size_t x2, size_t y2) {
+    int height = y2 - y1; 
+    return (size_t) abs(height);
+}
 
+size_t Line::get_width_of_line(size_t x1, size_t y1, size_t x2, size_t y2) {
+    int width = x2 - x1;
+    return (size_t) abs(width);
+}
+
+double Line::get_slope(size_t x1, size_t y1, size_t x2, size_t y2) {
+    return (double) (y2 - y1) / (double) (x2 - x1);
+}
+
+bool Line::draw(Screen &scr, char ch) {
+    if (get_height_of_line(_x1, _y1, _x2, _y2) <= 0 || get_width_of_line(_x1, _y1, _x2, _y2) <= 0) {return false;}
+    if (get_height_of_line(_x1, _y1, _x2, _y2) > get_width_of_line(_x1, _y1, _x2, _y2)) 
+        {draw_by_y(scr, ch, _x1, _y1, _x2, _y2);} 
+    else {draw_by_x(scr, ch, _x1, _y1, _x2, _y2);}
+    return true;
 }
 
 using namespace std;

@@ -83,6 +83,10 @@ class Line : public Shape {
         static bool draw_by_x(Screen &scr, char ch, size_t x1, size_t y1, size_t x2, size_t y2);
         static bool draw_by_y(Screen &scr, char ch, size_t x1, size_t y1, size_t x2, size_t y2);
 
+        size_t get_height_of_line(size_t x1, size_t y1, size_t x2, size_t y2);
+        size_t get_width_of_line(size_t x1, size_t y1, size_t x2, size_t y2);
+        double get_slope(size_t x1, size_t y1, size_t x2, size_t y2);
+
     public:
         Line(size_t a, size_t b, size_t c, size_t d): _x1(a), _y1(b), _x2(c), _y2(d) {};
         virtual ~Line() {};
