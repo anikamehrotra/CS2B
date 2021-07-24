@@ -94,6 +94,8 @@ template <typename T> void Queue<T>::resize(size_t size) {
         i++;
     }
     _data = temp._data;
+    _head = temp._head;
+    _tail = temp._tail;
 
 }
 
