@@ -57,4 +57,5 @@ template <typename T> string Queue<T>::to_string(size_t lim) const {
         s += "...";
     }
     s += "\n";
-    }
+    return s;
+}

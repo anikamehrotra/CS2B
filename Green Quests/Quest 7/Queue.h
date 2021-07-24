@@ -32,7 +32,10 @@ public:
     size_t size() const {return _data.size();}
     void resize(size_t size);
 
-    const T &peek() const {if (is_empty() {return _sentinel;} return _data[_head];}
+    const T &peek() const {
+        if (is_empty() {return _sentinel;} 
+        return _data[_head];
+    }
     bool dequeue();
     bool enqueue(const T &elem);
 
