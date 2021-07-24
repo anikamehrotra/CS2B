@@ -94,16 +94,16 @@ template <typename T> void Queue<T>::resize(size_t size) {
 template <typename T> string Queue<T>::to_string(size_t lim) const {
     string s = "";
     s += "# Queue - size = ";
-    s += _data.size() + "\n";
+    s += to_string(_data.size()) + "\n";
     s += "data : ";
     if (lim >= _data.size()) {
         for (size_t i = 0; i < _data.size(); i++) {
-            s += _data[i] + " ";
+            s += to_string(_data[i]) + " ";
         }
     }
     else if (lim < _data.size()) {
         for (size_t i = 0; i < lim; i++) {
-            s += _data[i] + " ";
+            s += to_string(_data[i]) + " ";
         }
         s += "...";
     }
