@@ -28,3 +28,6 @@ template <typename T> bool Queue<T>::dequeue() {
     return false;
 }
 
+template <typename T> void Queue<T>::resize(size_t size) {
+    
+}
