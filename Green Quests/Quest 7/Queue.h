@@ -87,9 +87,9 @@ template <typename T> bool Queue<T>::dequeue() {
 
 template <typename T> void Queue<T>::resize(size_t size) {
     Queue <T> temp(size);
-    size_t i = 0;
+    size_t i = _head;
     while (!is_empty()) {
-        temp.enqueue(_data[i]);
+        temp.enqueue(_data[i % _data.size()]);
         dequeue();
         i++;
     }
