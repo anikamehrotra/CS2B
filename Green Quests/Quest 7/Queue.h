@@ -33,7 +33,7 @@ public:
     void resize(size_t size);
 
     const T &peek() const {
-        if (is_empty() {return _sentinel;} 
+        if (is_empty()) {return _sentinel;} 
         return _data[_head];
     }
     bool dequeue();
