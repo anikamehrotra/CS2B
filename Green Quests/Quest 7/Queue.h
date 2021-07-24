@@ -28,7 +28,7 @@ public:
     bool is_empty() const;
     size_t size() const;
     void resize(size_t size);
-    const T &peek() const;
+    const T &peek() const {return _data[_head];}
     bool dequeue();
     bool enqueue(const T &elem);
     std::string to_string(size_t limit = MAX_DISP_ELEMS) const;
@@ -39,7 +39,9 @@ T Queue<T>::_sentinel = T();
 template <typename T>
 Queue<T>::Queue(size_t size)
 {
-    // TODO
+    _data.resize(size);
+    _head = 0;
+    _tail = 0;
 }
 // TODO - Fill in the missing implementations. Experiment with the aesthetics by moving
 // some of these implementations inline (into your class def above). See which gives
