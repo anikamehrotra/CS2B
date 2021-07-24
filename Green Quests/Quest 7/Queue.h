@@ -12,9 +12,7 @@
 
 using namespace std;
 
-template <typename T>
-class Queue
-{
+template <typename T> class Queue {
 private:
     std::vector<T> _data;
     size_t _head, _tail;
