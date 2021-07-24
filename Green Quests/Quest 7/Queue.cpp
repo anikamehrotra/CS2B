@@ -39,11 +39,7 @@ template <typename T> void Queue<T>::resize(size_t size) {
     _data = temp._data;
 }
 
-template <typename T> void popalot(Queue<T>& q) {
-    while (!q.is_empty()) {
-        q.dequeue();
-    }
-}
+
 
 template <typename T> string Queue<T>::to_string(size_t lim) const {
     string s = "";

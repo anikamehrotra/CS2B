@@ -43,6 +43,11 @@ Queue<T>::Queue(size_t size)
     _head = 0;
     _tail = 0;
 }
+template <typename T> void popalot(Queue<T>& q) {
+    while (!q.is_empty()) {
+        q.dequeue();
+    }
+}
 // TODO - Fill in the missing implementations. Experiment with the aesthetics by moving
 // some of these implementations inline (into your class def above). See which gives
 // you more readable code.
