@@ -65,7 +65,7 @@ template <typename T> bool Queue<T>::is_empty() const {
 }
 
 template <typename T> bool Queue<T>::enqueue(const T& elem) {
-    if (_head != (_tail + 1) % _data.size()) {
+    if (_head != (_tail + 1) % size()) {
         _data[_tail] = elem;
         _tail++;
         return true;
@@ -94,14 +94,14 @@ template <typename T> void Queue<T>::resize(size_t size) {
 template <typename T> string Queue<T>::to_string(size_t lim) const {
     string s = "";
     s += "# Queue - size = ";
-    s += to_string(_data.size()) + "\n";
+    s += to_string(size()) + "\n";
     s += "data : ";
-    if (lim >= _data.size()) {
-        for (size_t i = 0; i < _data.size(); i++) {
+    if (lim >= size()) {
+        for (size_t i = 0; i < size(); i++) {
             s += to_string(_data[i]) + " ";
         }
     }
-    else if (lim < _data.size()) {
+    else if (lim < size()) {
         for (size_t i = 0; i < lim; i++) {
             s += to_string(_data[i]) + " ";
         }
