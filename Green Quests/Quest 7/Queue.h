@@ -51,7 +51,7 @@ public:
 
 template <typename T> T Queue<T>::_sentinel = T();
 template <typename T> Queue<T>::Queue(size_t size) {
-    _data.resize(size);
+    _data.resize(size+1);
     _head = 0;
     _tail = 0;
 }
