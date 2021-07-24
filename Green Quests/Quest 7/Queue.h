@@ -58,4 +58,59 @@ template <typename T> void popalot(Queue<T>& q) {
 // some of these implementations inline (into your class def above). See which gives
 // you more readable code.
 
+
+template <typename T> bool Queue<T>::is_empty() const {
+    if (_head == _tail) return true;
+    return false;
+}
+
+template <typename T> bool Queue<T>::enqueue(const T& elem) {
+    if (_head != (_tail + 1) % _data.size()) {
+        _data[_tail] = elem;
+        _tail++;
+        return true;
+    }
+    return false;
+}
+
+template <typename T> bool Queue<T>::dequeue() {
+    if (!is_empty()) {_data[_head] = 0; _head++; return true;}
+    return false;
+}
+
+template <typename T> void Queue<T>::resize(size_t size) {
+    Queue <T> temp(size);
+    size_t i = 0;
+    while (!is_empty()) {
+        temp.enqueue(_data[i]);
+        dequeue();
+        i++;
+    }
+    _data = temp._data;
+    _head = 0;
+    _tail = _data.size() - 1;
+}
+
+template <typename T> string Queue<T>::to_string(size_t lim) const {
+    string s = "";
+    s += "# Queue - size = ";
+    s += _data.size() + "\n";
+    s += "data : ";
+    if (lim >= _data.size()) {
+        for (size_t i = 0; i < _data.size(); i++) {
+            s += _data[i] + " ";
+        }
+    }
+    else if (lim < _data.size()) {
+        for (size_t i = 0; i < lim; i++) {
+            s += _data[i] + " ";
+        }
+        s += "...";
+    }
+    s += "\n";
+    return s;
+}
+
+
+
 #endif /* Queue_h */
