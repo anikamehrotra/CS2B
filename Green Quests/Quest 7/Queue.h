@@ -26,7 +26,7 @@ public:
     static void set_sentinel(const T &elem) { _sentinel = elem; }
     static T get_sentinel() { return _sentinel; }
     bool is_empty() const;
-    size_t size() const;
+    size_t size() const {return _data.size();}
     void resize(size_t size);
     const T &peek() const {return _data[_head];}
     bool dequeue();
