@@ -30,5 +30,36 @@ template <typename T> bool Queue<T>::dequeue() {
 
 template <typename T> void Queue<T>::resize(size_t size) {
     Queue <T> temp(size);
-    
+    size_t i = _data.size()-1;
+    while (!is_empty()) {
+        temp.enqueue(_data[i];)
+        _data.dequeue();
+        i--;
+    }
+    _data = temp._data;
+}
+
+template <typename T> void popalot(Queue<T>& q) {
+    while (!q.is_empty()) {
+        q.dequeue();
+    }
+}
+
+template <typename T> string Queue<T>::to_string(size_t lim) const {
+    string s = "";
+    s += "# Queue - size = ";
+    s += _data.size() + "\n";
+    s += "data : ";
+    if (lim >= _data.size()) {
+        for (size_t i = 0; i < _data.size(); i++) {
+            s += _data[i] + " ";
+        }
+    }
+    else if (lim < _data.size()) {
+        for (size_t i = 0; i < lim; i++) {
+            s += _data[i] + " ";
+        }
+        s += "...";
+    }
+    s += "\n";
 }
