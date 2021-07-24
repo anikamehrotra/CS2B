@@ -12,7 +12,8 @@
 
 using namespace std;
 
-template <typename T> class Queue {
+template <typename T> 
+class Queue {
 private:
     std::vector<T> _data;
     size_t _head, _tail;
@@ -41,6 +42,7 @@ public:
 
     friend class Tests; // Don't remove this line
 };
+
 template <typename T> T Queue<T>::_sentinel = T();
 template <typename T> Queue<T>::Queue(size_t size) {
     _data.resize(size);
