@@ -31,13 +31,15 @@ template <typename T> bool Queue<T>::dequeue() {
 
 template <typename T> void Queue<T>::resize(size_t size) {
     Queue <T> temp(size);
-    size_t i = _data.size()-1;
+    size_t i = 0;
     while (!is_empty()) {
         temp.enqueue(_data[i]);
         dequeue();
-        i--;
+        i++;
     }
     _data = temp._data;
+    _head = 0;
+    _tail = _data.size() - 1;
 }
 
 template <typename T> string Queue<T>::to_string(size_t lim) const {
