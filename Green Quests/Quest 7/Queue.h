@@ -103,13 +103,13 @@ template <typename T> string Queue<T>::to_string(size_t lim) const {
     s += std::to_string(size()) + "\n";
     s += "data : ";
     if (lim >= size()) {
-        for (size_t i = 0; i < size(); i++) {
-            s += std::to_string(_data[i]) + " ";
+        for (size_t i = _head; i < size(); i++) {
+            s += std::to_string(_data[i % _data.size()]) + " ";
         }
     }
     else if (lim < size()) {
-        for (size_t i = 0; i < lim; i++) {
-            s += std::to_string(_data[i]) + " ";
+        for (size_t i = _head; i < lim; i++) {
+            s += std::to_string(_data[i % _data.size()]) + " ";
         }
         s += "...";
     }
