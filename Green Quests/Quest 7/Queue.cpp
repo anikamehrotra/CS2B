@@ -9,20 +9,12 @@
 
 #include "Queue.h"
 using namespace std;
-/*
-*/
-/*
-*/
-/*
-*/
-/*
-*/
-/*
-    */
+
 template <typename T> bool Queue<T>::is_empty() const {
     if (_head == _tail) return true;
     return false;
 }
+
 template <typename T> bool Queue<T>::enqueue(const T& elem) {
     if (_head != (_tail + 1) % _data.size()) {
         _data[_tail] = elem;
@@ -31,16 +23,18 @@ template <typename T> bool Queue<T>::enqueue(const T& elem) {
     }
     return false;
 }
+
 template <typename T> bool Queue<T>::dequeue() {
-    if (!is_empty()) {_data[_head] = 0; _head++;}
+    if (!is_empty()) {_data[_head] = 0; _head++; return true;}
     return false;
 }
+
 template <typename T> void Queue<T>::resize(size_t size) {
     Queue <T> temp(size);
     size_t i = _data.size()-1;
     while (!is_empty()) {
         temp.enqueue(_data[i]);
-        _data.dequeue();
+        dequeue();
         i--;
     }
     _data = temp._data;

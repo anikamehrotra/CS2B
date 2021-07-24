@@ -22,23 +22,26 @@ private:
 
 public:
     static const int MAX_DISP_ELEMS = 100;
+
     Queue(size_t size);
+
     static void set_sentinel(const T &elem) { _sentinel = elem; }
     static T get_sentinel() { return _sentinel; }
+
     bool is_empty() const;
     size_t size() const {return _data.size();}
     void resize(size_t size);
-    const T &peek() const {return _data[_head];}
+
+    const T &peek() const {if (is_empty() {return _sentinel;} return _data[_head];}
     bool dequeue();
     bool enqueue(const T &elem);
+
     std::string to_string(size_t limit = MAX_DISP_ELEMS) const;
+
     friend class Tests; // Don't remove this line
 };
-template <typename T>
-T Queue<T>::_sentinel = T();
-template <typename T>
-Queue<T>::Queue(size_t size)
-{
+template <typename T> T Queue<T>::_sentinel = T();
+template <typename T> Queue<T>::Queue(size_t size) {
     _data.resize(size);
     _head = 0;
     _tail = 0;
