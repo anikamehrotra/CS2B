@@ -29,7 +29,7 @@ public:
     static T get_sentinel() { return _sentinel; }
 
     bool is_empty() const;
-    size_t size() const {return _data.size();}
+    size_t size() const {return _tail - _head;}
     void resize(size_t size);
 
     const T &peek() const {
