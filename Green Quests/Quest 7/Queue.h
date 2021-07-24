@@ -71,7 +71,7 @@ template <typename T> bool Queue<T>::enqueue(const T& elem) {
     // if (size() == 0) {return false;}
     if (size() == 0 || _head != (_tail + 1) % _data.size()) {
         _data[_tail] = elem;
-        _tail++;
+        _tail = _tail + 1 % _data.size();
         return true;
     }
     return false;
