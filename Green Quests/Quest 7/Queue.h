@@ -29,8 +29,8 @@ public:
 
     bool is_empty() const;
     size_t size() const {
-        // return _tail - _head + 1;
-        return _data.size();
+        return _tail - _head;
+        //return _data.size();
         }
     void resize(size_t size);
 
@@ -68,8 +68,8 @@ template <typename T> bool Queue<T>::is_empty() const {
 }
 
 template <typename T> bool Queue<T>::enqueue(const T& elem) {
-    if (size() == 0) {return false;}
-    if (_head != (_tail + 1) % size()) {
+    // if (size() == 0) {return false;}
+    if (_head != (_tail + 1) % _data.size()) {
         _data[_tail] = elem;
         _tail++;
         return true;
