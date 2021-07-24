@@ -29,6 +29,9 @@ public:
 
     bool is_empty() const;
     size_t size() const {
+        if (_tail < _head) {
+            return _tail - _head + _data.size();
+        }
         return _tail - _head;
         //return _data.size();
         }
