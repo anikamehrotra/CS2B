@@ -29,5 +29,6 @@ template <typename T> bool Queue<T>::dequeue() {
 }
 
 template <typename T> void Queue<T>::resize(size_t size) {
+    Queue <T> temp(size);
     
 }
