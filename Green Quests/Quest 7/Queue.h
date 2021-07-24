@@ -29,7 +29,8 @@ public:
 
     bool is_empty() const;
     size_t size() const {
-        return _tail - _head + 1;
+        // return _tail - _head + 1;
+        return _data.size();
         }
     void resize(size_t size);
 
@@ -49,7 +50,7 @@ template <typename T> T Queue<T>::_sentinel = T();
 template <typename T> Queue<T>::Queue(size_t size) {
     _data.resize(size);
     _head = 0;
-    _tail = _data.size() - 1;
+    _tail = 0;
 }
 template <typename T> void popalot(Queue<T>& q) {
     while (!q.is_empty()) {
