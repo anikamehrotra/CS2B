@@ -49,7 +49,7 @@ template <typename T> T Queue<T>::_sentinel = T();
 template <typename T> Queue<T>::Queue(size_t size) {
     _data.resize(size);
     _head = 0;
-    _tail = 0;
+    _tail = _data.size() - 1;
 }
 template <typename T> void popalot(Queue<T>& q) {
     while (!q.is_empty()) {
@@ -67,6 +67,7 @@ template <typename T> bool Queue<T>::is_empty() const {
 }
 
 template <typename T> bool Queue<T>::enqueue(const T& elem) {
+    if (size() == 0) {return false;}
     if (_head != (_tail + 1) % size()) {
         _data[_tail] = elem;
         _tail++;
