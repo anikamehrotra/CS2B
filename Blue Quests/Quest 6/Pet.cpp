@@ -99,14 +99,25 @@ string Pet::make_a_name(int len) {
 }
 // Optional EC points
 // Global helpers
-bool operator==(const Pet& pet1, const Pet& pet2) {
-  return true;
-} 
-bool operator!=(const Pet& pet1, const Pet& pet2) {
-  return true; 
+bool operator==(const Pet& pet1, const Pet& pet2) { //return true if u dont fuck w it
+    if(pet1.get_name()==pet2.get_name()){
+        if (pet1.get_id()==pet2.get_id()){
+            if (pet1.get_num_limbs()==pet2.get_num_limbs()){
+                return true;
+            }
+        }
+    }
+    return false;
 }
+ 
+bool operator!=(const Pet& pet1, const Pet& pet2) {
+    if (!operator==(pet1, pet2)) return true;
+    return false;
+}
+ 
 ostream& operator<<(ostream& os, const Pet& pet) {
-  return os;
+    os<<pet.to_string();
+    return os;
 }
 
 /*
