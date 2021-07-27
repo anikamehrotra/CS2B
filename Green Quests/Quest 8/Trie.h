@@ -33,7 +33,7 @@ class Trie {
                     else {curr = curr->next[ch] = new Trie::Node();}
                 }
                 // next line could be wrong so double check
-                // if (curr->next ) {curr->next}
+                if (curr->next.size() == 0) {curr->next.resize(1);}
                 if (curr->next[0] == nullptr) {curr->next[0] = new Trie::Node();}
                 
             };
