@@ -18,7 +18,7 @@ class Trie {
             vector<Trie::Node *> next;
 
             ~Node() {
-                for (int i = 0; i < next.size(); i++) {
+                for (size_t i = 0; i < next.size(); i++) {
                     delete next[i];
                     next[i] = nullptr;
                 }
