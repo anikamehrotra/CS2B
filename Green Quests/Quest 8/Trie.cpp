@@ -37,3 +37,8 @@ size_t Trie::Node::get_completions(vector<string>& completions, size_t limit) co
     
     return completions.size();
 }
+
+size_t Trie::trie_sort(vector<string>& vec) const {
+    vec.clear();
+    
+}
