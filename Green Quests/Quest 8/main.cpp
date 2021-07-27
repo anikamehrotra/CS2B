@@ -14,5 +14,6 @@ class Tests {
 
 int main() {
     Trie t;
-    t.insert("hi");
+    t.insert("hello");
+    t.lookup("he");
 }
