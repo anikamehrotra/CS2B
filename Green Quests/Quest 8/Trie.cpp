@@ -23,7 +23,7 @@ size_t Trie::Node::get_completions(vector<string>& completions, size_t limit) co
     completions.clear();
     unprocessed_nodes.push(Continuation(this, ""));
 
-    while(!unprocessed_nodes.empty()) {
+    while(!unprocessed_nodes.empty() && completions.size() < limit) {
         Continuation cont = unprocessed_nodes.front();
         unprocessed_nodes.pop();
         if (cont.node->next[0] != nullptr) {completions.push_back(cont.partial);}
