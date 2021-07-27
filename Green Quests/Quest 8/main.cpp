@@ -21,4 +21,5 @@ int main() {
     cout << "lookup a: " << t.lookup("a") << endl;
     cout << "lookup hello: " << t.lookup("hello") << endl;
     cout << "lookup helloa: " << t.lookup("helloa") << endl;
+    cout << t.to_string(100) << endl;
 }

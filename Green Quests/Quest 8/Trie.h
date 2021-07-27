@@ -75,7 +75,7 @@ class Trie {
             vector<string> completions;
             get_completions("", completions, limit+1);
             s = "# Trie contents\n";
-            if (limit > completions.size()) {
+            if (limit >= completions.size()) {
                 for (size_t i = 0; i < completions.size(); i++) {
                     s += completions[i] + "\n";
                 }
