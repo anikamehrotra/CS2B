@@ -6,6 +6,7 @@
 #include <vector>
 #include <algorithm>
 #include <cmath>
+#include <queue>
 
 #include "Trie.h"
 using namespace std;
@@ -18,14 +19,14 @@ size_t Trie::Node::get_completions(vector<string>& completions, size_t limit) co
     };
 
     //All string descendants of this node are completions
-    //queue<Continuation> unprocessed_nodes;
-/*
+    queue<Continuation> unprocessed_nodes;
+
     while(!unprocessed_nodes.empty()) {
         Continuation cont = unprocessed_nodes.front();
         unprocessed_nodes.pop();
 
 
     }
- */   
+    
     return completions.size();
 }
