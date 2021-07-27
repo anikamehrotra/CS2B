@@ -170,23 +170,3 @@ string Automaton::get_first_n_generations(size_t n, size_t width) {
     }
     return s;
 }
-
-/*
-Hooray! 3 Transfer Credits earn a trip to Luminare's Levitating Emporium (utils)
-
-Hooray! 4 Conditions agreed upon by the sparring trio (set rule)
-
-Hooray! 1 Bottle of Crypiscid Distillate exchanged for a balloon axe (constructor)
-
-Hooray! 3 Prosphuric Monocrystamate molecules energized to ionization level 1.729 (equals)
-
-Hooray! 6 Pillars of solpitude provide the strength you need (make_next_gen)
-
-Hooray! 3 Phlags of intergalactic victory hoisted before waking up (generation to string)
-
-You can keep going. Or enter the next quest. Or both.
-
-Hooray, krazy the koala knows where to go nowhere to go.
-
-Hooray! 3 Dreams show N hyperquadrants that partition the way out (get first n gens)
-*/

@@ -63,19 +63,3 @@ std::string Hanoi::solve(int num_discs, int src, int dst, int tmp) {
         get_moves(num_discs, src, dst, tmp);
 }
 
-/*
-Hooray! 3 Catacombs of Crossfire successfully crossed at midday (get_moves base cases).
-
-Hooray! 5 Grand Prizes awarded at Graspro Grinstock Grand Prix (get_moves: 2-5).
-
-Hooray! 5 Dubbadoo Dubbada Dubbadubba Doodas wish for your wellbeing (get_moves: 6-10).
-
-Hooray! 2 Dances of Din-dinad'ash performed in mid-air (solve).
-
-You can keep going. Or enter the next quest. Or both.
-
-Hooray, Hooray. Merry Mynahs show the way.
-
-Hooray! 8 Leaf Cloverfields as far as eye could see (lookup cache).
-
-*/
