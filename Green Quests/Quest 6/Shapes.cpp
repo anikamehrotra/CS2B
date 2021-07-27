@@ -137,37 +137,3 @@ bool Stick_Man::draw(Screen &scr, char ch) {
     }
     return true;
 }
-
-/*
-Hooray! 2 Strawportian homes cleaned to the highest standards of kemptness (ctr)
-
-Hooray! 1 Roadside Shanty pared a supercilious quarry (fill)
-
-Hooray! 1 Paltry Pebble trumps many mounds of Clayi Clod (clear)
-
-Hooray! 2 Transipid Lakes shlimmmered all though the long winter (to string)
-
-Hooray! 2 Fiendfyre Quenchifizers found in an abandoned mineshaft (<<)
-
-Hooray! 1 Phlower born to blush unseen instagrammed into immortality (point)
-
-Hooray! 3 more lives in Shakies Rimes, a splash of color to your days and times (draw by x)
-
-Hooray! 2 Eternities juggled from palm to palm by the centennial millipede (draw by y)
-
-Hooray! 2 Dumb Thoughts recrystallized into precious phrases by merry ol' Shakey (line draw)
-
-Hooray! 4 Numismerate Literati compose hymns to his holy highness, Pfifer XVII (quad)
-
-Hooray! 1 Night the ninth shakes thrones of feeble kings (rect)
-
-You can keep going. Or enter the next quest. Or both.
-
-Hooray, an ant a cyana beckons, I reckons.
-
-Hooray! 2 Horrid Hooting Stanzas interposed to make a Grand Megnumopus (stick man)
-
-Hooray! 3 Grumpets from mista_9721 fetch 9.271 mil gp at the Grand Exchange (draw stick man)
-
-Hooray! 2 Acceptable Audits provide a clear view of unthrifty loveliness (~stick man)
-*/
