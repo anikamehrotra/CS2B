@@ -10,6 +10,7 @@ using namespace std;
 
 class Tests {
     public:
+       
 };
 
 int main() {
@@ -22,4 +23,6 @@ int main() {
     cout << "lookup hello: " << t.lookup("hello") << endl;
     cout << "lookup helloz: " << t.lookup("helloz") << endl;
     cout << t.to_string(100) << endl;
+    vector<string> completions;
+    t.get_completions("s", completions, 1000);
 }
