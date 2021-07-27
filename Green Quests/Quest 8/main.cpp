@@ -28,7 +28,7 @@ int main() {
     cout << "lookup a: " << t.lookup("a") << endl;
     cout << "lookup hello: " << t.lookup("hello") << endl;
     cout << "lookup helloz: " << t.lookup("helloz") << endl;
-    cout << t.to_string(100) << endl;
+    // cout << t.to_string(100) << endl;
     vector<string> completions;
-    test.test_get_completions(t, " ", completions, 1000);
+    test.test_get_completions(t, "", completions, 1000);
 }
