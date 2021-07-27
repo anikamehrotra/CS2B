@@ -175,27 +175,3 @@ string Pet_Store::to_string(size_t n1, size_t n2)
     return s;
 }
 
-/*
-Hooray! 1 G'nosh gifted by Wingoliroans of the West (constructor)
-
-Hooray! 1 Doomsberry of Dromedium purchased from Endmonger Falsetoff (get size)
-
-Hooray! 1 Amphorum of Camphorium unearthed (set size)
-
-Hooray! 1 Brannertail Bongoose defeated for now (clear)
-
-Hooray! 2 Sploonkinter Aurelio Gyromedrons tamed (populate store)
-
-Hooray! 5 pints of Mad Monk's Meade brewed. (find by id, linear)
-
-Hooray! 10 Provincial Magistrates bribed. (find by id, binary)
- (Don't do this kind of thing. Read the Tiger's honor code)
-
-The secret password for your next quest is an elephant who remembers (do not share)
-
-Hooray! 1 Spell of Momentary Moribundness cast (find by name, linear)
-
-Hooray! 3 Rulerless Rings forged in Fiesty Fire (find by name, binary)
-
-Hooray! 1 Vial of Pandora's Pandemonium opened (to_string)
-*/

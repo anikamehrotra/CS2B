@@ -117,19 +117,3 @@ class Stack_String
         friend class Tests;
 };
 #endif /* Stacks_h */
-
-/*
-Hooray! 2 Rogues from Rombarchia befriended (Basic Stack)
-
-Hooray! 2 Light Emitting Weevils adopted (Push)
-
-Hooray! 3 Qubits of Inner Space leased (Top)
-
-Hooray! 2 Golden Rhinoceri won in a duel (Pop 1)
-
-Hooray! 2 Sprinchots of Smoltassium insufflated... dangerous! (Pop 2)
-
-Hooray! 4 Ears of Pfamathrin Corn harvested (Stringification)
-
-The password for your next quest is the duck-billed platypus (don't share)
-*/
