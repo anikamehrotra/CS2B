@@ -20,6 +20,7 @@ size_t Trie::Node::get_completions(vector<string>& completions, size_t limit) co
 
     //All string descendants of this node are completions
     queue<Continuation> unprocessed_nodes;
+    completions.clear();
     unprocessed_nodes.push(Continuation(this, ""));
 
     while(!unprocessed_nodes.empty()) {
