@@ -41,7 +41,7 @@ class Trie {
                 const Trie::Node *curr = this;
                 for (const char *str = s.c_str(); *str; str++) {
                     char ch = *str;
-                    // if ((size_t) ch >= curr->next.size()) {curr->next.resize(ch+1);}
+                    if ((size_t) ch >= curr->next.size()) {return nullptr;}
                     if (curr->next[ch] != nullptr) {curr = curr->next[ch];}
                     else {return nullptr;}
                     // else {curr = curr->next[ch] = new Trie::Node();}

@@ -20,6 +20,6 @@ int main() {
     cout << "lookup h: " << t.lookup("h") << endl;
     cout << "lookup a: " << t.lookup("a") << endl;
     cout << "lookup hello: " << t.lookup("hello") << endl;
-    cout << "lookup helloa: " << t.lookup("helloa") << endl;
+    cout << "lookup helloz: " << t.lookup("helloz") << endl;
     cout << t.to_string(100) << endl;
 }
