@@ -67,10 +67,27 @@ class Trie {
 
         void insert(string s) const {_root->insert(s);};
         bool lookup(string s) const {return _root->lookup(s);};
-        size_t get_completions(vector<string>& completions, size_t limit) const {return _root->get_completions(completions, limit);};
+        size_t get_completions(string s, vector<string>& completions, size_t limit) const { return _root->traverse(s)->get_completions(completions, limit);};
         size_t trie_sort(vector<string>& vec) const;
 
-        string to_string(size_t n) const;
+        string to_string(size_t limit) const {
+            string s;
+            vector<string> completions;
+            get_completions("", completions, limit+1);
+            s = "# Trie contents\n";
+            if (limit > completions.size()) {
+                for (size_t i = 0; i < completions.size(); i++) {
+                    s += completions[i] + "\n";
+                }
+            }
+            else {
+                for (size_t i = 0; i < limit; i++) {
+                    s += completions[i] + "\n";
+                }
+                s += "...\n";
+            }
+            return s;
+        };
         ostream& operator<<(ostream os) {return os << to_string(100);};
 
         friend class Tests;
