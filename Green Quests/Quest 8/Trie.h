@@ -17,7 +17,12 @@ class Trie {
         struct Node {
             vector<Trie::Node *> next;
 
-            ~Node() {};
+            ~Node() {
+                for (int i = 0; i < next.size(); i++) {
+                    delete next[i];
+                    next[i] = nullptr;
+                }
+            };
 
             void insert(string s) {
                 Trie::Node *curr = this;
@@ -25,7 +30,7 @@ class Trie {
                     char ch = *str;
                     if ((size_t) ch >= curr->next.size()) {curr->next.resize(ch+1);}
                     if (curr->next[ch] != nullptr) {curr = curr->next[ch];}
-                    else {curr->next[ch] = new Trie::Node();}
+                    else {curr = curr->next[ch] = new Trie::Node();}
                 }
                 // next line could be wrong so double check
                 // if (curr->next ) {curr->next}
@@ -41,7 +46,7 @@ class Trie {
         const Node *traverse(string &s) const {return _root->traverse(s);};
     public:
         Trie() {_root = new Node();};
-        ~Trie() {delete _root;};
+        ~Trie() {delete _root; _root = nullptr;};
 
         void insert(string s) {_root->insert(s);};
         bool lookup(string s) const {return _root->lookup(s);};
