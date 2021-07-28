@@ -25,7 +25,7 @@ class Graph {
         // Suggested private helpers. Not tested.
         void add_edge(int src, int dst, std::string tag) {
             if (_nodes.size() <= (size_t) src) {_nodes.resize(src + 1);}
-            if (_nodes[src].size() <= (size_t) dst) {_nodes.resize(dst + 1);}
+            if (_nodes.size() <= (size_t) dst) {_nodes.resize(dst + 1);}
             _nodes[src].push_back(Edge(dst, tag));
         };
         std::string to_string() const;
