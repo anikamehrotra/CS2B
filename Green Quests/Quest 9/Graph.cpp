@@ -131,6 +131,13 @@ void Graph::make_purty_pitcher() {
     for (size_t j = 61; j < 70; j++) {
         add_edge(6, j, "");
     }
+    for (size_t j = 71; j < 80; j++) {
+        add_edge(7, j, "");
+    }
+    for (size_t i = 0; i < 10; i++) {
+        for (size_t j = i; j < i+10; j++) {
+        }
+    }
 
     
 };
