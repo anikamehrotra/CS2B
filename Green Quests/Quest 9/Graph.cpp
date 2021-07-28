@@ -110,15 +110,20 @@ void Graph::make_dodos_in_space() {
 
 void Graph::make_purty_pitcher() {
     _nodes.clear();
-    for (int i = 0; i < 70; i+=7) {
-        /*
+    for ()
+    
+};
+
+/*
+for (int i = 0; i < 70; i+=7) {
+        
         add_edge(i, i + 1, ".");
         add_edge(i, i + 2, ".");
         add_edge(i, i + 3, ".");
         add_edge(i, i + 4, ".");
         add_edge(i, i + 5, ".");
         add_edge(i, i + 6, ".");
-        */
+        
         add_edge(i + 1, i, ".");
         add_edge(i + 1, i + 2, ".");
 
@@ -129,41 +134,5 @@ void Graph::make_purty_pitcher() {
         add_edge(i + 5, i, ".");
         int randEdge = (i+3) % 2;
         add_edge(randEdge, i + 6, ".");
-    }
-    
-};
-/*
-# Graph - 6 nodes.
-# Edge lists:
-0 : (1,i-see) 
-1 : (2,the-silly-snake) 
-2 : (3,i-be) 
-3 : (4,you-saw-me) 
-4 : (5,once-like) 
-5 : (0,kekule) 
-# End of Graph
-
-# Graph - 6 nodes.
-# Edge lists:
-0 : (1,i-see) 
-1 : (2,the-silly-snake) 
-2 : (3,I-be) 
-3 : (4,you-saw-me) 
-4 : (5,once-like) 
-5 : (0,kekule) 
-# End of Graph
-*/
-/*
-# Graph - 7 nodes.
-# Edge lists:
-0 : (1,.) 
-1 : (2,.) (3,.) (4,.) 
-4 : (5,.) (6,.) 
-# End of Graph
-# Graph - 5 nodes.
-# Edge lists:
-0 : (1,.) 
-1 : (2,.) (3,.) (4,.) 
-4 : (5,.) (6,.) 
-# End of Graph
+}
 */
