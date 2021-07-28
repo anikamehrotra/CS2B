@@ -105,9 +105,19 @@ void Graph::make_dodos_in_space() {
         add_edge(i, i + 1, s);
     }
 };
+
+int fib(int n)
+{
+   if (n <= 1)
+      return n;
+   return fib(n-1) + fib(n-2);
+}
+
 void Graph::make_purty_pitcher() {
     _nodes.clear();
-    
+    for (int i = 0; i < 10; i++) {
+        add_edge(fib(i), fib(i+1), "-_-");)
+    }
 };
 /*
 # Graph - 6 nodes.
