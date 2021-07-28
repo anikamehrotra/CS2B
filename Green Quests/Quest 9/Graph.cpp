@@ -110,7 +110,7 @@ void Graph::make_dodos_in_space() {
 
 void Graph::make_purty_pitcher() {
     _nodes.clear();
-    for (int i = 0; i < 20; i+=5) {
+    for (int i = 0; i < 30; i+=6) {
         add_edge(i, i + 1, ".");
         add_edge(i, i + 2, ".");
         add_edge(i, i + 3, ".");
