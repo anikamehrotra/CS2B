@@ -12,6 +12,7 @@
 using namespace std;
 
 void Graph::make_silly_snake() {
+    _nodes.clear();
     add_edge(0, 1, "i-see");
     add_edge(1, 2, "the-silly-snake");
     add_edge(2, 3, "I-be");
@@ -19,9 +20,31 @@ void Graph::make_silly_snake() {
     add_edge(4, 5, "once-like");
     add_edge(5, 0, "kekule");
 };
-void make_mr_sticky();
-void make_driftin_dragonfly();
-void make_slinky_star();
-void make_kathy_da_grate();
-void make_dodos_in_space();
-void make_purty_pitcher();
+
+void Graph::make_mr_sticky() {
+    _nodes.clear();
+    add_edge(0, 1, ".");
+    add_edge(1, 2, ".");
+    add_edge(1, 3, ".");
+    add_edge(1, 4, ".");
+    add_edge(4, 5, ".");
+    add_edge(4, 6, ".");
+};
+
+void Graph::make_driftin_dragonfly() {
+    _nodes.clear();
+    add_edge(0, 1, "dis-be-me-head");
+};
+
+void Graph::make_slinky_star() {
+    _nodes.clear();
+};
+void Graph::make_kathy_da_grate() {
+    _nodes.clear();
+};
+void Graph::make_dodos_in_space() {
+    _nodes.clear();
+};
+void Graph::make_purty_pitcher() {
+    _nodes.clear();
+};
