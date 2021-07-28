@@ -11,13 +11,13 @@
 #include "Graph.h"
 using namespace std;
 
-void add_edge(int src, int dst, std::string tag) {
-    
-};
-
-void make_silly_snake() {
-    Graph g;
-    g.addEdge(0, 1, "i-see");
+void Graph::make_silly_snake() {
+    add_edge(0, 1, "i-see");
+    add_edge(1, 2, "the-silly-snake");
+    add_edge(2, 3, "I-be");
+    add_edge(3, 4, "you-saw-me");
+    add_edge(4, 5, "once-like");
+    add_edge(5, 0, "kekule");
 };
 void make_mr_sticky();
 void make_driftin_dragonfly();
