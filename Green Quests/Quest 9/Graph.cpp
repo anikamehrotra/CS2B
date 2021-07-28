@@ -99,8 +99,10 @@ void Graph::make_kathy_da_grate() {
 };
 void Graph::make_dodos_in_space() {
     _nodes.clear();
-    for (int i = 0; i < 50; i+=2) {
-        add_edge(i, i + 1, "Yippee-Dodo-" + i);
+    for (size_t i = 0; i < 50; i+=2) {
+        string s = "Yippee-Dodo-";
+        s += std::to_string(i);
+        add_edge(i, i + 1, s);
     }
 };
 void Graph::make_purty_pitcher() {

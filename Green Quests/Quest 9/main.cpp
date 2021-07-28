@@ -11,4 +11,5 @@ using namespace std;
 int main() {
     Graph g;
     g.make_silly_snake();
+    g.make_dodos_in_space();
 }
