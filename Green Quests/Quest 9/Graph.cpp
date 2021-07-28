@@ -106,17 +106,19 @@ void Graph::make_dodos_in_space() {
     }
 };
 
-int fib(int n)
-{
-   if (n <= 1)
-      return n;
-   return fib(n-1) + fib(n-2);
-}
+
 
 void Graph::make_purty_pitcher() {
     _nodes.clear();
-    for (int i = 0; i < 7; i++) {
-        add_edge(fib(i), fib(i+1), "-_-");
+    for (int i = 0; i < 20; i+=3) {
+        add_edge(i, i + 1, ".");
+        add_edge(i + 1, i + 2, ".");
+        add_edge(i + 2, i, ".");
+    }
+    for (int i = 1; i < 21; i+=2) {
+        add_edge(i, i + 1, ".");
+        add_edge(i + 1, i + 2, ".");
+        add_edge(i + 2, i, ".");
     }
 };
 /*
