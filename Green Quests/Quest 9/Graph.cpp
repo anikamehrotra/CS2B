@@ -111,14 +111,14 @@ void Graph::make_dodos_in_space() {
 void Graph::make_purty_pitcher() {
     _nodes.clear();
     for (int i = 0; i < 20; i+=3) {
-        add_edge(i, i + 1, ".");
-        add_edge(i + 1, i + 2, ".");
-        add_edge(i + 2, i, ".");
+        add_edge(i, i + 2, ".");
+        add_edge(i + 2, i + 4, ".");
+        add_edge(i + 4, i, ".");
     }
     for (int i = 1; i < 21; i+=2) {
-        add_edge(i, i + 1, ".");
-        add_edge(i + 1, i + 2, ".");
-        add_edge(i + 2, i, ".");
+        add_edge(i, i + 2, ".");
+        add_edge(i + 2, i + 4, ".");
+        add_edge(i + 4, i, ".");
     }
 };
 /*
