@@ -115,7 +115,7 @@ int fib(int n)
 
 void Graph::make_purty_pitcher() {
     _nodes.clear();
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 7; i++) {
         add_edge(fib(i), fib(i+1), "-_-");
     }
 };
