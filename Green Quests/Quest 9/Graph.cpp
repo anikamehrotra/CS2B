@@ -107,6 +107,7 @@ void Graph::make_dodos_in_space() {
 };
 void Graph::make_purty_pitcher() {
     _nodes.clear();
+    
 };
 /*
 # Graph - 6 nodes.
