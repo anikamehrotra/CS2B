@@ -7,3 +7,8 @@
 #include "Graph.h"
 #include "Graph.cpp"
 using namespace std;
+
+int main() {
+    Graph g;
+    g.make_silly_snake();
+}
