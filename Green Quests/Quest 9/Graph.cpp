@@ -118,7 +118,18 @@ void Graph::make_purty_pitcher() {
     add_edge(7, 8, ".");
     add_edge(8, 9, ".");
     add_edge(9, 10, ".");
-    add_edge(10, 7, ".");
+    add_edge(10, 11, ".");
+    add_edge(11, 12, ".");
+    add_edge(12, 13, ".");
+    add_edge(13, 14, ".");
+    add_edge(14, 15, ".");
+    add_edge(15, 16, ".");
+    add_edge(16, 17, ".");
+    add_edge(17, 18, ".");
+    add_edge(18, 19, ".");
+    add_edge(19, 20, ".");
+    add_edge(20, 21, ".");
+    add_edge(21, 7, ".");
 };
     /*
     add_edge(0, 1, ".");
