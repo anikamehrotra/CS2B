@@ -7,27 +7,25 @@
 using namespace std;
 
 typedef unsigned char byte;
-
+/*
 class Base {
     public:
 
-        int methodX() {
+        void methodX() {
             cout << "Base" << endl;
-            return 0;
         };
 };
 
 class Sub : public Base {
     public:
 
-       int methodX() {
+        void methodX() {
             cout << "Sub" << endl;
-            return 0;
         };
 };
 
 int main() {
-/*
+
    double *dubArray1 = new double[100];
    double *dubArray2 = new double[75];
       
@@ -35,7 +33,7 @@ int main() {
    // immediately following we have:
    dubArray1 = dubArray2;
    dubArray1[75] = 9;   
-   */  
+   
 
    Base *b = new Base();
    Sub *s = new Sub();
@@ -44,7 +42,7 @@ int main() {
    s->methodX();
    b = s;
    b->methodX();
-
+s->methodX();
    /*
     byte bits[128];
     for (size_t i = 0; i < 128; i++) {
@@ -63,5 +61,32 @@ int main() {
     cout << " | (bits[n/8] >> (8 - n%8 - 1) & 1): " << (int)(bits[n/8] >> (8-n%8 - 1) & 1);
     cout << endl;
    }
+}
  */
+
+
+
+// --------- BASE AND DERIVED CLASSES -------------
+class Base
+{
+public:
+  void fun() { cout << "Base\n"; }
+};
+
+class Derived : public Base
+{
+public:
+  void fun(){ cout << "Derived\n"; }
+};
+
+// ---------------- CLIENT -------------------------
+void main()
+{
+  Base b, *bp = &b;
+  Derived d, *dp = &d;
+
+  bp->fun();
+  dp->fun();
+  bp = dp;
+  bp->fun();
 }
