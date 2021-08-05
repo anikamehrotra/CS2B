@@ -8,8 +8,43 @@ using namespace std;
 
 typedef unsigned char byte;
 
+class Base {
+    public:
+        Base();
+        ~Base();
+        string methodX() {
+            cout << "Base" << endl;
+        }
+};
+
+class Sub {
+    public:
+        Sub();
+        ~Sub();
+       string methodX() {
+            cout << "Sub" << endl;
+        }
+};
+
 int main() {
-   
+
+   double *dubArray1 = new double[100];
+   double *dubArray2 = new double[75];
+      
+   // there are no intervening statements.  
+   // immediately following we have:
+   dubArray1 = dubArray2;
+   dubArray1[75] = 9;     
+/*
+   Base b = new Base();
+   Sub s = new Sub();
+
+   b.methodX();
+   s.methodX();
+   b = s;
+   b.methodX();
+*/
+   /*
     byte bits[128];
     for (size_t i = 0; i < 128; i++) {
             byte b = (byte)i;
@@ -27,5 +62,5 @@ int main() {
     cout << " | (bits[n/8] >> (8 - n%8 - 1) & 1): " << (int)(bits[n/8] >> (8-n%8 - 1) & 1);
     cout << endl;
    }
- 
+ */
 }
