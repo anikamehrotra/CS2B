@@ -65,7 +65,7 @@ s->methodX();
  */
 
 
-
+/*
 // --------- BASE AND DERIVED CLASSES -------------
 class Base
 {
@@ -89,4 +89,9 @@ void main()
   dp->fun();
   bp = dp;
   bp->fun();
+}
+*/
+
+void main() {
+	
 }
